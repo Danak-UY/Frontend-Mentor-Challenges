@@ -1,0 +1,116 @@
+@import url(https://fonts.google.com/specimen/Manrope:500,700);
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  color: #6d7f97;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ecf2f8;
+}
+
+html .container,
+body .container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+html .container .wrapper,
+body .container .wrapper {
+  background-color: white;
+  width: 100%;
+  max-width: 770px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  border-radius: 1rem;
+  box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, 0.04);
+}
+
+html .container .wrapper .wrapper-image,
+body .container .wrapper .wrapper-image {
+  overflow: hidden;
+}
+
+html .container .wrapper .wrapper-image img,
+body .container .wrapper .wrapper-image img {
+  border-radius: 1rem 0 0 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+html .container .wrapper .wrapper-info,
+body .container .wrapper .wrapper-info {
+  padding: 2.5rem;
+}
+
+html .container .wrapper .wrapper-info h1,
+body .container .wrapper .wrapper-info h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+html .container .wrapper .wrapper-info p,
+body .container .wrapper .wrapper-info p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+html .container .wrapper .wrapper-info .profile,
+body .container .wrapper .wrapper-info .profile {
+  display: flex;
+  align-items: center;
+}
+
+html .container .wrapper .wrapper-info .profile img,
+body .container .wrapper .wrapper-info .profile img {
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+html .container .wrapper .wrapper-info .profile figcaption,
+body .container .wrapper .wrapper-info .profile figcaption {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: .5rem 1rem 0;
+}
+
+html .container .wrapper .wrapper-info .profile figcaption h2,
+body .container .wrapper .wrapper-info .profile figcaption h2 {
+  font-size: .9rem;
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+
+html .container .wrapper .wrapper-info .profile figcaption p,
+body .container .wrapper .wrapper-info .profile figcaption p {
+  margin-bottom: 0px;
+  color: #9eafc2;
+  font-size: .9rem;
+}
+
+html .container .wrapper .wrapper-info .profile .share,
+body .container .wrapper .wrapper-info .profile .share {
+  border-radius: 50%;
+  background-color: #ecf2f8;
+  padding: .5rem;
+}
+
+html .container .wrapper .wrapper-info .profile .share img,
+body .container .wrapper .wrapper-info .profile .share img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
