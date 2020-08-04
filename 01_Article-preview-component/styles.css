@@ -190,6 +190,12 @@ body .container .wrapper .wrapper-info .profile .share .social-media a {
   height: 1.2rem;
   display: inline-block;
   margin: 0 .6rem;
+  transition: 0.2s ease transform;
+}
+
+html .container .wrapper .wrapper-info .profile .share .social-media a:hover,
+body .container .wrapper .wrapper-info .profile .share .social-media a:hover {
+  transform: translateY(-4px);
 }
 
 html .container .wrapper .wrapper-info .profile .share .social-media a img,
@@ -197,12 +203,6 @@ body .container .wrapper .wrapper-info .profile .share .social-media a img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: 0.2s ease opacity;
-}
-
-html .container .wrapper .wrapper-info .profile .share .social-media a img:hover,
-body .container .wrapper .wrapper-info .profile .share .social-media a img:hover {
-  opacity: .8;
 }
 
 @media screen and (max-width: 768px) {
@@ -223,6 +223,8 @@ body .container .wrapper .wrapper-info .profile .share .social-media a img:hover
   body .container .wrapper .wrapper-info {
     position: relative;
     padding: 2rem 2rem 1rem;
+    overflow: hidden;
+    border-radius: 0 0 1rem 1rem;
   }
   html .container .wrapper .wrapper-info h1,
   body .container .wrapper .wrapper-info h1 {
@@ -239,11 +241,6 @@ body .container .wrapper .wrapper-info .profile .share .social-media a img:hover
   html .container .wrapper .wrapper-info .profile .share .button-share,
   body .container .wrapper .wrapper-info .profile .share .button-share {
     z-index: 10;
-    background-color: #6d7f97;
-  }
-  html .container .wrapper .wrapper-info .profile .share .button-share img,
-  body .container .wrapper .wrapper-info .profile .share .button-share img {
-    filter: brightness(200%);
   }
   html .container .wrapper .wrapper-info .profile .share .social-media,
   body .container .wrapper .wrapper-info .profile .share .social-media {
@@ -252,8 +249,14 @@ body .container .wrapper .wrapper-info .profile .share .social-media a img:hover
     width: 100%;
     border-radius: 0 0 1rem 1rem;
     box-shadow: none;
-    transform: translateX(0);
+    transform: translateX(0) translateY(100%);
     padding: 2rem 2.5rem;
+    opacity: 1;
+  }
+  html .container .wrapper .wrapper-info .profile .share .social-media.social-active,
+  body .container .wrapper .wrapper-info .profile .share .social-media.social-active {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
   }
   html .container .wrapper .wrapper-info .profile .share .social-media::before,
   body .container .wrapper .wrapper-info .profile .share .social-media::before {

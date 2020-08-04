@@ -169,15 +169,15 @@ body
                 width: 1.2rem
                 height: 1.2rem
                 display: inline-block
-                margin: 0 .6rem
+                margin: 0 .6rem                
+                @include transition($property: transform)
+
+                &:hover
+                  transform: translateY(-4px)
 
                 img                   
                   @include image($fit: contain)
-                  @include transition($property: opacity)
-                  
 
-                  &:hover
-                    opacity: .8
 
 @media screen and (max-width: $tablet)
   html,
@@ -198,6 +198,8 @@ body
         .wrapper-info
           position: relative
           padding: 2rem 2rem 1rem
+          overflow: hidden
+          border-radius: 0 0 1rem 1rem
 
           h1
             font-size: 1.3rem
@@ -212,10 +214,6 @@ body
 
               .button-share
                 z-index: 10
-                background-color: $dark-blue
-
-                img
-                  filter: brightness(200%)
 
               .social-media
                 left: 0px
@@ -223,8 +221,13 @@ body
                 width: 100%
                 border-radius: 0 0 1rem 1rem
                 box-shadow: none
-                transform: translateX(0)                
+                transform: translateX(0) translateY(100%)
                 padding: 2rem 2.5rem
+                opacity: 1
+
+                &.social-active
+                  transform: translateX(0) translateY(0)
+                  opacity: 1
 
                 &::before
                   display: none
