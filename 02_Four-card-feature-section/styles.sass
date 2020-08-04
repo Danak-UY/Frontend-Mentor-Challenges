@@ -1,0 +1,126 @@
+// COLORS
+$red: hsl(0, 78%, 62%)
+$cyan: hsl(180, 62%, 55%)
+$orange: hsl(34, 97%, 64%)
+$blue: hsl(212, 86%, 64%)
+
+$very-dark-blue: hsl(234, 12%, 34%)
+$grayish-blue: hsl(229, 6%, 66%)
+$very-light-gray: hsl(0, 0%, 98%)
+
+$white: rgb(255, 255, 255)
+$black: rgb(0, 0, 0)
+
+// SIZES
+$mobile: 375px
+$tablet: 768px
+$desktop: 1440px
+
+// FONTS
+@import url(https://fonts.google.com/specimen/Poppins:200,400,600)
+
+$popins: 'Poppins', sans-serif
+$base-font-size: 15px
+
+// STYLES 
+*
+  padding: 0px
+  margin: 0px
+  box-sizing: border-box
+
+// MIXINS
+@mixin image($fit)
+  width: 100%
+  height: 100%
+  object-fit: $fit
+
+@mixin transition($property)
+  transition: .2s ease $property
+
+body
+  background-color: $very-light-gray
+  font-family: $popins
+  font-size: $base-font-size
+  color: $very-dark-blue
+
+header
+  margin: 2rem auto
+  max-width: 500px
+  text-align: center
+
+  h1
+    font-weight: 600
+    margin-bottom: 1.2rem
+
+    span
+      display: block
+      font-weight: 200
+
+  p
+    font-weight: 200
+    margin: 0 2rem
+
+.container
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  max-width: 1200px
+  margin: 2rem auto
+
+  .card
+    position: relative
+    background-color: $white
+    padding: 2rem
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .02), 0 6px 6px rgba(0, 0, 0, .05)
+    border-radius: .5rem
+    padding: 2rem
+    margin: 1rem
+    width: 350px
+    overflow: hidden
+
+    &.box-push
+      transform: translateY(50%)
+
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      height: 5px
+      width: 100%
+
+    &.card-cyan::after
+      background-color: $cyan
+
+    &.card-red::after
+      background-color: $red
+
+    &.card-orange::after
+      background-color: $orange
+
+    &.card-blue::after
+      background-color: $blue
+
+    h2
+      font-weight: 600
+      font-size: 1.2rem
+      margin-bottom: 1rem
+
+    p
+      font-weight: 400
+      color: $grayish-blue
+      line-height: 1.6
+
+    img
+      display: block
+      margin-left: auto
+      margin-top: 2rem
+
+@media screen and (max-width: 780px)
+  .container
+    .card
+      &.box-push
+        transform: translateY(0)
+
+      &.card-blue
+        order: 4

@@ -1,0 +1,110 @@
+@import url(https://fonts.google.com/specimen/Poppins:200,400,600);
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #4c4e61;
+}
+
+header {
+  margin: 2rem auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+header h1 span {
+  display: block;
+  font-weight: 200;
+}
+
+header p {
+  font-weight: 200;
+  margin: 0 2rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.container .card {
+  position: relative;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02), 0 6px 6px rgba(0, 0, 0, 0.05);
+  border-radius: .5rem;
+  padding: 2rem;
+  margin: 1rem;
+  width: 350px;
+  overflow: hidden;
+}
+
+.container .card.box-push {
+  transform: translateY(50%);
+}
+
+.container .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+}
+
+.container .card.card-cyan::after {
+  background-color: #45d3d3;
+}
+
+.container .card.card-red::after {
+  background-color: #ea5353;
+}
+
+.container .card.card-orange::after {
+  background-color: #fcaf4a;
+}
+
+.container .card.card-blue::after {
+  background-color: #549ef2;
+}
+
+.container .card h2 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.container .card p {
+  font-weight: 400;
+  color: #a3a5ae;
+  line-height: 1.6;
+}
+
+.container .card img {
+  display: block;
+  margin-left: auto;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 780px) {
+  .container .card.box-push {
+    transform: translateY(0);
+  }
+  .container .card.card-blue {
+    order: 4;
+  }
+}
