@@ -37,6 +37,7 @@ body .container .wrapper {
 html .container .wrapper .wrapper-image,
 body .container .wrapper .wrapper-image {
   overflow: hidden;
+  max-height: 280px;
 }
 
 html .container .wrapper .wrapper-image img,
@@ -57,6 +58,7 @@ body .container .wrapper .wrapper-info h1 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 html .container .wrapper .wrapper-info p,
@@ -116,14 +118,16 @@ body .container .wrapper .wrapper-info .profile .share .button-share {
   transition: 0.2s ease background-color;
 }
 
-html .container .wrapper .wrapper-info .profile .share .button-share:hover,
-body .container .wrapper .wrapper-info .profile .share .button-share:hover {
-  background-color: #48556a;
+html .container .wrapper .wrapper-info .profile .share .button-share:hover, html .container .wrapper .wrapper-info .profile .share .button-share.social-active,
+body .container .wrapper .wrapper-info .profile .share .button-share:hover,
+body .container .wrapper .wrapper-info .profile .share .button-share.social-active {
+  background-color: #6d7f97;
 }
 
-html .container .wrapper .wrapper-info .profile .share .button-share:hover img,
-body .container .wrapper .wrapper-info .profile .share .button-share:hover img {
-  filter: brightness(200%);
+html .container .wrapper .wrapper-info .profile .share .button-share:hover img, html .container .wrapper .wrapper-info .profile .share .button-share.social-active img,
+body .container .wrapper .wrapper-info .profile .share .button-share:hover img,
+body .container .wrapper .wrapper-info .profile .share .button-share.social-active img {
+  filter: grayscale(1) brightness(200%);
 }
 
 html .container .wrapper .wrapper-info .profile .share .button-share img,
@@ -139,13 +143,23 @@ body .container .wrapper .wrapper-info .profile .share .social-media {
   position: absolute;
   bottom: 180%;
   left: 50%;
-  transform: translateX(-55%);
+  transform: translateX(-55%) translateY(25px);
   padding: 1.5rem 2rem;
   border-radius: .8rem;
   background-color: #48556a;
   display: flex;
   align-items: center;
   box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, 0.04);
+  transition: .3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+html .container .wrapper .wrapper-info .profile .share .social-media.social-active,
+body .container .wrapper .wrapper-info .profile .share .social-media.social-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-55%) translateY(0);
 }
 
 html .container .wrapper .wrapper-info .profile .share .social-media::before,
@@ -158,7 +172,7 @@ body .container .wrapper .wrapper-info .profile .share .social-media::before {
   transform: rotate(-90deg) translateX(-50%);
   position: absolute;
   bottom: -12px;
-  left: calc(50% + 3px);
+  left: calc(50% + 4px);
 }
 
 html .container .wrapper .wrapper-info .profile .share .social-media span,
@@ -189,4 +203,70 @@ body .container .wrapper .wrapper-info .profile .share .social-media a img {
 html .container .wrapper .wrapper-info .profile .share .social-media a img:hover,
 body .container .wrapper .wrapper-info .profile .share .social-media a img:hover {
   opacity: .8;
+}
+
+@media screen and (max-width: 768px) {
+  html .container .wrapper,
+  body .container .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  html .container .wrapper .wrapper-image,
+  body .container .wrapper .wrapper-image {
+    height: 220px;
+  }
+  html .container .wrapper .wrapper-image img,
+  body .container .wrapper .wrapper-image img {
+    border-radius: 1rem 1rem 0 0;
+  }
+  html .container .wrapper .wrapper-info,
+  body .container .wrapper .wrapper-info {
+    position: relative;
+    padding: 2rem 2rem 1rem;
+  }
+  html .container .wrapper .wrapper-info h1,
+  body .container .wrapper .wrapper-info h1 {
+    font-size: 1.3rem;
+  }
+  html .container .wrapper .wrapper-info p,
+  body .container .wrapper .wrapper-info p {
+    margin-bottom: 3rem;
+  }
+  html .container .wrapper .wrapper-info .profile .share,
+  body .container .wrapper .wrapper-info .profile .share {
+    position: initial;
+  }
+  html .container .wrapper .wrapper-info .profile .share .button-share,
+  body .container .wrapper .wrapper-info .profile .share .button-share {
+    z-index: 10;
+    background-color: #6d7f97;
+  }
+  html .container .wrapper .wrapper-info .profile .share .button-share img,
+  body .container .wrapper .wrapper-info .profile .share .button-share img {
+    filter: brightness(200%);
+  }
+  html .container .wrapper .wrapper-info .profile .share .social-media,
+  body .container .wrapper .wrapper-info .profile .share .social-media {
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: none;
+    transform: translateX(0);
+    padding: 2rem 2.5rem;
+  }
+  html .container .wrapper .wrapper-info .profile .share .social-media::before,
+  body .container .wrapper .wrapper-info .profile .share .social-media::before {
+    display: none;
+  }
+  html .container .wrapper .wrapper-info .profile .share .social-media span,
+  body .container .wrapper .wrapper-info .profile .share .social-media span {
+    font-size: 1rem;
+  }
+  html .container .wrapper .wrapper-info .profile .share .social-media a,
+  body .container .wrapper .wrapper-info .profile .share .social-media a {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 .8rem;
+  }
 }

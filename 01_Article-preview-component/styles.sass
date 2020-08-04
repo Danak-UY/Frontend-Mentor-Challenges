@@ -8,6 +8,7 @@ $black: rgb(0, 0, 0)
 
 // SIZES
 $mobile: 375px
+$tablet: 768px
 $desktop: 1440px
 
 // FONTS
@@ -57,6 +58,7 @@ body
 
       .wrapper-image
         overflow: hidden
+        max-height: 280px
 
         img
           border-radius: 1rem 0 0 1rem
@@ -69,6 +71,7 @@ body
           font-size: 1.5rem
           font-weight: 700
           margin-bottom: 1rem
+          line-height: 1.4
 
         p
           line-height: 1.6
@@ -112,11 +115,12 @@ body
               @include transition($property: background-color)
 
 
-              &:hover
-                background-color: $dark-grayish-blue
+              &:hover,
+              &.social-active
+                background-color: $dark-blue
 
                 img
-                  filter: brightness(200%)
+                  filter: grayscale(1) brightness(200%)
 
               img 
                 @include image($fit: contain)
@@ -127,13 +131,21 @@ body
               position: absolute
               bottom: 180%
               left: 50%
-              transform: translateX(-55%)
+              transform: translateX(-55%) translateY(25px)
               padding: 1.5rem 2rem
               border-radius: .8rem
               background-color: $dark-grayish-blue
               display: flex
               align-items: center
               box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, .04)
+              transition: .3s ease
+              opacity: 0
+              visibility: hidden
+
+              &.social-active
+                opacity: 1
+                visibility: visible
+                transform: translateX(-55%) translateY(0)
 
               &::before
                 content: ""
@@ -144,7 +156,7 @@ body
                 transform: rotate(-90deg) translateX(-50%)
                 position: absolute
                 bottom: -12px
-                left: calc(50% + 3px)
+                left: calc(50% + 4px)
 
               span
                 text-transform: uppercase
@@ -166,6 +178,64 @@ body
 
                   &:hover
                     opacity: .8
-              
+
+@media screen and (max-width: $tablet)
+  html,
+  body
+
+    .container
+
+      .wrapper
+        display: flex
+        flex-direction: column
+
+        .wrapper-image
+          height: 220px
+
+          img
+            border-radius: 1rem 1rem 0 0
+
+        .wrapper-info
+          position: relative
+          padding: 2rem 2rem 1rem
+
+          h1
+            font-size: 1.3rem
+
+          p
+            margin-bottom: 3rem
+
+          .profile
+
+            .share
+              position: initial
+
+              .button-share
+                z-index: 10
+                background-color: $dark-blue
+
+                img
+                  filter: brightness(200%)
+
+              .social-media
+                left: 0px
+                bottom: 0px
+                width: 100%
+                border-radius: 0 0 1rem 1rem
+                box-shadow: none
+                transform: translateX(0)                
+                padding: 2rem 2.5rem
+
+                &::before
+                  display: none
+
+                span
+                  font-size: 1rem
+
+                a
+                  width: 1.5rem
+                  height: 1.5rem
+                  margin: 0 .8rem
+
 
 

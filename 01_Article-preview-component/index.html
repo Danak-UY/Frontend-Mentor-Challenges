@@ -83,5 +83,15 @@
         </div>
       </div>
     </main>
+
+    <script>
+      const shareButton = document.querySelector(".button-share");
+      const socialMedia = document.querySelector(".social-media");
+
+      shareButton.addEventListener("click", () => {
+        socialMedia.classList.toggle("social-active");
+        shareButton.classList.toggle("social-active");
+      });
+    </script>
   </body>
 </html>
