@@ -16,12 +16,20 @@ $desktop: 1440px
 $manrope: 'Manrope', sans-serif
 $base-font-size: 13px
 
-
 // STYLES 
 *
   padding: 0px
   margin: 0px
   box-sizing: border-box
+
+// MIXINS
+@mixin image($fit)
+  width: 100%
+  height: 100%
+  object-fit: $fit
+
+@mixin transition($property)
+  transition: .2s ease $property
 
 html,
 body
@@ -52,9 +60,7 @@ body
 
         img
           border-radius: 1rem 0 0 1rem
-          width: 100%
-          height: 100%
-          object-fit: cover
+          @include image($fit: cover)
 
       .wrapper-info
         padding: 2.5rem
@@ -72,7 +78,7 @@ body
           display: flex
           align-items: center
 
-          img
+          &>img
             border-radius: 50%
             width: 2.8rem
             height: 2.8rem
@@ -95,13 +101,71 @@ body
               font-size: .9rem
 
           .share
-            border-radius: 50%
-            background-color: $light-grayish-blue
-            padding: .5rem
+            position: relative
 
-            img 
-              width: 100%
-              height: 100%
-              object-fit: contain
+            .button-share
+              display: block
+              border-radius: 50%
+              background-color: $light-grayish-blue
+              position: relative
+              padding: .5rem
+              @include transition($property: background-color)
+
+
+              &:hover
+                background-color: $dark-grayish-blue
+
+                img
+                  filter: brightness(200%)
+
+              img 
+                @include image($fit: contain)
+                @include transition($property: filter)
+
+
+            .social-media
+              position: absolute
+              bottom: 180%
+              left: 50%
+              transform: translateX(-55%)
+              padding: 1.5rem 2rem
+              border-radius: .8rem
+              background-color: $dark-grayish-blue
+              display: flex
+              align-items: center
+              box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, .04)
+
+              &::before
+                content: ""
+                box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, .04)
+                border-style: solid
+                border-width: 15px 12px 15px 0
+                border-color: transparent $dark-grayish-blue transparent transparent
+                transform: rotate(-90deg) translateX(-50%)
+                position: absolute
+                bottom: -12px
+                left: calc(50% + 3px)
+
+              span
+                text-transform: uppercase
+                color: $dark-blue
+                letter-spacing: .3rem
+                font-size: .9rem
+                margin-right: .8rem
+
+              a
+                width: 1.2rem
+                height: 1.2rem
+                display: inline-block
+                margin: 0 .6rem
+
+                img                   
+                  @include image($fit: contain)
+                  @include transition($property: opacity)
+                  
+
+                  &:hover
+                    opacity: .8
+              
 
 

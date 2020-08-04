@@ -71,8 +71,8 @@ body .container .wrapper .wrapper-info .profile {
   align-items: center;
 }
 
-html .container .wrapper .wrapper-info .profile img,
-body .container .wrapper .wrapper-info .profile img {
+html .container .wrapper .wrapper-info .profile > img,
+body .container .wrapper .wrapper-info .profile > img {
   border-radius: 50%;
   width: 2.8rem;
   height: 2.8rem;
@@ -103,14 +103,90 @@ body .container .wrapper .wrapper-info .profile figcaption p {
 
 html .container .wrapper .wrapper-info .profile .share,
 body .container .wrapper .wrapper-info .profile .share {
-  border-radius: 50%;
-  background-color: #ecf2f8;
-  padding: .5rem;
+  position: relative;
 }
 
-html .container .wrapper .wrapper-info .profile .share img,
-body .container .wrapper .wrapper-info .profile .share img {
+html .container .wrapper .wrapper-info .profile .share .button-share,
+body .container .wrapper .wrapper-info .profile .share .button-share {
+  display: block;
+  border-radius: 50%;
+  background-color: #ecf2f8;
+  position: relative;
+  padding: .5rem;
+  transition: 0.2s ease background-color;
+}
+
+html .container .wrapper .wrapper-info .profile .share .button-share:hover,
+body .container .wrapper .wrapper-info .profile .share .button-share:hover {
+  background-color: #48556a;
+}
+
+html .container .wrapper .wrapper-info .profile .share .button-share:hover img,
+body .container .wrapper .wrapper-info .profile .share .button-share:hover img {
+  filter: brightness(200%);
+}
+
+html .container .wrapper .wrapper-info .profile .share .button-share img,
+body .container .wrapper .wrapper-info .profile .share .button-share img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: 0.2s ease filter;
+}
+
+html .container .wrapper .wrapper-info .profile .share .social-media,
+body .container .wrapper .wrapper-info .profile .share .social-media {
+  position: absolute;
+  bottom: 180%;
+  left: 50%;
+  transform: translateX(-55%);
+  padding: 1.5rem 2rem;
+  border-radius: .8rem;
+  background-color: #48556a;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, 0.04);
+}
+
+html .container .wrapper .wrapper-info .profile .share .social-media::before,
+body .container .wrapper .wrapper-info .profile .share .social-media::before {
+  content: "";
+  box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, 0.04);
+  border-style: solid;
+  border-width: 15px 12px 15px 0;
+  border-color: transparent #48556a transparent transparent;
+  transform: rotate(-90deg) translateX(-50%);
+  position: absolute;
+  bottom: -12px;
+  left: calc(50% + 3px);
+}
+
+html .container .wrapper .wrapper-info .profile .share .social-media span,
+body .container .wrapper .wrapper-info .profile .share .social-media span {
+  text-transform: uppercase;
+  color: #6d7f97;
+  letter-spacing: .3rem;
+  font-size: .9rem;
+  margin-right: .8rem;
+}
+
+html .container .wrapper .wrapper-info .profile .share .social-media a,
+body .container .wrapper .wrapper-info .profile .share .social-media a {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: inline-block;
+  margin: 0 .6rem;
+}
+
+html .container .wrapper .wrapper-info .profile .share .social-media a img,
+body .container .wrapper .wrapper-info .profile .share .social-media a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.2s ease opacity;
+}
+
+html .container .wrapper .wrapper-info .profile .share .social-media a img:hover,
+body .container .wrapper .wrapper-info .profile .share .social-media a img:hover {
+  opacity: .8;
 }
