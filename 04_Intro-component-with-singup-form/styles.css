@@ -120,8 +120,8 @@ h1 + p {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   background-image: url("./images/icon-error.svg");
   background-position: center;
   background-size: contain;
@@ -168,4 +168,16 @@ p small a {
   color: #ff7a7a;
   font-weight: 600;
   text-decoration: none;
+}
+
+@media screen and (max-width: 798px) {
+  .container {
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
 }
