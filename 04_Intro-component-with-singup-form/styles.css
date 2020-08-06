@@ -1,0 +1,171 @@
+@import url(https://fonts.google.com/specimen/Poppins:400,500,600,700);
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: #ff7a7a;
+  background-image: url("./images/bg-intro-desktop.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container > div {
+  flex: 1;
+  padding: 0 1.25rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+h1 + p {
+  opacity: .8;
+}
+
+.box {
+  background-color: white;
+  border-radius: .5rem;
+  padding: 2rem;
+  box-shadow: 0 6px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.box.box-blue {
+  background-color: #6055a5;
+  margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.box p {
+  font-weight: 400;
+}
+
+.box strong {
+  font-weight: 600;
+}
+
+.form-control {
+  position: relative;
+}
+
+.form-control small {
+  color: #ff7a7a;
+  display: block;
+  text-align: right;
+  font-size: .7rem;
+  font-weight: 500;
+  font-style: italic;
+  margin-top: .25rem;
+  transform: translateY(-25px);
+  transition: .3s ease;
+  z-index: 5;
+  position: relative;
+}
+
+.form-control input {
+  border-radius: .25rem;
+  border: 1px solid #b9b6d3;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  display: block;
+  width: 100%;
+  color: #3e3c49;
+  font-family: "Poppins", sans-serif, sans-serif;
+  z-index: 10;
+  background-color: white;
+  position: relative;
+}
+
+.form-control input:focus {
+  border-color: #3e3c49;
+}
+
+.form-control.error input {
+  border-color: #ff7a7a;
+  border-width: 2px;
+  color: #ff7a7a;
+}
+
+.form-control.error small {
+  transform: translateY(0);
+  margin-bottom: .75rem;
+}
+
+.form-control.error::before {
+  content: "";
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("./images/icon-error.svg");
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  z-index: 15;
+}
+
+button {
+  background-color: #38cc8c;
+  border-radius: .5rem;
+  border: 1px solid #2fb67c;
+  box-shadow: 0 2px #2fb67c;
+  color: white;
+  font-family: "Poppins", sans-serif, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  display: block;
+  width: 100%;
+  transition: .2s ease;
+  cursor: pointer;
+  margin-bottom: .75rem;
+  letter-spacing: 1px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active, button:hover {
+  box-shadow: 0px 0px transparent;
+  transform: translateY(2px);
+}
+
+p small {
+  color: #b9b6d3;
+  font-size: .75rem;
+  font-weight: 500;
+}
+
+p small a {
+  color: #ff7a7a;
+  font-weight: 600;
+  text-decoration: none;
+}
