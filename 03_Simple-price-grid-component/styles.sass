@@ -1,0 +1,128 @@
+// COLORS
+$cyan: hsl(179, 62%, 43%)
+$light-cyan: hsl(179, 47%, 52%)
+$light-green: rgb(192, 223, 50)
+$bright-yellow: hsl(71, 73%, 54%)
+
+$grayish-blue: hsl(218, 22%, 67%)
+$light-gray: hsl(204, 43%, 93%)
+
+$white: rgb(255, 255, 255)
+$black: rgb(0, 0, 0)
+
+// SIZES
+$mobile: 375px
+$tablet: 768px
+$desktop: 1440px
+
+// FONTS
+@import url(https://fonts.google.com/specimen/Karla:400,700)
+
+$base-font-family: 'Karla', sans-serif
+$base-font-size: 16px
+
+// STYLES 
+*
+  padding: 0px
+  margin: 0px
+  box-sizing: border-box
+
+body
+  font-size: $base-font-size
+  font-family: $base-font-family
+  background-color: $light-gray
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  width: 100vw
+  color: $grayish-blue
+
+main
+  background-color: $white
+  width: 100%
+  margin: 2rem
+  max-width: 660px
+  border-radius: .5rem
+  box-shadow: 0px 16px 16px rgba(0, 0, 0, .1) 
+  overflow: hidden
+
+.row
+  display: flex
+
+  section
+    flex: 1
+
+section
+  padding: 2rem
+
+  &.bg-cyan
+    background-color: $cyan
+    color: $white
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+  &.bg-light-cyan
+    background-color: $light-cyan
+    color: $white
+
+h1
+  color: $cyan
+  font-size: 1.5rem
+  font-weight: 700
+  margin-bottom: .8rem
+
+h2.yellow-text
+  color: $bright-yellow
+  font-size: 1rem
+  margin-bottom: .8rem
+
+p
+  line-height: 1.6
+
+  &.faded
+    display: flex
+    align-items: center
+    margin-top: -0.5rem
+
+    span
+      opacity: .5
+
+    .big
+      opacity: 1
+      font-size: 2rem
+      margin-right: 1rem
+      font-weight: 700
+
+button
+  width: 100%
+  background-color: $bright-yellow
+  color: $white
+  padding: .75rem
+  border: 0
+  border-radius: .25rem
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, .1)
+  cursor: pointer
+  font-family: $base-font-family
+  font-weight: 700
+  align-self: end
+  font-size: 1rem
+  margin-top: 1rem
+
+h3
+  margin-bottom: 1rem
+  font-size: 1.2rem
+
+ul
+  list-style: none
+  padding: 0
+
+  li
+    color: $bright-yellow
+    margin-bottom: .2rem
+    opacity: .8
+
+@media only screen and (max-width: 580px)
+  .row
+    flex-direction: column
