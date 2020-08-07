@@ -1,0 +1,197 @@
+@import url(https://fonts.google.com/specimen/Josefin+Sans:300,400,600);
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  color: #413a3a;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.container .section-left {
+  width: 60%;
+  min-height: 100vh;
+  padding: 5rem 12rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .container .section-left {
+    padding: 5rem 8rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .container .section-left {
+    padding: 5rem 3rem;
+  }
+}
+
+.container .section-left.bg-gradient {
+  background-image: url("./images/bg-pattern-desktop.svg");
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container .section-left .section-left__info {
+  max-width: 45ch;
+}
+
+.container .section-left .bg-mobile {
+  display: none;
+  width: 100%;
+  height: auto;
+  margin-bottom: 4rem;
+}
+
+.container .section-right {
+  width: 40%;
+  min-height: 100vh;
+}
+
+.container .section-right.hero-image {
+  background-image: url("./images/hero-desktop.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+.logo {
+  margin-bottom: 8rem;
+  width: 10rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1rem;
+  margin-bottom: 1rem;
+}
+
+h1 span {
+  color: #ce9797;
+  font-weight: 300;
+}
+
+p {
+  color: #ce9797;
+  line-height: 1.6;
+}
+
+.form-control {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.form-control input {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  border: 1px solid #ce9797;
+  color: #413a3a;
+  border-radius: 2.5rem;
+  padding: calc(1rem + 1px) 2rem;
+  width: 100%;
+  background-color: transparent;
+  transition: .3s ease;
+}
+
+.form-control input::placeholder {
+  color: #ce9797;
+}
+
+.form-control button {
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  box-shadow: 2px 5px 15px rgba(206, 151, 151, 0.6);
+  border: 0;
+  border-radius: 2.5rem;
+  padding: 1rem 2.8rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.form-control button:hover {
+  background-image: linear-gradient(135deg, #fdeded, #f8d3d3);
+  box-shadow: 2px 8px 18px rgba(206, 151, 151, 0.6);
+}
+
+.form-control small {
+  color: #f96262;
+  padding: 0.5rem 2rem;
+  font-size: .9rem;
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition: .3s ease;
+  display: block;
+}
+
+.form-control.error::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 7.4rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: translateY(64%);
+  background-position: center;
+  background-size: contain;
+  background-image: url("./images/icon-error.svg");
+}
+
+.form-control.error input {
+  border-color: #f96262;
+  color: #f96262;
+}
+
+.form-control.error small {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+@media only screen and (max-width: 760px) {
+  .container .section-left {
+    width: 100%;
+  }
+  .container .section-left .section-left__info {
+    max-width: 100%;
+  }
+  .container .section-left .bg-mobile {
+    display: block;
+    margin-left: -3rem;
+    margin-right: -3rem;
+    width: calc(100% + 6rem);
+  }
+  .container .section-left .logo {
+    margin-bottom: 2rem;
+  }
+  .container .section-left h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .container .section-left p {
+    text-align: center;
+  }
+  .container .section-right {
+    display: none;
+  }
+}

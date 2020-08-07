@@ -1,0 +1,194 @@
+// COLORS
+$desaturated-red: hsl(0, 36%, 70%)
+$soft-red: hsl(0, 93%, 68%)
+$dark-grayish-red: hsl(0, 6%, 24%) 
+
+$white: rgb(255, 255, 255)
+$black: rgb(0, 0, 0)
+
+$grandient-gray: linear-gradient(135deg, hsl(0, 80%, 96%), hsl(0, 74%, 90%))
+$grandient-red: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%))
+
+// SIZES
+$mobile: 375px
+$tablet: 768px
+$desktop: 1440px
+
+// FONTS
+@import url(https://fonts.google.com/specimen/Josefin+Sans:300,400,600)
+
+$base-font-family: 'Josefin Sans', sans-serif
+$base-font-size: 16px
+
+// STYLES 
+*
+  padding: 0px
+  margin: 0px
+  box-sizing: border-box
+
+body
+  font-size: $base-font-size
+  font-family: $base-font-family
+  background-color: $white
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  width: 100vw
+  color: $dark-grayish-red
+
+.container
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  width: 100%
+
+  .section-left
+    width: 60%
+    min-height: 100vh
+    padding: 5rem 12rem
+
+    @media screen and (max-width: 1200px)
+      &
+        padding: 5rem 8rem
+
+    @media screen and (max-width: 960px)
+      &
+        padding: 5rem 3rem
+
+    &.bg-gradient
+      background-image: url("./images/bg-pattern-desktop.svg")
+      background-position: top left
+      background-repeat: no-repeat
+      background-size: cover
+
+    .section-left__info
+      max-width: 45ch
+
+    .bg-mobile
+      display: none
+      width: 100%
+      height: auto
+      margin-bottom: 4rem
+
+  .section-right
+    width: 40%
+    min-height: 100vh
+
+    &.hero-image
+      background-image: url("./images/hero-desktop.jpg")
+      background-position: center center
+      background-size: cover
+
+.logo 
+  margin-bottom: 8rem
+  width: 10rem
+
+h1
+  text-transform: uppercase
+  font-size: 4rem
+  font-weight: 600
+  line-height: 1
+  letter-spacing: 1rem
+  margin-bottom: 1rem
+
+  span
+    color: $desaturated-red
+    font-weight: 300
+
+p
+  color: $desaturated-red
+  line-height: 1.6
+
+.form-control
+  position: relative
+  margin-top: 2rem
+  
+  input
+    font-family: $base-font-family
+    font-size: $base-font-size
+    border: 1px solid $desaturated-red
+    color: $dark-grayish-red
+    border-radius: 2.5rem
+    padding: calc(1rem + 1px) 2rem
+    width: 100%
+    background-color: transparent
+    transition: .3s ease
+
+    &::placeholder
+      color: $desaturated-red
+
+  button
+    background-image: $grandient-red
+    box-shadow: 2px 5px 15px hsla(0, 36%, 70%, .6)
+    border: 0
+    border-radius: 2.5rem
+    padding: 1rem 2.8rem
+    position: absolute
+    top: 0
+    right: 0
+    cursor: pointer
+    transition: .3s ease
+
+    &:hover
+      background-image: $grandient-gray
+      box-shadow: 2px 8px 18px hsla(0, 36%, 70%, .6)     
+
+  small
+    color: $soft-red
+    padding: 0.5rem 2rem
+    font-size: .9rem
+    opacity: 0
+    transform: translateY(-1rem)
+    transition: .3s ease
+    display: block
+
+  &.error
+
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      right: 7.4rem
+      width: 1.5rem
+      height: 1.5rem
+      transform: translateY(64%)
+      background-position: center
+      background-size: contain
+      background-image: url("./images/icon-error.svg")
+
+    input
+      border-color: $soft-red
+      color: $soft-red
+
+    small
+      opacity: 1
+      transform: translateY(0px)
+
+@media only screen and (max-width: 760px)
+  .container
+    .section-left
+      width: 100%
+
+      .section-left__info
+        max-width: 100%
+
+      .bg-mobile
+        display: block
+        margin-left: -3rem
+        margin-right: -3rem
+        width: calc(100% + 6rem)
+
+      .logo
+        margin-bottom: 2rem
+
+      h1 
+        font-size: 3rem
+        text-align: center
+      
+      p
+        text-align: center
+
+    .section-right
+      display: none
