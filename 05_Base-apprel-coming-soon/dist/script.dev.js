@@ -1,6 +1,6 @@
 "use strict";
 
-var form = document.querySelector("form.box");
+var form = document.querySelector("form");
 form.querySelectorAll("input").forEach(function (input) {
   return input.addEventListener("keyup", function (e) {
     return e.target.parentNode.classList.contains("error") ? validateInput(e.target) : "";

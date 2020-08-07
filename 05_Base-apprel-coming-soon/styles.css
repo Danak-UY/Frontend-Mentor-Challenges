@@ -171,15 +171,16 @@ p {
 @media only screen and (max-width: 760px) {
   .container .section-left {
     width: 100%;
+    padding: 3rem 2rem;
   }
   .container .section-left .section-left__info {
     max-width: 100%;
   }
   .container .section-left .bg-mobile {
     display: block;
-    margin-left: -3rem;
-    margin-right: -3rem;
-    width: calc(100% + 6rem);
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: calc(100% + 4rem);
   }
   .container .section-left .logo {
     margin-bottom: 2rem;

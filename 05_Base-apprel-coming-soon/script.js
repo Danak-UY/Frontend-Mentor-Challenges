@@ -1,4 +1,4 @@
-const form = document.querySelector("form.box");
+const form = document.querySelector("form");
 
 form
   .querySelectorAll("input")
