@@ -1,0 +1,188 @@
+// COLORS
+$dark-blue: hsl(240, 38%, 20%)
+$grayish-blue: hsl(240, 18%, 77%)
+
+$white: rgb(255, 255, 255)
+$black: rgb(0, 0, 0)
+
+// SIZES
+$mobile: 375px
+$tablet: 768px
+$desktop: 1440px
+
+// FONTS
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap)
+
+$base-font-family: 'Inter', sans-serif
+$base-font-size: 32px
+
+// STYLES 
+*
+  padding: 0px
+  margin: 0px
+  box-sizing: border-box
+
+html
+  font-size: $base-font-size
+
+body
+  font-family: $base-font-family
+  background-color: $white
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  width: 100vw
+  color: $dark-blue
+  background-image: url("./images/pattern-curve.svg")
+  background-position: bottom left
+  background-repeat: no-repeat
+  background-size: contain
+
+.container
+  min-height: 100vh
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 1rem
+
+.slider
+  height: 100%
+  width: 100%
+  max-width: 860px
+  margin: 0 auto
+  position: relative
+
+  .slide
+    width: 100%
+    display: flex
+    flex-direction: column-reverse
+    justify-content: center
+    align-items: center
+    text-align: center
+
+  .slide__image
+    width: 100%
+    height: 100%
+    max-width: 12rem
+    margin: 0 auto
+    padding: 1.5rem
+    background-image: url("./images/pattern-bg.svg")
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: contain
+
+    img
+      width: 100%
+      height: auto
+      box-shadow: 0px 16px 48px -12px hsla(240, 38%, 20%, .4)
+      border-radius: .5rem
+
+  .slide__text
+    padding-top: 1rem
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    background-image: url("./images/pattern-quotes.svg")
+    background-position: top center
+    background-size: 2rem
+    background-repeat: no-repeat
+
+
+    blockquote
+      p
+        font-weight: 300
+        font-size: .75rem
+        line-height: 1.2
+    
+    cite
+      font-style: normal
+      margin-top: .5rem
+      display: block
+
+      strong
+        font-size: .5rem
+        font-weight: 700
+
+      span
+        display: block
+        color: $grayish-blue
+        font-weight: 500
+        font-size: .5rem
+
+  .slider__buttons
+    z-index: 99
+    position: absolute
+    top: 9.7rem
+    left: 50%
+    transform: translateX(-50%)
+    width: 3rem
+    height: 1.5rem
+    border-radius: 1.5rem
+    background-color: $white
+    box-shadow: 0px 16px 48px -12px hsla(240, 38%, 20%, .4)
+
+    .prev
+      left: 0rem
+      border-radius: 50% 0 0 50%
+
+    .next
+      right: 0rem
+      border-radius: 0 50% 50% 0
+
+    .prev,
+    .next
+      display: inline-block
+      width: 50%
+      height: 100%
+      position: absolute
+      cursor: pointer
+      transition: .2s ease
+      overflow: hidden
+
+      &::after
+        content: ""
+        position: absolute
+        height: 100%
+        width: 100%
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: auto
+
+      &:hover
+        background-color: hsla(240, 18%, 77%, .2)
+
+    .prev::after
+      background-image: url("./images/icon-prev.svg")
+
+    .next::after
+      background-image: url("./images/icon-next.svg")
+
+@media only screen and (min-width: $tablet)
+  .slider
+    .slide
+      flex-direction: row
+      text-align: left
+
+      .slide__image
+        margin-left: -3rem
+        max-width: 100%
+        
+        img
+          width: 12rem
+
+      .slide__text
+        background-position: 15% top
+        background-size: 3rem
+        align-items: flex-start
+        z-index: 10
+        padding: 1.5rem 0
+
+        span
+          display: inline-block
+
+    .slider__buttons
+      top: 12.75rem
+      left: calc(100% - 7.5rem)

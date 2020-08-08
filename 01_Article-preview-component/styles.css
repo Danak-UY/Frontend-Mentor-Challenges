@@ -1,4 +1,4 @@
-@import url(https://fonts.google.com/specimen/Manrope:500,700);
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap);
 * {
   padding: 0px;
   margin: 0px;
@@ -10,7 +10,7 @@ body {
   font-family: "Manrope", sans-serif;
   font-size: 13px;
   color: #6d7f97;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
