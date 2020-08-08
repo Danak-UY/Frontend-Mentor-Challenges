@@ -1,5 +1,5 @@
 class Slider {
-  constructor(selector, animation = true, movement = true, delay = 5000) {
+  constructor(selector, movement = true, delay = 5000) {
     this.slider = document.querySelector(selector);
     this.slides = this.slider.querySelectorAll(".slide");
     this.itemsCount = this.slides.length;
@@ -10,7 +10,6 @@ class Slider {
       });
 
     this.counter = 0;
-    this.animation = animation;
     this.movement = movement;
     this.interval = null;
     this.delay = delay;
@@ -50,6 +49,7 @@ class Slider {
   }
 
   moveTo(currentSlide, nextSlide) {
+    this.restart();
     this.hideSlide(this.slides[currentSlide]);
     setTimeout(() => this.showSlilde(this.slides[nextSlide]), 1301);
   }
@@ -68,5 +68,5 @@ class Slider {
 }
 
 (function () {
-  new Slider(".slider", true, false, 8000);
+  new Slider(".slider", true, 8000);
 })();

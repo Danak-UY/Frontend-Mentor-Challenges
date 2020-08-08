@@ -48,7 +48,7 @@ h1::before {
   left: 0;
   width: 5rem;
   height: .25rem;
-  background-color: #7756b9;
+  background-color: #7d5ac5;
   border-radius: .125rem;
 }
 
@@ -99,16 +99,53 @@ article {
   box-shadow: 0px 8px 16px rgba(30, 30, 30, 0.12);
 }
 
+article figure {
+  position: relative;
+  height: 100%;
+}
+
 article figure img {
   width: 100%;
   height: auto;
 }
 
-article figcaption {
-  padding: 1.25rem 1.5rem;
+article figure .buttons {
   display: flex;
-  flex-direction: column;
-  align-content: space-around;
+  margin: 1rem 0 .5rem;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.25rem;
+  width: calc(100% - 3rem);
+}
+
+article figure .buttons a {
+  padding: 1rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  width: 50%;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 2px;
+  border-radius: 2rem 0 0 2rem;
+  background-color: #aa86f1;
+  transition: .3s ease;
+  flex: 4;
+}
+
+article figure .buttons a:hover {
+  flex: 5;
+}
+
+article figure .buttons .project-button {
+  background-color: #7d5ac5;
+  border-radius: 0 2rem 2rem 0;
+}
+
+article figcaption {
+  padding: 1.25rem 1.5rem 6rem;
 }
 
 article figcaption h2 {
@@ -131,38 +168,6 @@ article figcaption p {
   line-height: 1.4;
   color: #8d8d8d;
   margin-bottom: 1rem;
-}
-
-article figcaption .buttons {
-  display: flex;
-  margin: 1rem 0 .5rem;
-  justify-self: end;
-}
-
-article figcaption .buttons a {
-  padding: 1rem;
-  border-radius: 2rem;
-  text-transform: uppercase;
-  color: white;
-  text-decoration: none;
-  width: 50%;
-  text-align: center;
-  font-weight: 500;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 2px;
-  border-radius: 2rem 0 0 2rem;
-  background-color: #aa86f1;
-  transition: .3s ease;
-  flex: 4;
-}
-
-article figcaption .buttons a:hover {
-  flex: 5;
-}
-
-article figcaption .buttons .project-button {
-  background-color: #7756b9;
-  border-radius: 0 2rem 2rem 0;
 }
 
 .techs {

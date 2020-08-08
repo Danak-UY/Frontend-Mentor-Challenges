@@ -8,7 +8,6 @@
   <figcaption>
     <div class="info">
       <h2><a href="./{{project.folder}}">{{project.title}}</a></h2>
-
       <ul class="techs">
         {{#each project.techs}}
         <li class="{{this}}">{{this}}</li>
@@ -16,9 +15,9 @@
       </ul>
       <p>{{project.description}}</p>
     </div>
-    <div class="buttons">
-      <a href="{{project.originalLink}}" target="_blank">Original</a>
-      <a href="./{{project.folder}}" class="project-button">Project</a>
-    </div>
   </figcaption>
+  <div class="buttons">
+    <a href="{{project.originalLink}}" target="_blank">Original</a>
+    <a href="./{{project.folder}}" class="project-button">Project</a>
+  </div>
 </figure>
