@@ -1,11 +1,14 @@
 <figure>
-  <img
-    src="{{project.folder}}design/desktop-preview.jpg"
-    alt="Project Preview"
-  />
+  <a href="./{{project.folder}}">
+    <img
+      src="{{project.folder}}design/desktop-preview.jpg"
+      alt="Project Preview"
+    />
+  </a>
   <figcaption>
     <div class="info">
-      <h2>{{project.title}}</h2>
+      <h2><a href="./{{project.folder}}">{{project.title}}</a></h2>
+
       <ul class="techs">
         {{#each project.techs}}
         <li class="{{this}}">{{this}}</li>

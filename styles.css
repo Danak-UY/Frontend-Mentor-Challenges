@@ -89,8 +89,13 @@ article {
   box-shadow: 0px 8px 16px rgba(30, 30, 30, 0.12);
 }
 
+article figure img {
+  width: 100%;
+  height: auto;
+}
+
 article figcaption {
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-content: space-around;
@@ -101,6 +106,15 @@ article figcaption h2 {
   font-weight: 500;
   margin-bottom: .5rem;
   line-height: 1.2;
+}
+
+article figcaption h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+article figcaption h2 a:hover {
+  color: inherit;
 }
 
 article figcaption p {
@@ -115,7 +129,7 @@ article figcaption .buttons {
   justify-self: end;
 }
 
-article figcaption a {
+article figcaption .buttons a {
   padding: 1rem;
   border-radius: 2rem;
   text-transform: uppercase;
@@ -132,18 +146,13 @@ article figcaption a {
   flex: 4;
 }
 
-article figcaption a:hover {
+article figcaption .buttons a:hover {
   flex: 5;
 }
 
-article figcaption .project-button {
+article figcaption .buttons .project-button {
   background-color: #7756b9;
   border-radius: 0 2rem 2rem 0;
-}
-
-article img {
-  width: 100%;
-  height: auto;
 }
 
 .techs {
