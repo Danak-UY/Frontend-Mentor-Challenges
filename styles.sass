@@ -41,6 +41,13 @@ body
   background-color: $grayish
   color: $dark-gray
   min-height: 100vh
+  background-image: url("./images/bg-pattrn-desktop.svg")
+  background-position: center center
+  background-size: cover
+  background-attachment: fixed
+
+  @media only screen and (max-width: $tablet)    
+    background-image: url("./images/bg-pattrn-mobile.svg")
 
 .container
   margin: 0 auto

@@ -14,6 +14,16 @@ body {
   background-color: #fafafa;
   color: #2b2929;
   min-height: 100vh;
+  background-image: url("./images/bg-pattrn-desktop.svg");
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-image: url("./images/bg-pattrn-mobile.svg");
+  }
 }
 
 .container {
