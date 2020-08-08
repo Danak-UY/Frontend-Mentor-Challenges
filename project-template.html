@@ -1,0 +1,21 @@
+<figure>
+  <img
+    src="{{project.folder}}design/desktop-preview.jpg"
+    alt="Project Preview"
+  />
+  <figcaption>
+    <div class="info">
+      <h2>{{project.title}}</h2>
+      <ul class="techs">
+        {{#each project.techs}}
+        <li class="{{this}}">{{this}}</li>
+        {{/each}}
+      </ul>
+      <p>{{project.description}}</p>
+    </div>
+    <div class="buttons">
+      <a href="{{project.originalLink}}" target="_blank">Original</a>
+      <a href="./{{project.folder}}" class="project-button">Project</a>
+    </div>
+  </figcaption>
+</figure>

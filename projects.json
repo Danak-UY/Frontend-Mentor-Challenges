@@ -1,0 +1,44 @@
+const projects = [
+    {
+      "folder": "./01_Article-preview-component/",
+      "title": "Article preview component",
+      "originalLink": "https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT",
+      "description": "Practice your layout skills with this article preview component. There's lots of fun to be had playing around with animations for the sharing icons as well.",
+      "techs": ["html", "css", "js"]
+    },
+    {
+      "folder": "./02_Four-card-feature-section/",
+      "title": "Four card feature section",
+      "originalLink": "https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK",
+      "description": "A nice layout-based challenge for beginners. This will test anyone who is new to multi-column and responsive layouts.",
+      "techs": ["html", "css"]
+    },
+    {
+      "folder": "./03_Simple-price-grid-component/",
+      "title": "Single price grid component",
+      "originalLink": "https://www.frontendmentor.io/challenges/single-price-grid-component-5ce41129d0ff452fec5abbbc",
+      "description": "In this challenge, you will build out the pricing component to the designs provided.",
+      "techs": ["html", "css"]
+    },
+    {
+      "folder": "./04_Intro-component-with-singup-form/",
+      "title": "Intro component with sign-up form",
+      "originalLink": "https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1",
+      "description": "Practice building out a sign-up form complete with client-side validation using JavaScript.",
+      "techs": ["html", "css", "js"]
+    },
+    {
+      "folder": "./05_Base-apprel-coming-soon/",
+      "title": "Base Apparel coming soon page",
+      "originalLink": "https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0",
+      "description": "This layout looks simple enough, but there are some interesting details to it that will test your CSS skills. You'll also get to practice basic form validation.",
+      "techs": ["html", "css", "js"]
+    },
+    {
+      "folder": "./06_Coding-bootcamp-testimonials-slider/",
+      "title": "Coding bootcamp testimonials slider",
+      "originalLink": "https://www.frontendmentor.io/challenges/coding-bootcamp-testimonials-slider-4FNyLA8JL",
+      "description": "This challenge will be a nice test if you're new to JavaScript. It's also a great opportunity to play around with content animations and transitions.",
+      "techs": ["html", "css", "js"]
+    },
+]

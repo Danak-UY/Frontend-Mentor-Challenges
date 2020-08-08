@@ -1,0 +1,184 @@
+// COLORS
+$purple: #7756b9
+$soft-purple: #aa86f1
+$grayish: #fafafa
+$gray: #8d8d8d
+$dark-gray: #2b2929
+
+$html: #e7572f
+$css: #0b86d8
+$js: #e9d227
+$react: #0dc2e2
+$vue: #43a579
+$angular: #c73739
+$api: #21bd9d
+
+$white: rgb(255, 255, 255)
+$black: rgb(0, 0, 0)
+
+// SIZES
+$mobile: 375px
+$tablet: 768px
+$desktop: 1440px
+
+// FONTS
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap)
+
+$base-font-family: 'Inter', sans-serif
+$base-font-size: 16px
+
+// STYLES 
+*
+  padding: 0px
+  margin: 0px
+  box-sizing: border-box
+
+html
+  font-size: $base-font-size
+
+body
+  font-family: $base-font-family
+  background-color: $grayish
+  color: $dark-gray
+  min-height: 100vh
+
+.container
+  margin: 0 auto
+  padding: 2rem
+  min-height: 100vh
+  width: 100%
+  max-width: 1200px
+
+h1
+  font-size: 3rem
+  font-weight: 400
+  position: relative
+  margin-bottom: 2rem
+
+  &::before
+    content: ""
+    position: absolute
+    bottom: -3rem
+    left: 0
+    width: 5rem
+    height: .25rem
+    background-color: $purple
+    border-radius: .125rem
+
+  a
+    color: $dark-gray
+    text-decoration: none
+
+    &:hover
+      span
+        &::after
+          transform: translate(3px, -3px)  
+          opacity: .2     
+
+    span
+      position: relative
+
+      &::after
+        content: ""
+        position: absolute
+        bottom: 1.8rem
+        right: -2rem
+        background-image: url("https://image.flaticon.com/icons/svg/376/376007.svg")
+        background-size: contain
+        width: 1.2rem
+        height: 1.2rem
+        opacity: .1
+        transition: .3s ease
+
+  & > span
+    text-transform: uppercase
+    font-size: 1.5rem
+    font-weight: 400
+
+main
+  margin: 7rem 0 3rem
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  grid-gap: 2rem
+
+article
+  background-color: $white
+  border-radius: 1rem
+  overflow: hidden
+  box-shadow: 0px 8px 16px rgba(30, 30, 30, .12)
+
+  figcaption
+    padding: 1.5rem
+    display: flex
+    flex-direction: column
+    align-content: space-around
+
+    h2
+      font-size: 1.6rem
+      font-weight: 500
+      margin-bottom: .5rem
+      line-height: 1.2
+
+    p
+      line-height: 1.4
+      color: $gray
+      margin-bottom: 1rem
+
+    .buttons
+      display: flex
+      margin: 1rem 0 .5rem
+      justify-self: end
+
+    a
+      padding: 1rem
+      border-radius: 2rem
+      text-transform: uppercase
+      color: $white
+      text-decoration: none
+      width: 50%
+      text-align: center
+      font-weight: 500
+      font-family: $base-font-family
+      letter-spacing: 2px
+      border-radius: 2rem 0 0 2rem      
+      background-color: $soft-purple
+      transition: .3s ease
+      flex: 4
+
+      &:hover
+        flex: 5
+
+    .project-button
+      background-color: $purple
+      border-radius: 0 2rem 2rem 0
+
+  img
+    width: 100%
+    height: auto
+
+.techs
+  list-style: none
+  margin-bottom: .5rem
+
+  li
+    display: inline-block
+    font-weight: 600
+    margin-right: .25rem
+    text-transform: uppercase
+
+    &.html
+      color: $html
+    &.css
+      color: $css
+    &.js
+      color: $js
+    &.react
+      color: $react
+    &.vue
+      color: $vue
+    &.angular
+      color: $angular
+    &.api
+      color: $api
+
+
