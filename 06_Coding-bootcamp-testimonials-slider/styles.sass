@@ -56,11 +56,39 @@ body
 
   .slide
     width: 100%
-    display: flex
+    display: none
     flex-direction: column-reverse
     justify-content: center
     align-items: center
     text-align: center
+
+    &.vissible
+      display: flex
+
+    &.active
+      .slide__image
+        img
+          opacity: 1
+
+      .slide__text
+        blockquote
+          p,
+          cite
+            transform: translateY(0)
+            opacity: 1
+
+      &.enter
+        .slide__image
+          img
+            transition-delay: .1s
+
+        .slide__text
+          blockquote
+            p
+              transition-delay: .5s
+
+            cite
+              transition-delay: .8s
 
   .slide__image
     width: 100%
@@ -78,6 +106,9 @@ body
       height: auto
       box-shadow: 0px 16px 48px -12px hsla(240, 38%, 20%, .4)
       border-radius: .5rem
+      transition: opacity .8s ease
+      opacity: 0
+      transition-delay: .8s
 
   .slide__text
     padding-top: 1rem
@@ -90,17 +121,24 @@ body
     background-size: 2rem
     background-repeat: no-repeat
 
-
     blockquote
       p
         font-weight: 300
         font-size: .75rem
         line-height: 1.2
+        transition: .5s ease
+        transform: translateY(.5rem)
+        opacity: 0
+        transition-delay: .5s
     
     cite
       font-style: normal
       margin-top: .5rem
       display: block
+      transition: .5s ease
+      transform: translateY(.5rem)
+      opacity: 0
+      transition-delay: .1s
 
       strong
         font-size: .5rem

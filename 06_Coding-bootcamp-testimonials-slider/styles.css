@@ -43,11 +43,37 @@ body {
 
 .slider .slide {
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.slider .slide.vissible {
+  display: flex;
+}
+
+.slider .slide.active .slide__image img {
+  opacity: 1;
+}
+
+.slider .slide.active .slide__text blockquote p,
+.slider .slide.active .slide__text blockquote cite {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slider .slide.active.enter .slide__image img {
+  transition-delay: .1s;
+}
+
+.slider .slide.active.enter .slide__text blockquote p {
+  transition-delay: .5s;
+}
+
+.slider .slide.active.enter .slide__text blockquote cite {
+  transition-delay: .8s;
 }
 
 .slider .slide__image {
@@ -67,6 +93,9 @@ body {
   height: auto;
   box-shadow: 0px 16px 48px -12px rgba(32, 32, 70, 0.4);
   border-radius: .5rem;
+  transition: opacity .8s ease;
+  opacity: 0;
+  transition-delay: .8s;
 }
 
 .slider .slide__text {
@@ -85,12 +114,20 @@ body {
   font-weight: 300;
   font-size: .75rem;
   line-height: 1.2;
+  transition: .5s ease;
+  transform: translateY(0.5rem);
+  opacity: 0;
+  transition-delay: .5s;
 }
 
 .slider .slide__text cite {
   font-style: normal;
   margin-top: .5rem;
   display: block;
+  transition: .5s ease;
+  transform: translateY(0.5rem);
+  opacity: 0;
+  transition-delay: .1s;
 }
 
 .slider .slide__text cite strong {
