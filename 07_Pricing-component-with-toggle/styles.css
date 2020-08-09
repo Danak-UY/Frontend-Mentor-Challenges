@@ -133,7 +133,7 @@ main .price-cards .price-cards__card h2.checked .monthly-price {
 }
 
 main .price-cards .price-cards__card h2.checked .annually-price {
-  display: block;
+  display: flex;
 }
 
 main .price-cards .price-cards__card h2 .dollar-sign {
