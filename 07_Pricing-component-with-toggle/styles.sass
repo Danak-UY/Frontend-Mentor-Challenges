@@ -123,18 +123,25 @@ main
         margin-bottom: 1rem
 
       h2
-        font-size: 4rem
-        margin-bottom: 1rem
-        display: flex
-        align-items: center
-        justify-content: center
-        width: 100%
-        color: $dark-grayish-blue
+        & > span
+          font-size: 4rem
+          margin-bottom: 1rem
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 100%
+          color: $dark-grayish-blue
 
-        &:nth-of-type(1)                   
+        .annually-price
           display: none
 
-        span
+        &.checked
+          .monthly-price
+            display: none
+          .annually-price
+            display: block
+
+        .dollar-sign
           font-size: 2rem
           padding: .5rem
 
@@ -177,7 +184,7 @@ main
         background-image: $grandient-purple
         padding: 3rem 2rem
 
-        h2
+        h2 > span
           color: $white
 
         ul
@@ -200,6 +207,8 @@ main
 
       .price-cards__card
         margin: 1rem 0
+        width: 100%
+        max-width: 20rem
 
         &.recommended
           padding: 2rem
