@@ -1,0 +1,205 @@
+// COLORS
+$very-light-grayish-blue: hsl(240, 78%, 98%)
+$light-grayish-blue: hsl(234, 14%, 74%)
+$grayish-blue: hsl(233, 13%, 49%)
+$dark-grayish-blue: hsl(232, 13%, 33%)
+
+$white: rgb(255, 255, 255)
+$black: rgb(0, 0, 0)
+
+$grandient-purple: linear-gradient(135deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%))
+
+// SIZES
+$mobile: 375px
+$tablet: 768px
+$desktop: 1440px
+
+// FONTS
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap)
+
+$base-font-family: 'Montserrat', sans-serif
+$base-font-size: 15px
+
+// STYLES 
+*
+  padding: 0px
+  margin: 0px
+  box-sizing: border-box
+
+html
+  font-size: $base-font-size
+
+body
+  font-family: $base-font-family
+  background-color: $very-light-grayish-blue
+  color: $grayish-blue
+  min-height: 100vh
+  background-image: url("./images/bg-bottom.svg"), url("./images/bg-top.svg")
+  background-position: left bottom, right top
+  background-repeat: no-repeat
+  background-size: auto, auto
+  display: flex
+  justify-content: center
+  align-items: center
+
+main
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  padding: 3rem 2rem
+  text-align: center
+
+  h1
+    margin-bottom: 2rem
+
+  .toggle-container
+    display: flex
+    justify-content: center
+    align-items: center
+    color: $light-grayish-blue
+    margin-bottom: 3rem
+
+    span
+      margin-bottom: .25rem
+
+    .toggle-item
+      margin: 0 1.5rem
+
+      input
+        width: 0px
+        height: 0px
+        visibility: hidden
+        position: absolute
+        top: -2rem
+        left: -2rem
+
+        &:checked + label::after
+          left: calc(100% - 1.8rem)
+          
+
+      label
+        display: inline-block
+        text-indent: -9999px
+        width: 3.5rem
+        height: 2rem
+        background-image: $grandient-purple
+        border-radius: 1rem
+        position: relative
+        cursor: pointer
+        transition: .3s ease
+
+        &:hover
+          opacity: .8
+
+        &::after
+          content: ""
+          position: absolute
+          top: 50%
+          left: .3rem
+          transform: translateY(-50%)
+          width: 1.5rem
+          height: 1.5rem
+          background-color: $white
+          border-radius: 1.5rem
+          transition: .3s ease
+
+
+  .price-cards
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0 5rem
+
+    .price-cards__card
+      flex: 1
+      padding: 2rem
+      border-radius: .5rem
+      background-color: $white
+      text-align: center
+      box-shadow: 0px 4px 16px 4px rgba(0, 0, 0, .08)
+
+      h3
+        font-size: 1rem
+        margin-bottom: 1rem
+
+      h2
+        font-size: 4rem
+        margin-bottom: 1rem
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        color: $dark-grayish-blue
+
+        &:nth-of-type(1)                   
+          display: none
+
+        span
+          font-size: 2rem
+          padding: .5rem
+
+      ul
+        list-style: none
+        margin-bottom: 2rem
+        color: $grayish-blue
+
+        li
+          padding: 1rem 0
+          border-top: 1px solid $light-grayish-blue
+
+          &:nth-last-of-type(1)
+            border-bottom: 1px solid $light-grayish-blue    
+
+      button
+        background-color: hsl(236, 72%, 79%)
+        background-image: $grandient-purple
+        text-transform: uppercase
+        letter-spacing: 2px
+        border-radius: .4rem
+        border: 1px solid rgba(255, 255, 255, 0)
+        padding: 1rem
+        text-align: center
+        width: 100%  
+        color: $white
+        font-family: $base-font-family
+        font-weight: 600  
+        cursor: pointer
+        transition: .3s ease
+        font-size: .75rem
+
+        &:hover
+          border-color: $dark-grayish-blue
+          color: $dark-grayish-blue
+          background: transparent
+
+      &.recommended
+        color: $white
+        background-image: $grandient-purple
+        padding: 3rem 2rem
+
+        h2
+          color: $white
+
+        ul
+          color: $white
+
+        button
+          background: $white
+          color: $grayish-blue
+
+          &:hover
+            background: transparent
+            color: $white
+            border-color: $white
+
+@media only screen and (max-width: 960px)  
+  main
+    .price-cards
+      flex-direction: column
+      padding: 0 2rem
+
+      .price-cards__card
+        margin: 1rem 0
+
+        &.recommended
+          padding: 2rem

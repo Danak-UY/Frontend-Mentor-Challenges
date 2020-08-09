@@ -1,0 +1,211 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap);
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f6f6fe;
+  color: #6d708d;
+  min-height: 100vh;
+  background-image: url("./images/bg-bottom.svg"), url("./images/bg-top.svg");
+  background-position: left bottom, right top;
+  background-repeat: no-repeat;
+  background-size: auto, auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+main h1 {
+  margin-bottom: 2rem;
+}
+
+main .toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b3b5c6;
+  margin-bottom: 3rem;
+}
+
+main .toggle-container span {
+  margin-bottom: .25rem;
+}
+
+main .toggle-container .toggle-item {
+  margin: 0 1.5rem;
+}
+
+main .toggle-container .toggle-item input {
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+}
+
+main .toggle-container .toggle-item input:checked + label::after {
+  left: calc(100% - 1.8rem);
+}
+
+main .toggle-container .toggle-item label {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 3.5rem;
+  height: 2rem;
+  background-image: linear-gradient(135deg, #a3a8f0, #696fdd);
+  border-radius: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+main .toggle-container .toggle-item label:hover {
+  opacity: .8;
+}
+
+main .toggle-container .toggle-item label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: .3rem;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  transition: .3s ease;
+}
+
+main .price-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5rem;
+}
+
+main .price-cards .price-cards__card {
+  flex: 1;
+  padding: 2rem;
+  border-radius: .5rem;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0px 4px 16px 4px rgba(0, 0, 0, 0.08);
+}
+
+main .price-cards .price-cards__card h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+main .price-cards .price-cards__card h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #494c5f;
+}
+
+main .price-cards .price-cards__card h2:nth-of-type(1) {
+  display: none;
+}
+
+main .price-cards .price-cards__card h2 span {
+  font-size: 2rem;
+  padding: .5rem;
+}
+
+main .price-cards .price-cards__card ul {
+  list-style: none;
+  margin-bottom: 2rem;
+  color: #6d708d;
+}
+
+main .price-cards .price-cards__card ul li {
+  padding: 1rem 0;
+  border-top: 1px solid #b3b5c6;
+}
+
+main .price-cards .price-cards__card ul li:nth-last-of-type(1) {
+  border-bottom: 1px solid #b3b5c6;
+}
+
+main .price-cards .price-cards__card button {
+  background-color: #a3a8f0;
+  background-image: linear-gradient(135deg, #a3a8f0, #696fdd);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: .4rem;
+  border: 1px solid rgba(255, 255, 255, 0);
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s ease;
+  font-size: .75rem;
+}
+
+main .price-cards .price-cards__card button:hover {
+  border-color: #494c5f;
+  color: #494c5f;
+  background: transparent;
+}
+
+main .price-cards .price-cards__card.recommended {
+  color: white;
+  background-image: linear-gradient(135deg, #a3a8f0, #696fdd);
+  padding: 3rem 2rem;
+}
+
+main .price-cards .price-cards__card.recommended h2 {
+  color: white;
+}
+
+main .price-cards .price-cards__card.recommended ul {
+  color: white;
+}
+
+main .price-cards .price-cards__card.recommended button {
+  background: white;
+  color: #6d708d;
+}
+
+main .price-cards .price-cards__card.recommended button:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+@media only screen and (max-width: 960px) {
+  main .price-cards {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+  main .price-cards .price-cards__card {
+    margin: 1rem 0;
+  }
+  main .price-cards .price-cards__card.recommended {
+    padding: 2rem;
+  }
+}
