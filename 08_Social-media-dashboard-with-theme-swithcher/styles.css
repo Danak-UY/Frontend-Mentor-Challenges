@@ -21,6 +21,16 @@
   --dark-grayish-blue: #63687e;
 }
 
+body {
+  --toggle-bg: var(--toggle-color);
+  --bg-color: var(--white);
+  --top-bg-pattern: var(--very-pale-blue);
+  --card-bg: var(--light-grayish-blue);
+  --card-bg-opaque: var(--light-grayish-blue-opaque);
+  --text-primary: var(--very-dark-blue);
+  --text-secondary: var(--dark-grayish-blue);
+}
+
 body[data-theme="dark"] {
   --toggle-bg: var(--toggle-gradient);
   --bg-color: var(--very-dark-blue);
@@ -29,16 +39,6 @@ body[data-theme="dark"] {
   --card-bg-opaque: var(--dark-desaturated-blue-opaque);
   --text-primary: var(--white);
   --text-secondary: var(--desaturated-blue);
-}
-
-body[data-theme="light"] {
-  --toggle-bg: var(--toggle-color);
-  --bg-color: var(--white);
-  --top-bg-pattern: var(--very-pale-blue);
-  --card-bg: var(--light-grayish-blue);
-  --card-bg-opaque: var(--light-grayish-blue-opaque);
-  --text-primary: var(--very-dark-blue);
-  --text-secondary: var(--dark-grayish-blue);
 }
 
 * {
@@ -56,6 +56,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   min-height: 100vh;
+  transition: .3s ease;
 }
 
 .wrapper {
@@ -77,17 +78,20 @@ header {
   border-radius: 0 0 1rem 1rem;
   max-width: 1400px;
   margin: 0 auto;
+  transition: .3s ease;
 }
 
 header .header-title {
   border-bottom: 1px solid var(--text-secondary);
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
+  transition: .3s ease;
 }
 
 header .header-title p {
   font-weight: 700;
   color: var(--text-secondary);
+  transition: .3s ease;
 }
 
 header .toggle {
@@ -96,6 +100,7 @@ header .toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: .3s ease;
 }
 
 header .toggle input {
@@ -104,6 +109,7 @@ header .toggle input {
   position: absolute;
   top: -2rem;
   left: -2rem;
+  display: none;
 }
 
 header .toggle input:checked + label {
@@ -111,7 +117,7 @@ header .toggle input:checked + label {
 }
 
 header .toggle input:checked + label::before {
-  left: .3rem;
+  left: .5rem;
 }
 
 header .toggle label {
@@ -122,13 +128,14 @@ header .toggle label {
   border-radius: 1.5rem;
   cursor: pointer;
   transition: .3s ease;
+  user-select: none;
 }
 
 header .toggle label::before {
   content: "";
   position: absolute;
   top: .35rem;
-  left: calc(100% - 1.8rem);
+  left: calc(100% - 2rem);
   width: 1.5rem;
   height: 1.5rem;
   background-color: var(--card-bg);
@@ -143,7 +150,7 @@ header .toggle label::before {
 .card {
   text-align: center;
   border-radius: .5rem;
-  transition: background-color .2s ease;
+  transition: background-color .3s ease;
   background-color: var(--card-bg);
   padding: 2rem 1rem;
   position: relative;
@@ -185,6 +192,7 @@ header .toggle label::before {
   align-items: center;
   color: var(--text-secondary);
   font-weight: 700;
+  transition: .3s ease;
 }
 
 .card .card-user img {
@@ -202,18 +210,21 @@ header .toggle label::before {
 .card .card-followers .card-followers-number {
   font-weight: 700;
   font-size: 4rem;
+  transition: .3s ease;
 }
 
 .card .card-followers .card-followers-title {
   text-transform: uppercase;
   letter-spacing: 4px;
   color: var(--text-secondary);
+  transition: .3s ease;
 }
 
 .card-today {
   margin-top: 1.5rem;
   text-transform: capitalize;
   font-weight: 700;
+  transition: .3s ease;
 }
 
 .card-today span {
@@ -259,7 +270,7 @@ header .toggle label::before {
   grid-row-gap: 1.5rem;
   align-items: center;
   border-radius: .5rem;
-  transition: background-color .2s ease;
+  transition: background-color .3s ease;
   background-color: var(--card-bg);
   padding: 2rem;
 }
@@ -270,6 +281,7 @@ header .toggle label::before {
 
 .card-small p {
   margin: 0;
+  transition: .3s ease;
 }
 
 .card-small p:nth-child(2n) {
@@ -316,5 +328,26 @@ header .toggle label::before {
   }
   header .toggle span {
     margin-right: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --toggle-bg: var(--toggle-gradient);
+    --bg-color: var(--very-dark-blue);
+    --top-bg-pattern: var(--very-dark-blue-pattern);
+    --card-bg: var(--dark-desaturated-blue);
+    --card-bg-opaque: var(--dark-desaturated-blue-opaque);
+    --text-primary: var(--white);
+    --text-secondary: var(--desaturated-blue);
+  }
+  body[data-theme="light"] {
+    --toggle-bg: var(--toggle-color);
+    --bg-color: var(--white);
+    --top-bg-pattern: var(--very-pale-blue);
+    --card-bg: var(--light-grayish-blue);
+    --card-bg-opaque: var(--light-grayish-blue-opaque);
+    --text-primary: var(--very-dark-blue);
+    --text-secondary: var(--dark-grayish-blue);
   }
 }

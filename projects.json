@@ -48,4 +48,11 @@ const projects = [
       "description": "This challenge will get you thinking about building an accessible custom toggle control and also test your layout skills.",
       "techs": ["html", "css", "js"]
     },
+    {
+      "folder": "./08_Social-media-dashboard-with-theme-swithcher/",
+      "title": "Social media dashboard with theme switcher",
+      "originalLink": "https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H",
+      "description": "This challenge will be a perfect chance to practice your Grid skills. The color theme switcher also adds a nice additional test.",
+      "techs": ["html", "css", "js"]
+    },
 ]
