@@ -1,0 +1,289 @@
+// COLORS
+\:root
+  --lime-green: hsl(163, 72%, 41%)
+  --bright-red: hsl(356, 69%, 56%)
+
+  --facebook: hsl(208, 92%, 53%)
+  --twitter: hsl(203, 89%, 53%)
+  --instagram: linear-gradient(135deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%))
+  --youtube: hsl(348, 97%, 39%)
+
+  --black: rgb(0, 0, 0)
+  
+  --toggle-gradient: linear-gradient(135deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%))  
+  --toggle-color: hsl(230, 22%, 74%)
+
+  --very-dark-blue: hsl(230, 17%, 14%)
+  --very-dark-blue-pattern: hsl(232, 19%, 15%)
+  --dark-desaturated-blue: hsl(228, 28%, 20%)
+  --dark-desaturated-blue-opaque: hsl(228, 25%, 15%)
+  --desaturated-blue: hsl(228, 34%, 66%)
+  --white: hsl(0, 0%, 100%)
+
+  --very-pale-blue: hsl(225, 100%, 98%)
+  --light-grayish-blue: hsl(227, 47%, 96%)
+  --light-grayish-blue-opaque: hsl(227, 45%, 89%)
+  --dark-grayish-blue: hsl(228, 12%, 44%)
+
+body[data-theme="dark"]
+  --toggle-bg: var(--toggle-gradient)
+  --bg-color: var(--very-dark-blue)
+  --top-bg-pattern: var(--very-dark-blue-pattern)
+  --card-bg: var(--dark-desaturated-blue)
+  --card-bg-opaque: var(--dark-desaturated-blue-opaque)
+  --text-primary: var(--white)
+  --text-secondary: var(--desaturated-blue)
+
+body[data-theme="light"]
+  --toggle-bg: var(--toggle-color)
+  --bg-color: var(--white)
+  --top-bg-pattern: var(--very-pale-blue)
+  --card-bg: var(--light-grayish-blue)
+  --card-bg-opaque: var(--light-grayish-blue-opaque)
+  --text-primary: var(--very-dark-blue)
+  --text-secondary: var(--dark-grayish-blue)
+
+
+// SIZES
+$mobile: 375px
+$tablet: 768px
+$desktop: 1440px
+
+// FONTS
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap)
+
+$base-font-family: 'Inter', sans-serif
+$base-font-size: 14px
+
+// STYLES 
+*
+  padding: 0px
+  margin: 0px
+  box-sizing: border-box
+
+html
+  font-size: $base-font-size
+
+body
+  font-family: $base-font-family
+  background-color: var(--bg-color)
+  color: var(--text-primary)
+  min-height: 100vh
+
+.wrapper
+  padding: 2rem
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+
+  .grid
+    display: grid
+    grid-gap: 2rem
+    grid-template-columns: 1fr
+
+header
+  background-color: var(--top-bg-pattern) 
+  padding-bottom: 5rem
+  border-radius: 0 0 1rem 1rem
+  max-width: 1400px
+  margin: 0 auto
+
+  .header-title
+    border-bottom: 1px solid var(--text-secondary)
+    padding-bottom: 1.5rem
+    margin-bottom: 1.5rem
+
+    p
+      font-weight: 700
+      color: var(--text-secondary)
+
+  .toggle
+    color: var(--text-secondary)
+    font-weight: 700
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    input
+      width: 0
+      height: 0
+      position: absolute
+      top: -2rem
+      left: -2rem      
+
+      &:checked + label
+        background-image: var(--toggle-gradient)
+
+        &::before
+          left: .3rem
+
+    label
+      width: 4rem
+      height: 2.2rem
+      background: var(--toggle-bg)
+      position: relative
+      border-radius: 1.5rem
+      cursor: pointer
+      transition: .3s ease
+
+      &::before
+        content: ""
+        position: absolute
+        top: .35rem
+        left: calc(100% - 1.8rem)
+        width: 1.5rem
+        height: 1.5rem
+        background-color: var(--card-bg)
+        border-radius: 1.5rem
+        transition: .3s ease
+
+.card-section
+  margin-top: -6rem
+
+.card
+  text-align: center
+  border-radius: .5rem
+  transition: background-color .2s ease
+  background-color: var(--card-bg)
+  padding: 2rem 1rem
+  position: relative
+  overflow: hidden
+
+  &:hover
+    background-color: var(--card-bg-opaque)
+
+  &::before
+    content: ""
+    height: 4px
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+
+  &.card-facebook::before
+    background-color: var(--facebook)
+  &.card-twitter::before
+    background-color: var(--twitter)
+  &.card-instagram::before
+    background-image: var(--instagram)
+  &.card-youtube::before
+    background-color: var(--youtube)
+
+  .card-user
+    display: flex
+    justify-content: center
+    align-items: center
+    color: var(--text-secondary)
+    font-weight: 700
+
+    img
+      margin-right: .5rem
+
+  .card-followers
+    margin: 1rem 0
+    span
+      display: block
+
+    .card-followers-number
+      font-weight: 700
+      font-size: 4rem
+
+    .card-followers-title
+      text-transform: uppercase
+      letter-spacing: 4px
+      color: var(--text-secondary)
+
+.card-today
+  margin-top: 1.5rem
+  text-transform: capitalize
+  font-weight: 700
+
+  span
+    position: relative
+    padding-left: 1rem
+
+    &::before
+      content: ""
+      position: absolute
+      top: .35rem
+      left: 0
+      width: .6rem
+      height: .6rem 
+      background-repeat: no-repeat
+      background-position: center center      
+
+  &.followers-up
+    color: var(--lime-green)
+
+    span::before
+      background-image: url("./images/icon-up.svg")
+
+  &.followers-down
+    color: var(--bright-red)
+
+    span::before
+      background-image: url("./images/icon-down.svg")
+
+.page-subtitle
+  color: var(--text-secondary)
+  margin-bottom: 2rem
+
+.card-small
+  display: grid
+  grid-template-columns: 1fr auto
+  grid-row-gap: 1.5rem
+  align-items: center
+  border-radius: .5rem
+  transition: background-color .2s ease
+  background-color: var(--card-bg)
+  padding: 2rem
+
+  &:hover
+    background-color: var(--card-bg-opaque)
+
+  p
+    margin: 0
+
+    &:nth-child(2n)
+      text-align: right
+
+  .card-small-title    
+    color: var(--text-secondary)
+    font-weight: 700
+
+  .card-small-numbers
+    font-weight: 700
+    font-size: 2.5rem
+
+  .card-today
+    align-self: flex-end
+    margin-bottom: .25rem
+
+@media only screen and (min-width: 560px)
+  .wrapper
+    .grid    
+      grid-template-columns: repeat(2, 1fr)
+
+@media only screen and (min-width: 960px)
+  .wrapper
+    .grid    
+      grid-template-columns: repeat(4, 1fr)
+
+  header
+
+    .wrapper
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+    .header-title
+      border-bottom: none
+      padding: 0
+      margin: 0
+
+    .toggle
+      justify-content: end
+
+      span
+        margin-right: 1rem
+

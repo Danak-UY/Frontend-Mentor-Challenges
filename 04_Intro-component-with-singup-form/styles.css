@@ -177,6 +177,9 @@ p small a {
   h1 {
     text-align: center;
   }
+  h1 + p {
+    margin-bottom: 1rem;
+  }
   p {
     text-align: center;
   }

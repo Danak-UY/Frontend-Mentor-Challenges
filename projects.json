@@ -46,6 +46,6 @@ const projects = [
       "title": "Pricing component with toggle",
       "originalLink": "https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC",
       "description": "This challenge will get you thinking about building an accessible custom toggle control and also test your layout skills.",
-      "techs": ["html", "css"]
+      "techs": ["html", "css", "js"]
     },
 ]
