@@ -11,11 +11,13 @@ const TableStyled = styled.div`
   grid-gap: 2rem;
   max-width: 25rem;
   width: 100%;
-  // animation: spin 20s linear infinite;
-  background-image: url("./images/bg-pentagon.svg");
-  background-position: center center;
-  background-size: 18rem;
-  background-repeat: no-repeat;
+
+  &.bg-pentagon {
+    background-image: url("./images/bg-pentagon.svg");
+    background-position: center center;
+    background-size: 18rem;
+    background-repeat: no-repeat;
+  }
 
   &:hover {
     animation-play-state: paused;
@@ -34,6 +36,12 @@ const TableStyled = styled.div`
     display: flex;
     justify-content: center;
     grid-gap: 2rem;
+  }
+
+  .in-game {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
   @keyframes spin {
@@ -56,19 +64,17 @@ function Table() {
 
   const availabeTokens = ["rock", "paper", "scissors", "lizard", "spock"];
 
-  async function updateStatus(name) {
+  function updateStatus(name) {
     setHousePicked(availabeTokens[getRandomInt(0, availabeTokens.length)]);
     setUserPicked(name);
     setPlaying(true);
-    console.log(userPicked);
-    console.log(housePicked);
-    console.log(playing);
+
+    console.log({ userPicked, housePicked });
   }
 
   function handleTryAgainClick() {
-    console.log(userPicked);
-    console.log(housePicked);
-    console.log(playing);
+    console.log({ userPicked, housePicked });
+
     setUserPicked("");
     setHousePicked("");
     setPlaying(false);

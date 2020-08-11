@@ -11,17 +11,28 @@ const ButtonStyled = styled.button`
   letter-spacing: 2px;
   cursor: pointer;
   font-size: 1.2rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
   background-color: transparent;
   color: var(--white);
-  font-family: "Barlow Semi Condensed", sans-serif;
 
   &:hover {
     background-color: var(--header-outline);
   }
 `;
 
-function Button({ ...props }) {
-  return <ButtonStyled {...props}>Rules</ButtonStyled>;
+function Button({ children, ...props }) {
+  return <ButtonStyled {...props}>{children}</ButtonStyled>;
 }
+
+export const WhiteButton = styled(ButtonStyled)`
+  background-color: var(--white);
+  border: 2px solid var(--white);
+  color: var(--score-text);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--white);
+  }
+`;
 
 export default Button;

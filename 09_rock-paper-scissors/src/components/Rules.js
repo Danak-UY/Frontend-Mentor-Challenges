@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import Button from "./Button";
+import OverlayRules from "./OverlayRules";
 
 const RulesStyled = styled.div`
   padding: 2rem 0;
@@ -53,16 +54,8 @@ function Rules() {
 
   return (
     <RulesStyled>
-      {visible && (
-        <div className="rules-overlay">
-          <h2>Rules</h2>
-          <img src="./images/image-rules-bonus.svg" alt="Game Rules" />
-          <button className="close-button" onClick={handleToggleClick}>
-            <img src="./images/icon-close.svg" alt="Close Icon" />
-          </button>
-        </div>
-      )}
-      <Button onClick={handleToggleClick} />
+      {visible && <OverlayRules handleClick={handleToggleClick} />}
+      <Button onClick={handleToggleClick}>Rules</Button>
     </RulesStyled>
   );
 }
