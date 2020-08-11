@@ -3,6 +3,9 @@
 var projectTemplate;
 var fileUrl = "./project-template.html";
 var projectsDOM = document.querySelector("main");
+Handlebars.registerHelper("evaluateLink", function (folder, link, options) {
+  if (!link) options.data.root.project["projectLink"] = folder;
+});
 fetch(fileUrl).then(function (r) {
   return r.text();
 }).then(function (t) {
@@ -12,7 +15,6 @@ fetch(fileUrl).then(function (r) {
     article.innerHTML = projectTemplate({
       project: project
     });
-    console.log(article.innerHTML);
     projectsDOM.appendChild(article);
   });
 });

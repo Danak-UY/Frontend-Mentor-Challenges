@@ -41,4 +41,19 @@ const projects = [
       "description": "This challenge will be a nice test if you're new to JavaScript. It's also a great opportunity to play around with content animations and transitions.",
       "techs": ["html", "css", "js"]
     },
+    {
+      "folder": "./07_Pricing-component-with-toggle/",
+      "title": "Pricing component with toggle",
+      "originalLink": "https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC",
+      "description": "This challenge will get you thinking about building an accessible custom toggle control and also test your layout skills.",
+      "techs": ["html", "css", "js"]
+    },
+    {
+      "projectLink": "https://epic-johnson-c6a2b8.netlify.app/",
+      "folder": "./08_Social-media-dashboard-with-theme-swithcher/",
+      "title": "Social media dashboard with theme switcher",
+      "originalLink": "https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H",
+      "description": "This challenge will be a perfect chance to practice your Grid skills. The color theme switcher also adds a nice additional test.",
+      "techs": ["html", "css", "react"]
+    },
 ]
