@@ -10,6 +10,7 @@ const HeaderStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 
   h1 {
     text-transform: uppercase;

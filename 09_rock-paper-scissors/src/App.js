@@ -11,14 +11,26 @@ const AppStyled = styled.main`
   background-image: var(--radial-gradient);
   min-height: 100vh;
   padding: 2rem;
+  display: flex;
+
+  .app-content {
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 function App() {
   return (
     <AppStyled>
       <Wrapper>
-        <Header />
-        <Table />
+        <div className="app-content">
+          <Header />
+          <Table />
+          <Header />
+        </div>
       </Wrapper>
     </AppStyled>
   );

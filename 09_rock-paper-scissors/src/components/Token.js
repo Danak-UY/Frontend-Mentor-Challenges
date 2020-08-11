@@ -1,24 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const TokenStyled = styled.div`
+const TokenStyled = styled.button`
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
-  background-image: ${(props) => props.color};
+  background-image: ${({ color }) => color};
   display: flex;
-  box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0px -5px 0px hsla(229, 25%, 31%, 0.12);
   padding: 1rem;
   cursor: pointer;
   user-select: none;
-  transition: 0.3s ease;
+  border: none;
 
   &:active {
     transform: scale(0.95);
-    box-shadow: inset 0px -8px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: inset 0px -8px 0px hsla(229, 25%, 31%, 0.12);
 
     & .box {
-      box-shadow: inset 0px 6px 0px rgba(0, 0, 0, 0.12);
+      box-shadow: inset 0px 6px 0px hsla(229, 25%, 31%, 0.12);
     }
   }
 
@@ -26,13 +26,12 @@ const TokenStyled = styled.div`
     flex: 1;
     align-self: stretch;
     border-radius: 50%;
-    box-shadow: inset 0px 4px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: inset 0px 4px 0px hsla(229, 25%, 31%, 0.12);
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--white);
     padding: 1rem;
-    transition: 0.3s ease;
   }
 
   .box img {

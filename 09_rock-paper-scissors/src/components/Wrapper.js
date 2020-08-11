@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const WrapperStyled = styled.main`
-  max-width: 1024px;
+  max-width: 960px;
   margin: 0 auto;
+  align-self: stretch;
+  flex: 1;
 `;
 
 function Wrapper({ children }) {
