@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap);
+:root {
+  --lime-green: #1db489;
+  --bright-red: #dc414c;
+  --facebook: #198ff5;
+  --twitter: #1ca0f2;
+  --instagram: linear-gradient(135deg, #fdc468, #df4996);
+  --youtube: #c4032a;
+  --black: black;
+  --toggle-gradient: linear-gradient(135deg, #378fe6, #3eda82);
+  --toggle-color: #aeb3cb;
+  --very-dark-blue: #1e202a;
+  --very-dark-blue-pattern: #1f212e;
+  --dark-desaturated-blue: #252a41;
+  --dark-desaturated-blue-opaque: #1d2130;
+  --desaturated-blue: #8b97c6;
+  --white: white;
+  --very-pale-blue: #f5f7ff;
+  --light-grayish-blue: #f0f2fa;
+  --light-grayish-blue-opaque: #d6dcf0;
+  --dark-grayish-blue: #63687e;
+}
+
+body {
+  --toggle-bg: var(--toggle-color);
+  --bg-color: var(--white);
+  --top-bg-pattern: var(--very-pale-blue);
+  --card-bg: var(--light-grayish-blue);
+  --card-bg-opaque: var(--light-grayish-blue-opaque);
+  --text-primary: var(--very-dark-blue);
+  --text-secondary: var(--dark-grayish-blue);
+}
+
+body[data-theme="dark"] {
+  --toggle-bg: var(--toggle-gradient);
+  --bg-color: var(--very-dark-blue);
+  --top-bg-pattern: var(--very-dark-blue-pattern);
+  --card-bg: var(--dark-desaturated-blue);
+  --card-bg-opaque: var(--dark-desaturated-blue-opaque);
+  --text-primary: var(--white);
+  --text-secondary: var(--desaturated-blue);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: 0.3s ease;
+}
+
+.wrapper {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wrapper .grid {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 560px) {
+  .wrapper .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .wrapper .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --toggle-bg: var(--toggle-gradient);
+    --bg-color: var(--very-dark-blue);
+    --top-bg-pattern: var(--very-dark-blue-pattern);
+    --card-bg: var(--dark-desaturated-blue);
+    --card-bg-opaque: var(--dark-desaturated-blue-opaque);
+    --text-primary: var(--white);
+    --text-secondary: var(--desaturated-blue);
+  }
+  body[data-theme="light"] {
+    --toggle-bg: var(--toggle-color);
+    --bg-color: var(--white);
+    --top-bg-pattern: var(--very-pale-blue);
+    --card-bg: var(--light-grayish-blue);
+    --card-bg-opaque: var(--light-grayish-blue-opaque);
+    --text-primary: var(--very-dark-blue);
+    --text-secondary: var(--dark-grayish-blue);
+  }
+}

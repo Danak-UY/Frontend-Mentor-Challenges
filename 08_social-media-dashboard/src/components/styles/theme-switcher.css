@@ -1,0 +1,57 @@
+.toggle {
+  color: var(--text-secondary);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.toggle input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  display: none;
+}
+
+.toggle input:checked + label {
+  background-image: var(--toggle-gradient);
+}
+
+.toggle input:checked + label::before {
+  left: 0.5rem;
+}
+
+.toggle label {
+  width: 4rem;
+  height: 2.2rem;
+  background: var(--toggle-bg);
+  position: relative;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.toggle label::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: calc(100% - 2rem);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--card-bg);
+  border-radius: 1.5rem;
+  transition: 0.3s ease;
+}
+
+@media only screen and (min-width: 960px) {
+  .toggle {
+    justify-content: end;
+  }
+  .toggle span {
+    margin-right: 1rem;
+  }
+}
