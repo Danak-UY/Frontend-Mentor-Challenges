@@ -5,8 +5,6 @@ import Token from "./Token";
 import TokenPicked from "./TokenPicked";
 import Result from "./Result";
 
-import evaluateGame from "./../functions/evaluateGame";
-
 const TableStyled = styled.div`
   padding: 2rem 0;
   display: grid;
@@ -14,13 +12,10 @@ const TableStyled = styled.div`
   max-width: 25rem;
   width: 100%;
   // animation: spin 20s linear infinite;
-
-  &.bg-pentagon {
-    background-image: url("./images/bg-pentagon.svg");
-    background-position: center center;
-    background-size: 18rem;
-    background-repeat: no-repeat;
-  }
+  background-image: url("./images/bg-pentagon.svg");
+  background-position: center center;
+  background-size: 18rem;
+  background-repeat: no-repeat;
 
   &:hover {
     animation-play-state: paused;
@@ -39,12 +34,6 @@ const TableStyled = styled.div`
     display: flex;
     justify-content: center;
     grid-gap: 2rem;
-  }
-
-  .in-game {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
   }
 
   @keyframes spin {
@@ -67,16 +56,19 @@ function Table() {
 
   const availabeTokens = ["rock", "paper", "scissors", "lizard", "spock"];
 
-  function onClick(name) {
+  async function updateStatus(name) {
     setHousePicked(availabeTokens[getRandomInt(0, availabeTokens.length)]);
     setUserPicked(name);
     setPlaying(true);
     console.log(userPicked);
     console.log(housePicked);
-    console.log(evaluateGame(userPicked, housePicked));
+    console.log(playing);
   }
 
   function handleTryAgainClick() {
+    console.log(userPicked);
+    console.log(housePicked);
+    console.log(playing);
     setUserPicked("");
     setHousePicked("");
     setPlaying(false);
@@ -87,15 +79,15 @@ function Table() {
       {!playing ? (
         <>
           <div className="row">
-            <Token name="rock" onClick={onClick} />
+            <Token name="rock" onClick={updateStatus} />
           </div>
           <div className="row">
-            <Token name="spock" onClick={onClick} />
-            <Token name="paper" onClick={onClick} />
+            <Token name="spock" onClick={updateStatus} />
+            <Token name="paper" onClick={updateStatus} />
           </div>
           <div className="row">
-            <Token name="lizard" onClick={onClick} />
-            <Token name="scissors" onClick={onClick} />
+            <Token name="lizard" onClick={updateStatus} />
+            <Token name="scissors" onClick={updateStatus} />
           </div>
         </>
       ) : (
