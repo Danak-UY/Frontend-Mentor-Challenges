@@ -9,9 +9,15 @@ function ThemeSwitcher() {
       : document.body.setAttribute("data-theme", "light");
   }
 
+  function evaluateTheme(mq) {
+    if (mq.matches) ref.current.click();
+    if (!mq.matches && ref.current.checked) ref.current.click();
+  }
+
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ref.current.click();
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    mq.addListener(evaluateTheme);
+    evaluateTheme(mq);
   }, []);
 
   return (

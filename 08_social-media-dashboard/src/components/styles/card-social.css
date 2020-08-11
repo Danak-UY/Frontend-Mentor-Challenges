@@ -99,7 +99,7 @@
 }
 
 .card-today.followers-up span::before {
-  /*background-image: url("./images/icon-up.svg");*/
+  background-image: url("./../../images/icon-up.svg");
 }
 
 .card-today.followers-down {
@@ -107,5 +107,5 @@
 }
 
 .card-today.followers-down span::before {
-  /*background-image: url("./images/icon-down.svg");*/
+  background-image: url("./../../images/icon-down.svg");
 }
