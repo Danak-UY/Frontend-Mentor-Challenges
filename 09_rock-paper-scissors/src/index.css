@@ -29,6 +29,10 @@ html {
   font-size: 16px;
 }
 
+body * {
+  transition: 0.3 ease !important;
+}
+
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
   color: var(--white);

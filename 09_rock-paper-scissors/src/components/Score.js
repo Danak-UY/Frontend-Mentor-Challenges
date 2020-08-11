@@ -10,10 +10,13 @@ const ScoreStyled = styled.main`
   justify-content: space-between;
   align:items: center;
   flex-direction: column;
+  min-width: 5rem;
 
   small {
     color: var(--score-text);
     text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: -0.25rem;
   }
 
   p {
