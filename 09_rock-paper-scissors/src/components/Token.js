@@ -5,6 +5,7 @@ const TokenStyled = styled.button`
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
+  background-color: ${({ color }) => color};
   background-image: ${({ color }) => color};
   display: flex;
   box-shadow: inset 0px -5px 0px hsla(229, 25%, 31%, 0.12);
@@ -46,14 +47,21 @@ const tokenColors = {
   scissors: "var(--scissors-gradient)",
   lizard: "var(--lizard-gradient)",
   spock: "var(--cyan-gradient)",
+  "": "hsla(237, 49%, 15%, .2)",
 };
 
-function Token({ name }) {
+function Token({ name = "", onClick = "" }) {
+  function handleClick() {
+    onClick(name);
+  }
+
   return (
-    <TokenStyled color={tokenColors[name]}>
-      <div className="box">
-        <img src={`./images/icon-${name}.svg`} alt={`${name} Token`} />
-      </div>
+    <TokenStyled color={tokenColors[name]} onClick={handleClick}>
+      {name !== "" && (
+        <div className="box">
+          <img src={`./images/icon-${name}.svg`} alt={`${name} Token`} />
+        </div>
+      )}
     </TokenStyled>
   );
 }

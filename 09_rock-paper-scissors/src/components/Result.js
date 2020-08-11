@@ -1,0 +1,35 @@
+import React from "react";
+import styled from "styled-components";
+
+import { WhiteButton } from "./Button";
+
+const ResultStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+
+  p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+  }
+
+  Button {
+    min-width: 15rem;
+  }
+`;
+
+function Result({ title, handleClick }) {
+  return (
+    <ResultStyled>
+      <p>{title}</p>
+      <WhiteButton onClick={handleClick}>Play Again</WhiteButton>
+    </ResultStyled>
+  );
+}
+
+export default Result;
