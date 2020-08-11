@@ -38,7 +38,7 @@ function TopCardsList() {
     <section className="card-section">
       <div className="wrapper">
         <div className="grid">
-          {cardListData.map(({ user }, index) => (
+          {cardListData.map((user, index) => (
             <CardSocial key={index} {...user} />
           ))}
         </div>

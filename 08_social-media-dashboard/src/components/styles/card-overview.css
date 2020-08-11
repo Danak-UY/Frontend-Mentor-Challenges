@@ -1,0 +1,39 @@
+.card-small {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-row-gap: 1.5rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  background-color: var(--card-bg);
+  padding: 2rem;
+}
+
+.card-small:hover {
+  background-color: var(--card-bg-opaque);
+}
+
+.card-small p {
+  margin: 0;
+  transition: 0.3s ease;
+}
+
+.card-small p:nth-child(2n) {
+  text-align: right;
+}
+
+.card-small .card-small-title {
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.card-small .card-small-numbers {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.card-small .card-today {
+  align-self: flex-end;
+  margin-bottom: 0.25rem;
+}
