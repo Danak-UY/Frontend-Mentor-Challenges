@@ -7,11 +7,7 @@ import Header from "./components/Header";
 import Wrapper from "./components/Wrapper";
 
 const AppStyled = styled.main`
-  background-image: radial-gradient(
-    circle at top,
-    hsl(214, 47%, 23%) 10%,
-    hsl(237, 49%, 15%)
-  );
+  background-image: var(--radial-gradient);
   min-height: 100vh;
   padding: 2rem;
 `;
