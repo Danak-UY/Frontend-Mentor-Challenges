@@ -15,8 +15,8 @@ function CardOverview({
         <SocialMediaImage socialMedia={socialMedia} />
       </p>
       <p className="card-small-numbers">{followersNumbersOverview}</p>
-      <p className="card-today followers-up">
-        <span>{percentage}</span>%
+      <p className={`card-today followers-${percentage >= 0 ? "up" : "down"}`}>
+        <span>{Math.abs(percentage)}</span>%
       </p>
     </article>
   );

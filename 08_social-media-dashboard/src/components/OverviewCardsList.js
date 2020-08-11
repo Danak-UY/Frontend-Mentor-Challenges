@@ -67,7 +67,7 @@ const cardSmallList = [
 
 function OverviewCardsList() {
   return (
-    <section class="overview-cards">
+    <section className="overview-cards">
       <div className="wrapper">
         <h2 className="page-subtitle">Overview - Today</h2>
         <div className="grid">
