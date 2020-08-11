@@ -49,10 +49,11 @@ const projects = [
       "techs": ["html", "css", "js"]
     },
     {
+      "projectLink": "https://epic-johnson-c6a2b8.netlify.app/",
       "folder": "./08_Social-media-dashboard-with-theme-swithcher/",
       "title": "Social media dashboard with theme switcher",
       "originalLink": "https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H",
       "description": "This challenge will be a perfect chance to practice your Grid skills. The color theme switcher also adds a nice additional test.",
-      "techs": ["html", "css", "js"]
+      "techs": ["html", "css", "react"]
     },
 ]
