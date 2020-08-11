@@ -16,6 +16,7 @@ const HeaderStyled = styled.div`
     text-transform: uppercase;
     font-size: 1.25rem;
     line-height: 1rem;
+    text-shadow: 0px 0px 8px var(--dark-text);
   }
 `;
 

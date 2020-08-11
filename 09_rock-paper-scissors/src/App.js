@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
 import Table from "./components/Table";
+import Rules from "./components/Rules";
 
 const AppStyled = styled.main`
   background-image: var(--radial-gradient);
@@ -29,7 +30,7 @@ function App() {
         <div className="app-content">
           <Header />
           <Table />
-          <Header />
+          <Rules />
         </div>
       </Wrapper>
     </AppStyled>

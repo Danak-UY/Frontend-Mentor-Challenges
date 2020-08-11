@@ -52,7 +52,7 @@ function Token({ name }) {
   return (
     <TokenStyled color={tokenColors[name]}>
       <div className="box">
-        <img src={`./images/icon-${name}.svg`} alt="Name Token" />
+        <img src={`./images/icon-${name}.svg`} alt={`${name} Token`} />
       </div>
     </TokenStyled>
   );
