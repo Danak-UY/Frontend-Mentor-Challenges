@@ -1,19 +1,34 @@
 import React from "react";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 import "./App.css";
 
-import Country from "./components/Country";
+import CountryList from "./components/CountryList";
+
+const initialState = {
+  countryList: [],
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "SET_COUNTRY_LIST": {
+      return { ...state, countryList: action.payload };
+    }
+    default: {
+      return state;
+    }
+  }
+}
+
+const store = createStore(reducer, initialState);
 
 function App() {
   return (
-    <div className="App">
-      <Country
-        flag="https://restcountries.eu/data/gbr.svg"
-        name="United Kingdom"
-        population={65110000}
-        region="Europe"
-        capital="London"
-      />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <CountryList />
+      </div>
+    </Provider>
   );
 }
 
