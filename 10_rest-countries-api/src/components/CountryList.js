@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Country from "./Country";
 
 const CountryListStyled = styled.div`
-  padding: 2rem;
+  padding: 0 4rem;
   display: grid;
   justify-content: center
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -14,7 +14,17 @@ const CountryListStyled = styled.div`
 
 function CountryList() {
   const dispatch = useDispatch();
-  const countryList = useSelector((state) => state.countryList);
+
+  const countryListByName = useSelector((state) => state.countryListByName);
+
+  const countryList = useSelector((state) => {
+    if (state.filterByRegion !== "" || state.filterByRegion !== "") {
+      console.log("Country List Filtered", state.coutryFilteredList);
+      return state.coutryFilteredList;
+    }
+    console.log("Country List Full", state.countryList);
+    return state.countryList;
+  });
 
   useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -31,7 +41,7 @@ function CountryList() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <CountryListStyled>
