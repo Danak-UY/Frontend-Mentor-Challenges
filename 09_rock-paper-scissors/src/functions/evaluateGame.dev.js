@@ -6,6 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = evaluateGame;
 
 function evaluateGame(userPicked, housePicked) {
+  console.log({
+    userPicked: userPicked,
+    housePicked: housePicked
+  });
   if (userPicked === "" || !housePicked === "") return;
   if (userPicked === housePicked) return "It's a draw!";
 

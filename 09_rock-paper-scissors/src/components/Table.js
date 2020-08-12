@@ -56,9 +56,10 @@ const TableStyled = styled.div`
 function Table() {
   //const [score, setScore] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [looping, setLooping] = useState(false);
   const [userPicked, setUserPicked] = useState("");
   const [housePicked, setHousePicked] = useState("");
-  const [gameResult, setGameResult] = useState("you win");
+  const [gameResult, setGameResult] = useState("");
 
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -66,20 +67,40 @@ function Table() {
 
   const availabeTokens = ["rock", "paper", "scissors", "lizard", "spock"];
 
-  function updateStatus(name) {
-    setHousePicked(availabeTokens[getRandomInt(0, availabeTokens.length)]);
-    setUserPicked(name);
+  function loopHousePick() {
+    return new Promise((res, rej) => {
+      const interval = setInterval(() => {
+        setHousePicked(getRandomToken());
+      }, 75);
+      setTimeout(() => {
+        clearInterval(interval);
+        setLooping(false);
+        res(getRandomToken());
+      }, 2000);
+    });
+  }
+
+  function getRandomToken() {
+    return availabeTokens[getRandomInt(0, availabeTokens.length)];
+  }
+
+  async function updateStatus(name) {
+    setLooping(true);
     setPlaying(true);
+    setUserPicked(name);
+    const housePick = await loopHousePick();
+    setHousePicked(housePick);
   }
 
   function handleTryAgainClick() {
     setUserPicked("");
     setHousePicked("");
     setPlaying(false);
+    setGameResult("");
   }
 
   useEffect(() => {
-    if (userPicked !== "" && housePicked !== "") {
+    if (userPicked !== "" && housePicked !== "" && !looping) {
       setGameResult(evaluateGame(userPicked, housePicked));
     }
   }, [userPicked, housePicked]);

@@ -26,8 +26,12 @@ const ResultStyled = styled.div`
 function Result({ title, handleClick }) {
   return (
     <ResultStyled>
-      <p>{title}</p>
-      <WhiteButton onClick={handleClick}>Play Again</WhiteButton>
+      {title !== "" && (
+        <>
+          <p>{title}</p>
+          <WhiteButton onClick={handleClick}>Play Again</WhiteButton>
+        </>
+      )}
     </ResultStyled>
   );
 }
