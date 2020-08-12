@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import Token from "./Token";
 import TokenPicked from "./TokenPicked";
 import Result from "./Result";
+
+import evaluateGame from "./../functions/evaluateGame";
 
 const TableStyled = styled.div`
   padding: 2rem 0;
@@ -68,17 +70,19 @@ function Table() {
     setHousePicked(availabeTokens[getRandomInt(0, availabeTokens.length)]);
     setUserPicked(name);
     setPlaying(true);
-
-    console.log({ userPicked, housePicked });
   }
 
   function handleTryAgainClick() {
-    console.log({ userPicked, housePicked });
-
     setUserPicked("");
     setHousePicked("");
     setPlaying(false);
   }
+
+  useEffect(() => {
+    if (userPicked !== "" && housePicked !== "") {
+      setGameResult(evaluateGame(userPicked, housePicked));
+    }
+  }, [userPicked, housePicked]);
 
   return (
     <TableStyled className={!playing ? "bg-pentagon" : ""}>

@@ -1,5 +1,4 @@
 import React from "react";
-import { CSSTransitionGroup } from "react-transition-group";
 import styled from "styled-components";
 
 const OverlayRulesStyled = styled.div`
@@ -64,19 +63,13 @@ const OverlayRulesStyled = styled.div`
 
 function OverlayRules({ handleClick }) {
   return (
-    <CSSTransitionGroup
-      transitionName="example"
-      transitionEnterTimeout={500}
-      transitionLeaveTimeout={300}
-    >
-      <OverlayRulesStyled>
-        <h2>Rules</h2>
-        <img src="./images/image-rules-bonus.svg" alt="Game Rules" />
-        <button className="close-button" onClick={handleClick}>
-          <img src="./images/icon-close.svg" alt="Close Icon" />
-        </button>
-      </OverlayRulesStyled>
-    </CSSTransitionGroup>
+    <OverlayRulesStyled>
+      <h2>Rules</h2>
+      <img src="./images/image-rules-bonus.svg" alt="Game Rules" />
+      <button className="close-button" onClick={handleClick}>
+        <img src="./images/icon-close.svg" alt="Close Icon" />
+      </button>
+    </OverlayRulesStyled>
   );
 }
 
