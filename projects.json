@@ -56,4 +56,12 @@ const projects = [
       "description": "This challenge will be a perfect chance to practice your Grid skills. The color theme switcher also adds a nice additional test.",
       "techs": ["html", "css", "react"]
     },
+    {
+      "projectLink": "https://condescending-ptolemy-52c31e.netlify.app/",
+      "folder": "./09_rock-paper-scissors/",
+      "title": "Rock, Paper, Scissors game",
+      "originalLink": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
+      "description": "This challenge will test your HTML, CSS and JavaScript skills. There's even a Rock, Paper, Scissors, Lizard, Spock version if you really want to challenge yourself.",
+      "techs": ["html", "css", "react"]
+    },
 ]

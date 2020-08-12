@@ -209,3 +209,11 @@ article figcaption p {
 .techs li.api {
   color: #21bd9d;
 }
+
+.techs li.bootstrap {
+  color: #7952B3;
+}
+
+.techs li.tailwind {
+  color: #38B2AC;
+}
