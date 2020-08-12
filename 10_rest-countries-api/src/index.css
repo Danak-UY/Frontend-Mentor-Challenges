@@ -31,11 +31,8 @@ body[data-theme: "dark" ] {
 }
 
 body {
-  --cl-elements: var(--dark-blue);
-  --cl-background: var(--very-dark-blue);
-  --cl-input: var(--dark-blue);
+  --cl-elements: var(--white);
+  --cl-background: var(--very-light-gray);
+  --cl-input: var(--dark-gray);
   --cl-text: var(--very-dark-blue);
-
-  font-family: var(--base-font-family);
-  font-size: var(--home-page-body);
 }
