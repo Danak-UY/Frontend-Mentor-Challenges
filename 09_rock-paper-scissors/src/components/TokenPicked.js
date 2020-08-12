@@ -16,10 +16,10 @@ const TokenPickedStyled = styled.div`
   }
 `;
 
-function TokenPicked({ token, title }) {
+function TokenPicked({ token, title, shadowAnimated = false }) {
   return (
     <TokenPickedStyled>
-      <Token name={token} />
+      <Token name={token} isShadowAnimated={shadowAnimated} />
       <p>{title}</p>
     </TokenPickedStyled>
   );

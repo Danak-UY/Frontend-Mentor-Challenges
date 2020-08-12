@@ -104,12 +104,12 @@ function Table() {
 
   useEffect(() => {
     if (userPicked !== "" && housePicked !== "" && !looping) {
-      const gameResult = evaluateGame(userPicked, housePicked);
-      setGameResult(gameResult);
-      if (gameResult.toLowerCase().includes("win")) {
+      const gameResultText = evaluateGame(userPicked, housePicked);
+      setGameResult(gameResultText);
+      if (gameResultText.toLowerCase().includes("win")) {
         setScore(score + 1);
       }
-      if (gameResult.toLowerCase().includes("looser")) {
+      if (gameResultText.toLowerCase().includes("looser")) {
         setScore(score - 1);
       }
     }
@@ -134,8 +134,16 @@ function Table() {
       ) : (
         <>
           <section className="in-game">
-            <TokenPicked token={userPicked} title="you picked" />
-            <TokenPicked token={housePicked} title="the house picked" />
+            <TokenPicked
+              token={userPicked}
+              title="you picked"
+              shadowAnimated={gameResult.toLowerCase().includes("win")}
+            />
+            <TokenPicked
+              token={housePicked}
+              title="the house picked"
+              shadowAnimated={gameResult.toLowerCase().includes("looser")}
+            />
           </section>
           <Result title={gameResult} handleClick={handleTryAgainClick} />
         </>

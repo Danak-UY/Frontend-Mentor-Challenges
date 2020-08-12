@@ -1,5 +1,15 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const shadowAnimation = keyframes`
+  to {
+    box-shadow: 
+      inset 0px -5px 0px hsla(229, 25%, 31%, 0.12),
+      0px 0px 0px 2rem hsla(237, 57%, 56%, .1), 
+      0px 0px 0px 4rem hsla(237, 57%, 56%, .05), 
+      0px 0px 0px 6rem hsla(237, 57%, 56%, .025);
+  }
+`;
 
 const TokenStyled = styled.button`
   width: 8rem;
@@ -13,6 +23,18 @@ const TokenStyled = styled.button`
   cursor: pointer;
   user-select: none;
   border: none;
+
+  animation: 0.8s
+    ${({ isShadowAnimated }) => (isShadowAnimated ? shadowAnimation : "")}
+    forwards;
+
+  ${({ isShadowAnimated }) =>
+    isShadowAnimated &&
+    `box-shadow: 
+      inset 0px -5px 0px hsla(229, 25%, 31%, 0.12),
+      0px 0px 0px 0rem hsla(237, 57%, 56%, .1), 
+      0px 0px 0px 0rem hsla(237, 57%, 56%, .05), 
+      0px 0px 0px 0rem hsla(237, 57%, 56%, .025);`}
 
   &:active {
     transform: scale(0.95);
@@ -50,13 +72,17 @@ const tokenColors = {
   "": "hsla(237, 49%, 15%, .2)",
 };
 
-function Token({ name = "", onClickEvent }) {
+function Token({ name = "", onClickEvent, isShadowAnimated = false }) {
   function handleClick() {
     if (onClickEvent) onClickEvent(name);
   }
 
   return (
-    <TokenStyled color={tokenColors[name]} onClick={handleClick}>
+    <TokenStyled
+      color={tokenColors[name]}
+      onClick={handleClick}
+      isShadowAnimated={isShadowAnimated}
+    >
       {name !== "" && (
         <div className="box">
           <img src={`./images/icon-${name}.svg`} alt={`${name} Token`} />
