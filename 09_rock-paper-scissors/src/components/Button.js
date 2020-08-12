@@ -35,4 +35,15 @@ export const WhiteButton = styled(ButtonStyled)`
   }
 `;
 
+export const LightButton = styled(ButtonStyled)`
+  background-color: transparent;
+  border: 2px solid var(--header-outline);
+  color: var(--header-outline);
+
+  &:hover {
+    background-color: var(--header-outline);
+    color: var(--white);
+  }
+`;
+
 export default Button;

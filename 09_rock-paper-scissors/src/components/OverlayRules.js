@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+
+import { LightButton } from "./Button";
+import { ScoreContext } from "./../App";
 
 const OverlayRulesStyled = styled.div`
   background-color: var(--white);
@@ -55,6 +58,10 @@ const OverlayRulesStyled = styled.div`
       align-self: flex-start;
     }
 
+    .reset-button {
+      margin-top: 2rem;
+    }
+
     .close-button {
       position: absolute;
       top: 2rem;
@@ -64,10 +71,20 @@ const OverlayRulesStyled = styled.div`
 `;
 
 function OverlayRules({ handleClick }) {
+  const { score, setScore } = useContext(ScoreContext);
+
+  function resetScore() {
+    setScore(0);
+    handleClick();
+  }
+
   return (
     <OverlayRulesStyled>
       <h2>Rules</h2>
       <img src="./images/image-rules-bonus.svg" alt="Game Rules" />
+      <LightButton className="reset-button" onClick={resetScore}>
+        Reset Score
+      </LightButton>
       <button className="close-button" onClick={handleClick}>
         <img src="./images/icon-close.svg" alt="Close Icon" />
       </button>

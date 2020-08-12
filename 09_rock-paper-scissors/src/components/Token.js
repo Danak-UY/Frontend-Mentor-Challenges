@@ -12,6 +12,12 @@ const shadowAnimation = keyframes`
   }
 `;
 
+const boxAnimation = keyframes`
+  to {
+    transform: rotateY(-360deg);
+  }
+`;
+
 const TokenStyled = styled.button`
   width: 8rem;
   height: 8rem;
@@ -69,6 +75,8 @@ const TokenStyled = styled.button`
   .box img {
     width: 2.5rem;
     height: auto;
+    animation: 0.8s
+      ${({ isShadowAnimated }) => (isShadowAnimated ? boxAnimation : "")};
   }
 
   @media screen and (min-width: 768px) {

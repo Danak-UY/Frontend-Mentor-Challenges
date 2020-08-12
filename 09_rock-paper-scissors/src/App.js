@@ -26,7 +26,7 @@ const AppStyled = styled.main`
 `;
 
 function App() {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(localStorage.getItem("rpsls_score") || 0);
   return (
     <ScoreContext.Provider value={{ score, setScore }}>
       <AppStyled>

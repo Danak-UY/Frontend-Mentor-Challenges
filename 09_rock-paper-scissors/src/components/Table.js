@@ -154,10 +154,14 @@ function Table() {
     }
   }, [looping]);
 
+  useEffect(() => {
+    localStorage.setItem("rpsls_score", score);
+  }, [score]);
+
   return (
     <TableStyled className={!playing ? "bg-pentagon" : ""}>
       {!playing ? (
-        <section class="out-game">
+        <section className="out-game">
           <div className="row">
             <Token name="rock" onClickEvent={updateStatus} />
           </div>
