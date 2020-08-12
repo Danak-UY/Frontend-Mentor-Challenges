@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 
 import Token from "./Token";
@@ -6,6 +6,7 @@ import TokenPicked from "./TokenPicked";
 import Result from "./Result";
 
 import evaluateGame from "./../functions/evaluateGame";
+import { ScoreContext } from "./../App";
 
 const TableStyled = styled.div`
   padding: 2rem 0;
@@ -54,7 +55,7 @@ const TableStyled = styled.div`
 `;
 
 function Table() {
-  //const [score, setScore] = useState(0);
+  const { score, setScore } = useContext(ScoreContext);
   const [playing, setPlaying] = useState(false);
   const [looping, setLooping] = useState(false);
   const [userPicked, setUserPicked] = useState("");
@@ -69,13 +70,15 @@ function Table() {
 
   function loopHousePick() {
     return new Promise((res, rej) => {
+      let loopPick = null;
       const interval = setInterval(() => {
-        setHousePicked(getRandomToken());
+        loopPick = getRandomToken();
+        setHousePicked(loopPick);
       }, 75);
       setTimeout(() => {
         clearInterval(interval);
         setLooping(false);
-        res(getRandomToken());
+        res(loopPick);
       }, 2000);
     });
   }
@@ -95,30 +98,37 @@ function Table() {
   function handleTryAgainClick() {
     setUserPicked("");
     setHousePicked("");
-    setPlaying(false);
     setGameResult("");
+    setPlaying(false);
   }
 
   useEffect(() => {
     if (userPicked !== "" && housePicked !== "" && !looping) {
-      setGameResult(evaluateGame(userPicked, housePicked));
+      const gameResult = evaluateGame(userPicked, housePicked);
+      setGameResult(gameResult);
+      if (gameResult.toLowerCase().includes("win")) {
+        setScore(score + 1);
+      }
+      if (gameResult.toLowerCase().includes("looser")) {
+        setScore(score - 1);
+      }
     }
-  }, [userPicked, housePicked]);
+  }, [looping]);
 
   return (
     <TableStyled className={!playing ? "bg-pentagon" : ""}>
       {!playing ? (
         <>
           <div className="row">
-            <Token name="rock" onClick={updateStatus} />
+            <Token name="rock" onClickEvent={updateStatus} />
           </div>
           <div className="row">
-            <Token name="spock" onClick={updateStatus} />
-            <Token name="paper" onClick={updateStatus} />
+            <Token name="spock" onClickEvent={updateStatus} />
+            <Token name="paper" onClickEvent={updateStatus} />
           </div>
           <div className="row">
-            <Token name="lizard" onClick={updateStatus} />
-            <Token name="scissors" onClick={updateStatus} />
+            <Token name="lizard" onClickEvent={updateStatus} />
+            <Token name="scissors" onClickEvent={updateStatus} />
           </div>
         </>
       ) : (

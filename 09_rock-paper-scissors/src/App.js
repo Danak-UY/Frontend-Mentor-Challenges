@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 
 import "./App.css";
 import styled from "styled-components";
@@ -7,6 +7,8 @@ import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
 import Table from "./components/Table";
 import Rules from "./components/Rules";
+
+export const ScoreContext = createContext();
 
 const AppStyled = styled.main`
   background-image: var(--radial-gradient);
@@ -24,16 +26,19 @@ const AppStyled = styled.main`
 `;
 
 function App() {
+  const [score, setScore] = useState(0);
   return (
-    <AppStyled>
-      <Wrapper>
-        <div className="app-content">
-          <Header />
-          <Table />
-          <Rules />
-        </div>
-      </Wrapper>
-    </AppStyled>
+    <ScoreContext.Provider value={{ score, setScore }}>
+      <AppStyled>
+        <Wrapper>
+          <div className="app-content">
+            <Header />
+            <Table />
+            <Rules />
+          </div>
+        </Wrapper>
+      </AppStyled>
+    </ScoreContext.Provider>
   );
 }
 

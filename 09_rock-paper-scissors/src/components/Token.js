@@ -50,9 +50,9 @@ const tokenColors = {
   "": "hsla(237, 49%, 15%, .2)",
 };
 
-function Token({ name = "", onClick = "" }) {
+function Token({ name = "", onClickEvent }) {
   function handleClick() {
-    onClick(name);
+    if (onClickEvent) onClickEvent(name);
   }
 
   return (
