@@ -49,18 +49,6 @@ const OverlayRulesStyled = styled.div`
     transform: translate(-50%, -50%);
     border-radius: 0.5rem;
 
-    &::before {
-      content: "";
-      width: 100vw;
-      height: 100vh;
-      background-color: red;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-
     h2 {
       margin-bottom: 1rem;
       font-size: 2rem;

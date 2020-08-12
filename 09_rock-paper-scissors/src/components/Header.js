@@ -18,6 +18,13 @@ const HeaderStyled = styled.div`
     line-height: 1rem;
     text-shadow: 0px 0px 8px var(--dark-text);
   }
+
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 1.5em;
+      line-height: 1.25rem;
+    }
+  }
 `;
 
 function Header() {

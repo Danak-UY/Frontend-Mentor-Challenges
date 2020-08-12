@@ -24,7 +24,6 @@ const TokenStyled = styled.button`
     0px 0px 0px 0rem hsla(237, 57%, 56%, 0.05),
     0px 0px 0px 0rem hsla(237, 57%, 56%, 0.025);
   padding: 1rem;
-  cursor: pointer;
   user-select: none;
   border: none;
 
@@ -34,33 +33,26 @@ const TokenStyled = styled.button`
 
   ${({ playing }) =>
     !playing &&
-    `
+    `    
+    cursor: pointer;
+
     &:active {
-      transform: scale(0.95);
+      transform: scale(0.8);
       box-shadow: inset 0px -8px 0px hsla(229, 25%, 31%, 0.12);
 
       & .box {
         box-shadow: inset 0px 6px 0px hsla(229, 25%, 31%, 0.12);
       }
     }
-    `}
 
-  &:active {
-    transform: scale(0.95);
-    box-shadow: inset 0px -8px 0px hsla(229, 25%, 31%, 0.12);
-
-    & .box {
-      box-shadow: inset 0px 6px 0px hsla(229, 25%, 31%, 0.12);
+    &:hover {
+      box-shadow: inset 0px -5px 0px hsla(229, 25%, 31%, 0.12),
+        0px 0px 0px 2rem hsla(237, 57%, 56%, 0.1),
+        0px 0px 0px 4rem hsla(237, 57%, 56%, 0.05),
+        0px 0px 0px 6rem hsla(237, 57%, 56%, 0.025);
+      transform: scale(1.1) rotateZ(20deg);
     }
-  }
-
-  &:hover {
-    box-shadow: inset 0px -5px 0px hsla(229, 25%, 31%, 0.12),
-      0px 0px 0px 2rem hsla(237, 57%, 56%, 0.1),
-      0px 0px 0px 4rem hsla(237, 57%, 56%, 0.05),
-      0px 0px 0px 6rem hsla(237, 57%, 56%, 0.025);
-    transform: scale(1.3) rotateZ(20deg);
-  }
+    `}
 
   .box {
     flex: 1;
@@ -88,9 +80,22 @@ const TokenStyled = styled.button`
       width: 12rem;
       height: 12rem;
       padding: 1.2rem;
+      box-shadow: inset 0px -10px 0px hsla(229, 25%, 31%, 0.12);
+
+      .box {
+        box-shadow: inset 0px 8px 0px hsla(229, 25%, 31%, 0.12);
+      }
 
       .box img {
-        width: 4rem
+        width: 4rem;
+      }
+    `}
+
+    ${({ playing }) =>
+      !playing &&
+      `      
+      &:hover {
+        transform: scale(1.3) rotateZ(20deg);
       }
     `}
   }
@@ -106,7 +111,7 @@ const TokenStyled = styled.button`
       padding: 1.4rem;
 
       .box img {
-        width: 5rem
+        width: 5rem;
       }
     `}
   }

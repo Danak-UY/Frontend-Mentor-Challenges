@@ -44,6 +44,20 @@ const RulesStyled = styled.div`
     }
   }
 
+  &::before {
+    display: ${({ visible }) => (visible === true ? "block" : "none")};
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(237, 49%, 15%);
+    opacity: 0.8;
+  }
+
   @media screen and (min-width: 768px) {
     position: absolute;
     bottom: 2rem;
@@ -60,7 +74,7 @@ function Rules() {
   }
 
   return (
-    <RulesStyled>
+    <RulesStyled visible={visible}>
       {visible && <OverlayRules handleClick={handleToggleClick} />}
       <Button onClick={handleToggleClick}>Rules</Button>
     </RulesStyled>
