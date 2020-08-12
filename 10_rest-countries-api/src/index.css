@@ -1,0 +1,41 @@
+:root {
+  --home-page-body: 14px;
+  --detail-page-body: 16px;
+  --base-font-family: "Nunito Sans", sans-serif;
+
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue: hsl(207, 26%, 17%);
+  --very-darker-blue: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--home-page-body);
+}
+
+body[data-theme: "dark" ] {
+  --cl-elements: var(--dark-blue);
+  --cl-background: var(--very-dark-blue);
+  --cl-input: var(--dark-blue);
+  --cl-text: var(--very-dark-blue);
+}
+
+body {
+  --cl-elements: var(--dark-blue);
+  --cl-background: var(--very-dark-blue);
+  --cl-input: var(--dark-blue);
+  --cl-text: var(--very-dark-blue);
+
+  font-family: var(--base-font-family);
+  font-size: var(--home-page-body);
+}
