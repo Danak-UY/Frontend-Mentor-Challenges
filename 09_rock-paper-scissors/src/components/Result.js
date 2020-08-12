@@ -21,6 +21,10 @@ const ResultStyled = styled.div`
   Button {
     min-width: 15rem;
   }
+
+  @media screen and (min-width: 768px) {
+    margin-top: -65vh;
+  }
 `;
 
 function Result({ title, handleClick }) {

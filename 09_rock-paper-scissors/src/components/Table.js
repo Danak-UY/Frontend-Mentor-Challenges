@@ -26,30 +26,69 @@ const TableStyled = styled.div`
     animation-play-state: paused;
   }
 
-  & .row:nth-child(1) {
-    margin-bottom: -3rem;
-    display: flex;
-    justify-content: center;
-  }
-  & .row:nth-child(2) {
-    display: flex;
-    justify-content: space-between;
-  }
-  & .row:nth-child(3) {
-    display: flex;
-    justify-content: center;
-    grid-gap: 2rem;
-  }
-
   .in-game {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 
+  .out-game {
+    padding: 2rem 0;
+    display: grid;
+    grid-gap: 2rem;
+    max-width: 30rem;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+
+    & .row:nth-child(1) {
+      margin-bottom: -3rem;
+      display: flex;
+      justify-content: center;
+      flex: 1;
+    }
+    & .row:nth-child(2) {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+    }
+    & .row:nth-child(3) {
+      display: flex;
+      justify-content: center;
+      grid-gap: 2rem;
+      flex: 1;
+    }
+  }
+
   @keyframes spin {
     to {
       transform: rotate(360deg);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    flex: 1;
+    max-width: initial;
+
+    .in-game {
+      justify-content: space-between;
+    }
+
+    &.bg-pentagon {
+      background-size: 45vh;
+    }
+
+    .out-game {
+      & .row:nth-child(1) {
+        margin-bottom: -4rem;
+      }
+      & .row:nth-child(2) {
+        flex: 1;
+      }
+      & .row:nth-child(3) {
+        display: flex;
+        grid-gap: 6rem;
+      }
     }
   }
 `;
@@ -118,7 +157,7 @@ function Table() {
   return (
     <TableStyled className={!playing ? "bg-pentagon" : ""}>
       {!playing ? (
-        <>
+        <section class="out-game">
           <div className="row">
             <Token name="rock" onClickEvent={updateStatus} />
           </div>
@@ -130,7 +169,7 @@ function Table() {
             <Token name="lizard" onClickEvent={updateStatus} />
             <Token name="scissors" onClickEvent={updateStatus} />
           </div>
-        </>
+        </section>
       ) : (
         <>
           <section className="in-game">

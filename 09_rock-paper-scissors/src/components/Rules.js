@@ -43,6 +43,13 @@ const RulesStyled = styled.div`
       }
     }
   }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0;
+  }
 `;
 
 function Rules() {

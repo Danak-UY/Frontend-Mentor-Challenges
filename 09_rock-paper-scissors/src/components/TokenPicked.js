@@ -14,12 +14,21 @@ const TokenPickedStyled = styled.div`
     margin-top: 1rem;
     letter-spacing: 2px;
   }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column-reverse;
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+    }
+  }
 `;
 
 function TokenPicked({ token, title, shadowAnimated = false }) {
   return (
     <TokenPickedStyled>
-      <Token name={token} isShadowAnimated={shadowAnimated} />
+      <Token name={token} isShadowAnimated={shadowAnimated} playing={true} />
       <p>{title}</p>
     </TokenPickedStyled>
   );

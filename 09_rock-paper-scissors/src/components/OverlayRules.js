@@ -38,26 +38,40 @@ const OverlayRulesStyled = styled.div`
     }
   }
 
-  .example-enter {
-    opacity: 0.01;
-    top: 100%;
-  }
+  @media screen and (min-width: 768px) {
+    top: 50%;
+    left: 50%;
+    right: initial;
+    bottom: initial;
+    width: auto;
+    height: auto;
+    padding: 2rem;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
 
-  .example-enter.example-enter-active {
-    opacity: 1;
-    top: 0;
-    transition: 500ms ease-in;
-  }
+    &::before {
+      content: "";
+      width: 100vw;
+      height: 100vh;
+      background-color: red;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
 
-  .example-leave {
-    opacity: 1;
-    top: 0;
-  }
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      align-self: flex-start;
+    }
 
-  .example-leave.example-leave-active {
-    opacity: 0.01;
-    top: 100%;
-    transition: 300ms ease-in;
+    .close-button {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
   }
 `;
 
