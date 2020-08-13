@@ -64,4 +64,12 @@ const projects = [
       "description": "This challenge will test your HTML, CSS and JavaScript skills. There's even a Rock, Paper, Scissors, Lizard, Spock version if you really want to challenge yourself.",
       "techs": ["html", "css", "react"]
     },
+    {
+      "projectLink": "https://stupefied-pasteur-be942b.netlify.app/",
+      "folder": "./10_rest-countries-api/",
+      "title": "REST Countries API",
+      "originalLink": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
+      "description": "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
+      "techs": ["html", "css", "react"]
+    },
 ]
