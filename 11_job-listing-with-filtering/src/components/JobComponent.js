@@ -1,7 +1,16 @@
 import React from "react";
 
-const JobComponent = () => {
-  return <div>Hi, i am a job</div>;
+const JobComponent = ({
+  Job,
+  Location,
+  Date,
+  Featured,
+  Org,
+  Photo,
+  Type,
+  Techs,
+}) => {
+  return <div>{Job}</div>;
 };
 
 export default JobComponent;

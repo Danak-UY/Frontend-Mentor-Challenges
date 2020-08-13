@@ -37,7 +37,11 @@ const JobComponentList = () => {
 
   return (
     <main>
-      <JobComponent />
+      {jobsList.length === 0 ? (
+        <p>Loaging</p>
+      ) : (
+        jobsList.map((job, index) => <JobComponent {...job} key={index} />)
+      )}
     </main>
   );
 };
