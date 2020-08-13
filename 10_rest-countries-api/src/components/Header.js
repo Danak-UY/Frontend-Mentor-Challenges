@@ -31,6 +31,12 @@ const HeaderStyled = styled.div`
       font-size: 1.5rem;
     }
   }
+
+  @media screen and (min-width: 1024px) {
+    .header-content {
+      padding: 0 2rem;
+    }
+  }
 `;
 
 function Header() {

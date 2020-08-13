@@ -45,6 +45,7 @@ function CountryList() {
 
   return (
     <Wrapper>
+      {/* {countryList.length === 0 && countryList.length} */}
       <CountryListStyled>
         {countryList.map(
           ({ flag, name, population, region, capital, alpha3Code }) => {
