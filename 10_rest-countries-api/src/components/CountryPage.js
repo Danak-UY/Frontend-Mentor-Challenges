@@ -6,6 +6,8 @@ import Wrapper from "./Wrapper";
 import Button from "./Button";
 import CountrySelected from "./CountrySelected";
 
+import stringToSlug from "./functions/stringToSlug";
+
 const CountryPageStyled = styled.div`
   padding: 2rem;
 `;
@@ -36,6 +38,15 @@ function CountryPage({ match, history }) {
     history.goBack();
   }
 
+  function updateCountry(countrySelected) {
+    setCountry(countrySelected);
+    history.push(
+      `/country/${stringToSlug(countrySelected.name)}/${
+        countrySelected.alpha3Code
+      }`
+    );
+  }
+
   return (
     <Wrapper>
       <CountryPageStyled>
@@ -46,7 +57,7 @@ function CountryPage({ match, history }) {
             text="back"
           />
         </div>
-        <CountrySelected {...country} />
+        <CountrySelected {...country} handleClick={updateCountry} />
       </CountryPageStyled>
     </Wrapper>
   );

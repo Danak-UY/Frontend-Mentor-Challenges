@@ -10,6 +10,11 @@ const CountryStyled = styled.div`
   background-color: var(--cl-elements);
   box-shadow: 0px 4px 12px 0px hsla(200, 15%, 8%, 0.04);
   cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 4px 16px 0px hsla(200, 15%, 8%, 0.08);
+  }
 
   .country-flag {
     img {

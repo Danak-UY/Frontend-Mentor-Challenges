@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import formatNumbers from "./functions/formatNumbers";
-import stringToSlug from "./functions/stringToSlug";
 
 import Button from "./Button";
 
@@ -93,6 +92,7 @@ function CountrySelected({
   languages = [],
   borders = [],
   alpha3Code,
+  handleClick,
 }) {
   const history = useHistory();
   const countryList = useSelector((state) => state.countryList);
@@ -100,18 +100,23 @@ function CountrySelected({
 
   function findBorders(countryBordersCodes) {
     if (countryBordersCodes.length === 0) return [];
-    console.log("Array Borders", countryBordersCodes);
-    console.log(countryList);
     const list = countryList.filter((item) =>
       countryBordersCodes.includes(item.alpha3Code)
     );
-    console.log("Borders List Filtered", list);
     return list;
   }
 
+  function findCountryByName(countryName) {
+    if (countryName === "") return null;
+    const [country] = countryList.filter((item) =>
+      item.name.toLowerCase().includes(countryName.toLowerCase())
+    );
+    return country;
+  }
+
   function updateCountry(ev) {
-    console.log(ev.target);
-    //istory.push(`/country/${stringToSlug(name)}/${alpha3Code}`);
+    const countrySelected = findCountryByName(ev.target.innerHTML);
+    handleClick(countrySelected);
   }
 
   useEffect(() => {
@@ -169,7 +174,7 @@ function CountrySelected({
                   text={item.name}
                   key={index}
                   handleClick={updateCountry}
-                  dataItem={item.alpha3Code}
+                  data-item-set={item.alpha3Code}
                 />
               ))}
             </div>

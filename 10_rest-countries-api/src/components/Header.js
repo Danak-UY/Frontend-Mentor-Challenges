@@ -25,6 +25,12 @@ const HeaderStyled = styled.div`
     text-decoration: none;
     color: var(--cl-text);
   }
+
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 function Header() {
