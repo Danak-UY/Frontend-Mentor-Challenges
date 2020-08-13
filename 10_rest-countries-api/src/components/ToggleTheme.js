@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 const ToggleThemeStyled = styled.label`
@@ -38,11 +38,19 @@ const ToggleThemeStyled = styled.label`
 
 function ToggleTheme() {
   const ref = useRef();
+  const [btnIcon, setBtnIcon] = useState("moon-outline");
+  const [btnText, setBtnText] = useState("Dark mode");
+
   function handleChange() {
-    console.log(ref);
-    ref.current.checked
-      ? document.body.setAttribute("data-theme", "dark")
-      : document.body.removeAttribute("data-theme", "dark");
+    if (ref.current.checked) {
+      document.body.setAttribute("data-theme", "dark");
+      setBtnText("Light mode");
+      setBtnIcon("sunny-outline");
+    } else {
+      document.body.removeAttribute("data-theme", "dark");
+      setBtnText("Dark mode");
+      setBtnIcon("moon-outline");
+    }
   }
 
   function evaluateTheme(mq) {
@@ -58,14 +66,14 @@ function ToggleTheme() {
 
   return (
     <ToggleThemeStyled>
+      <ion-icon name={btnIcon}></ion-icon>
       <input
         type="checkbox"
         id="toggle-theme"
         onChange={handleChange}
         ref={ref}
       />
-      <ion-icon name="moon-outline"></ion-icon>
-      Dark Mode
+      <span>{btnText}</span>
     </ToggleThemeStyled>
   );
 }
