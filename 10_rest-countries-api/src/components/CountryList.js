@@ -2,14 +2,19 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
+import Wrapper from "./Wrapper";
 import Country from "./Country";
 
 const CountryListStyled = styled.div`
   padding: 0 4rem;
   display: grid;
-  justify-content: center
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   grid-gap: 3rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 2rem;
+  }
 `;
 
 function CountryList() {
@@ -18,11 +23,9 @@ function CountryList() {
   const countryListByName = useSelector((state) => state.countryListByName);
 
   const countryList = useSelector((state) => {
-    if (state.filterByRegion !== "" || state.filterByRegion !== "") {
-      console.log("Country List Filtered", state.coutryFilteredList);
+    if (state.filterByRegion !== "" || state.filterByName !== "") {
       return state.coutryFilteredList;
     }
-    console.log("Country List Full", state.countryList);
     return state.countryList;
   });
 
@@ -36,7 +39,6 @@ function CountryList() {
           type: "SET_COUNTRY_LIST",
           payload: list,
         });
-        console.log(list.length);
       })
       .catch((error) => {
         console.log(error);
@@ -44,20 +46,25 @@ function CountryList() {
   }, [dispatch]);
 
   return (
-    <CountryListStyled>
-      {countryList.map(({ flag, name, population, region, capital }, index) => {
-        return (
-          <Country
-            key={index}
-            flag={flag}
-            name={name}
-            population={population}
-            region={region}
-            capital={capital}
-          />
-        );
-      })}
-    </CountryListStyled>
+    <Wrapper>
+      <CountryListStyled>
+        {countryList
+          .filter(({ cioc }) => cioc)
+          .map(({ flag, name, population, region, capital, cioc }) => {
+            return (
+              <Country
+                key={cioc}
+                flag={flag}
+                name={name}
+                population={population}
+                region={region}
+                capital={capital}
+                cioc={cioc}
+              />
+            );
+          })}
+      </CountryListStyled>
+    </Wrapper>
   );
 }
 

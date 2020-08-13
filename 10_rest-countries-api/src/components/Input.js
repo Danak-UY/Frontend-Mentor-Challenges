@@ -6,6 +6,7 @@ const InputStyled = styled.label`
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
+  background-color: var(--cl-elements);
 
   ion-icon {
     font-size: 1.5rem;

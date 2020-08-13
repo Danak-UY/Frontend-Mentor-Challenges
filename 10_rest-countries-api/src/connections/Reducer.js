@@ -1,5 +1,5 @@
 function filterByRegion(list, region) {
-  return list.filter((country) => country.region === region);
+  return list.filter((country) => country.region === region || region === "");
 }
 function filterByName(list, name) {
   return list.filter((country) =>
@@ -25,7 +25,6 @@ export default function reducer(state, action) {
       }
       const coutryFilteredList = filterByName(list, filterText);
 
-      console.log("Filtered by name", coutryFilteredList);
       return {
         ...state,
         coutryFilteredList,
@@ -50,7 +49,6 @@ export default function reducer(state, action) {
         );
       }
 
-      console.log("Filtered by region", coutryFilteredList);
       return {
         ...state,
         coutryFilteredList,

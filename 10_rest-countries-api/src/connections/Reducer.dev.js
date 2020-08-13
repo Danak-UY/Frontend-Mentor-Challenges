@@ -13,7 +13,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function filterByRegion(list, region) {
   return list.filter(function (country) {
-    return country.region === region;
+    return country.region === region || region === "";
   });
 }
 
@@ -49,7 +49,6 @@ function reducer(state, action) {
         }
 
         var coutryFilteredList = filterByName(list, filterText);
-        console.log("Filtered by name", coutryFilteredList);
         return _objectSpread({}, state, {
           coutryFilteredList: coutryFilteredList,
           filterByName: filterText
@@ -73,7 +72,6 @@ function reducer(state, action) {
           _coutryFilteredList = filterByName(_coutryFilteredList, state.filterByName);
         }
 
-        console.log("Filtered by region", _coutryFilteredList);
         return _objectSpread({}, state, {
           coutryFilteredList: _coutryFilteredList,
           filterByRegion: regionSelected

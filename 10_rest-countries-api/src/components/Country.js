@@ -1,19 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 import formatNumbers from "./functions/formatNumbers";
+import stringToSlug from "./functions/stringToSlug";
 
 const CountryStyled = styled.div`
   border-radius: 0.5rem;
   background-color: var(--cl-elements);
   box-shadow: 0px 4px 12px 0px hsla(200, 15%, 8%, 0.04);
+  cursor: pointer;
 
   .country-flag {
     img {
       border-radius: 0.5rem 0.5rem 0 0;
       max-width: 100%;
       height: auto;
-      transform: translate;
       object-fit: cover;
     }
   }
@@ -35,9 +37,13 @@ const CountryStyled = styled.div`
   }
 `;
 
-function Country({ flag, name, population, region, capital }) {
+function Country({ flag, name, population, region, capital, cioc }) {
+  const history = useHistory();
+  function handleClick() {
+    history.push(`/country/${stringToSlug(name)}/${cioc}`);
+  }
   return (
-    <CountryStyled>
+    <CountryStyled onClick={handleClick}>
       <div className="country-flag">
         <img loading="lazy" src={flag} alt={`${name} flag`} />
       </div>
