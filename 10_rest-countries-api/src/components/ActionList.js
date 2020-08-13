@@ -10,7 +10,7 @@ const ActionListStyled = styled.div`
   .grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 3rem;
+    grid-gap: 2rem;
   }
 
   @media screen and (min-width: 768px) {

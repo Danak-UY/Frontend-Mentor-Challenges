@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Input from "./Input";
 
@@ -35,10 +35,20 @@ const SearchStyled = styled.div`
       color: var(--cl-input);
     }
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 50rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 35rem;
+  }
 `;
 
 function Search() {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(
+    useSelector((state) => state.filterByName)
+  );
   const dispatch = useDispatch();
 
   const filterByName = (ev) => {

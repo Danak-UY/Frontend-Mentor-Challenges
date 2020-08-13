@@ -17,10 +17,11 @@ const CountryStyled = styled.div`
   }
 
   .country-flag {
+    overflow: hidden;
     img {
       border-radius: 0.5rem 0.5rem 0 0;
-      max-width: 100%;
-      height: auto;
+      width: 100%;
+      height: 15rem;
       object-fit: cover;
     }
   }
@@ -37,6 +38,14 @@ const CountryStyled = styled.div`
 
       strong {
         font-weight: 600;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .country-flag {
+      img {
+        height: 12rem;
       }
     }
   }

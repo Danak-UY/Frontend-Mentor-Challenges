@@ -5,4 +5,5 @@ body {
   background-color: var(--cl-background);
   color: var(--cl-text);
   font-weight: 300;
+  min-height: 100vh;
 }
