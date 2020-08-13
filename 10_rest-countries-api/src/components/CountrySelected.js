@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 import formatNumbers from "./functions/formatNumbers";
 
@@ -94,7 +93,6 @@ function CountrySelected({
   alpha3Code,
   handleClick,
 }) {
-  const history = useHistory();
   const countryList = useSelector((state) => state.countryList);
   const [bordersList, setBordersList] = useState([]);
 

@@ -27,6 +27,7 @@ const SearchStyled = styled.div`
 
     &:hover {
       background-color: var(--cl-background);
+      transform: translateY(-50%) rotate(90deg);
     }
 
     ion-icon {

@@ -14,6 +14,7 @@ const ButtonStyled = styled.button`
   align-items: center;
   cursor: pointer;
   font-family: var(--base-font-family);
+  color: var(--cl-text);
 
   &:hover {
     background-color: var(--cl-background);

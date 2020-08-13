@@ -19,17 +19,18 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  transition: 0.3s ease;
 }
 
 html {
   font-size: var(--home-page-body);
 }
 
-body[data-theme: "dark" ] {
+body[data-theme="dark"] {
   --cl-elements: var(--dark-blue);
   --cl-background: var(--very-dark-blue);
-  --cl-input: var(--dark-blue);
-  --cl-text: var(--very-dark-blue);
+  --cl-input: var(--very-light-gray);
+  --cl-text: var(--white);
 }
 
 body {

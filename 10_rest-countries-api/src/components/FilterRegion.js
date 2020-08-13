@@ -8,7 +8,6 @@ const FilterRegionStyled = styled.select`
 
 function FilterRegion() {
   const dispatch = useDispatch();
-  const filterByRegion = useSelector((state) => state.filterByRegion);
 
   function filterByRegionAction(ev) {
     const regionSelected = ev.target.value;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -8,8 +8,8 @@ import Country from "./Country";
 const CountryListStyled = styled.div`
   padding: 0 4rem;
   display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  justify-content: flex-start;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   grid-gap: 3rem;
 
   @media screen and (min-width: 768px) {
