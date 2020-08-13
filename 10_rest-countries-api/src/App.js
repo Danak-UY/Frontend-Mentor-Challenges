@@ -31,7 +31,7 @@ function App() {
               <ActionList />
               <CountryList />
             </Route>
-            <Route path="/country/:slug/:id" component={CountryPage} />
+            <Route path="/country/:slug/:countryCode" component={CountryPage} />
           </Switch>
         </div>
       </Router>

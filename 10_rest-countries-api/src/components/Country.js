@@ -37,10 +37,10 @@ const CountryStyled = styled.div`
   }
 `;
 
-function Country({ flag, name, population, region, capital, cioc }) {
+function Country({ flag, name, population, region, capital, alpha3Code }) {
   const history = useHistory();
   function handleClick() {
-    history.push(`/country/${stringToSlug(name)}/${cioc}`);
+    history.push(`/country/${stringToSlug(name)}/${alpha3Code}`);
   }
   return (
     <CountryStyled onClick={handleClick}>

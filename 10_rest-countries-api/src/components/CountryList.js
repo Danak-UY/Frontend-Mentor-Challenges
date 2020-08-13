@@ -20,8 +20,6 @@ const CountryListStyled = styled.div`
 function CountryList() {
   const dispatch = useDispatch();
 
-  const countryListByName = useSelector((state) => state.countryListByName);
-
   const countryList = useSelector((state) => {
     if (state.filterByRegion !== "" || state.filterByName !== "") {
       return state.coutryFilteredList;
@@ -48,21 +46,21 @@ function CountryList() {
   return (
     <Wrapper>
       <CountryListStyled>
-        {countryList
-          .filter(({ cioc }) => cioc)
-          .map(({ flag, name, population, region, capital, cioc }) => {
+        {countryList.map(
+          ({ flag, name, population, region, capital, alpha3Code }) => {
             return (
               <Country
-                key={cioc}
+                key={alpha3Code}
                 flag={flag}
                 name={name}
                 population={population}
                 region={region}
                 capital={capital}
-                cioc={cioc}
+                alpha3Code={alpha3Code}
               />
             );
-          })}
+          }
+        )}
       </CountryListStyled>
     </Wrapper>
   );
