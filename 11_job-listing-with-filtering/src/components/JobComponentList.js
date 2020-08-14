@@ -19,7 +19,7 @@ const JobComponentList = () => {
       .select({
         // maxRecords: 6,
         // pageSize: 2,
-        sort: [{ field: "Date", direction: "desc" }],
+        sort: [{ field: "date", direction: "desc" }],
       })
       .eachPage(
         function page(records, fetchNextPage) {
@@ -36,9 +36,9 @@ const JobComponentList = () => {
   }, []);
 
   return (
-    <main>
+    <main className="p-8 max-w-screen-xl mx-auto grid sm:grid-cols-2 lg:grid-cols-1 gap-8 row-gap-10">
       {jobsList.length === 0 ? (
-        <p>Loaging</p>
+        <p>Loading</p>
       ) : (
         jobsList.map((job, index) => <JobComponent {...job} key={index} />)
       )}
