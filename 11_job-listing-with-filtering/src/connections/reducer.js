@@ -6,24 +6,22 @@ export default function reducer(state, action) {
     }
     case "FILTER_BY_TAGS": {
       const tagSelected = action.payload;
-      console.log(tagSelected);
-
       let currentFilter = state.filterTags;
       if (currentFilter.includes(action.payload)) return { ...state };
 
-      let jobsFiltered =
+      let jobsFilteredList =
         currentFilter.length === 0 ? state.jobsList : state.jobsFilteredList;
 
-      jobsFiltered = jobsFiltered.filter((job) =>
+      jobsFilteredList = jobsFilteredList.filter((job) =>
         job.techs.includes(tagSelected)
       );
 
       currentFilter.push(tagSelected);
-      console.log(jobsFiltered);
+      // console.log(jobsFiltered);
       return {
         ...state,
+        jobsFilteredList,
         filterTags: currentFilter,
-        jobsFilteredList: jobsFiltered,
       };
     }
     case "CLEAR_FILTER": {
@@ -33,6 +31,6 @@ export default function reducer(state, action) {
       return { ...state, filterTags, jobsFilteredList };
     }
     default:
-      return state;
+      return { ...state };
   }
 }

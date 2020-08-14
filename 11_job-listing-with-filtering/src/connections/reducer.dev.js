@@ -24,32 +24,31 @@ function reducer(state, action) {
     case "FILTER_BY_TAGS":
       {
         var tagSelected = action.payload;
-        console.log(tagSelected);
         var currentFilter = state.filterTags;
         if (currentFilter.includes(action.payload)) return _objectSpread({}, state);
-        var jobsFiltered = currentFilter.length === 0 ? state.jobsList : state.jobsFilteredList;
-        jobsFiltered = jobsFiltered.filter(function (job) {
+        var jobsFilteredList = currentFilter.length === 0 ? state.jobsList : state.jobsFilteredList;
+        jobsFilteredList = jobsFilteredList.filter(function (job) {
           return job.techs.includes(tagSelected);
         });
-        currentFilter.push(tagSelected);
-        console.log(jobsFiltered);
+        currentFilter.push(tagSelected); // console.log(jobsFiltered);
+
         return _objectSpread({}, state, {
-          filterTags: currentFilter,
-          jobsFilteredList: jobsFiltered
+          jobsFilteredList: jobsFilteredList,
+          filterTags: currentFilter
         });
       }
 
     case "CLEAR_FILTER":
       {
         var filterTags = [];
-        var jobsFilteredList = [];
+        var _jobsFilteredList = [];
         return _objectSpread({}, state, {
           filterTags: filterTags,
-          jobsFilteredList: jobsFilteredList
+          jobsFilteredList: _jobsFilteredList
         });
       }
 
     default:
-      return state;
+      return _objectSpread({}, state);
   }
 }

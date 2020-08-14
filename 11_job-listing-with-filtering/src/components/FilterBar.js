@@ -6,7 +6,9 @@ import TagFilter from "./TagFilter";
 
 const FilterBar = () => {
   const dispatch = useDispatch();
-  const filterTags = useSelector((state) => state.filterTags);
+  const filterTags = useSelector((state) => {
+    return state.filterTags;
+  });
   function clearFilter() {
     dispatch({
       type: "CLEAR_FILTER",
@@ -17,9 +19,9 @@ const FilterBar = () => {
     <Wrapper>
       <section className="bg-white py-6 px-8 rounded-lg shadow-lg flex items-center justify-between -mt-24">
         <div className="flex flex-wrap">
-          <TagFilter text="Frontend" />
-          <TagFilter text="HTML" />
-          <TagFilter text="CSS" />
+          {filterTags.map((tag, index) => (
+            <TagFilter text={tag} key={index} />
+          ))}
         </div>
         <button
           className="text-cyan-darkGraysh hover:text-primary bg-transparent border-none font-bold leading-none"
