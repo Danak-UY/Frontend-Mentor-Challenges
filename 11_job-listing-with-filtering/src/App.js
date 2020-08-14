@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {filterTags.length !== 0 && <FilterBar />}
+      {!filterTags.length !== 0 && <FilterBar />}
       <JobComponentList />
     </div>
   );

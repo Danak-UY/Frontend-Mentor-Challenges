@@ -15,6 +15,7 @@ function reducer(state, action) {
   switch (action.type) {
     case "SET_JOBS_LIST":
       {
+        console.log(action.payload);
         return _objectSpread({}, state, {
           jobsList: action.payload
         });
@@ -22,7 +23,30 @@ function reducer(state, action) {
 
     case "FILTER_BY_TAGS":
       {
-        return _objectSpread({}, state);
+        var tagSelected = action.payload;
+        console.log(tagSelected);
+        var currentFilter = state.filterTags;
+        if (currentFilter.includes(action.payload)) return _objectSpread({}, state);
+        var jobsFiltered = currentFilter.length === 0 ? state.jobsList : state.jobsFilteredList;
+        jobsFiltered = jobsFiltered.filter(function (job) {
+          return job.techs.includes(tagSelected);
+        });
+        currentFilter.push(tagSelected);
+        console.log(jobsFiltered);
+        return _objectSpread({}, state, {
+          filterTags: currentFilter,
+          jobsFilteredList: jobsFiltered
+        });
+      }
+
+    case "CLEAR_FILTER":
+      {
+        var filterTags = [];
+        var jobsFilteredList = [];
+        return _objectSpread({}, state, {
+          filterTags: filterTags,
+          jobsFilteredList: jobsFilteredList
+        });
       }
 
     default:

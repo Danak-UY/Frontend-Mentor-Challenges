@@ -14,10 +14,9 @@ let base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE);
 const JobComponentList = () => {
   const dispatch = useDispatch();
   const jobsList = useSelector((state) => {
-    return state.jobsList;
+    if (state.filterTags.length === 0) return state.jobsList;
+    return state.jobsFilteredList;
   });
-
-  console.log(jobsList);
 
   useEffect(() => {
     base("Jobs")

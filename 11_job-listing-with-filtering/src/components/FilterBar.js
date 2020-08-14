@@ -9,7 +9,7 @@ const FilterBar = () => {
   const filterTags = useSelector((state) => state.filterTags);
   function clearFilter() {
     dispatch({
-      type: "SET_CLEAR_FILTER",
+      type: "CLEAR_FILTER",
       payload: [],
     });
   }
