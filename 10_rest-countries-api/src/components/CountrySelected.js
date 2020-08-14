@@ -163,7 +163,7 @@ function CountrySelected({
             </p>
           </div>
         </div>
-        {bordersList !== [] && (
+        {bordersList.length !== 0 && (
           <>
             <h3>Border Countries:</h3>
             <div className="borders">

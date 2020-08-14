@@ -120,7 +120,6 @@ article figure .buttons {
 
 article figure .buttons a {
   padding: 1rem;
-  border-radius: 2rem;
   text-transform: uppercase;
   color: white;
   text-decoration: none;
@@ -129,10 +128,10 @@ article figure .buttons a {
   font-weight: 500;
   font-family: "Inter", sans-serif;
   letter-spacing: 2px;
-  border-radius: 2rem 0 0 2rem;
-  background-color: #aa86f1;
+  background-color: #7d5ac5;
   transition: .3s ease;
   flex: 4;
+  white-space: nowrap;
 }
 
 article figure .buttons a:hover {
@@ -140,8 +139,13 @@ article figure .buttons a:hover {
 }
 
 article figure .buttons .project-button {
-  background-color: #7d5ac5;
+  background-color: #aa86f1;
   border-radius: 0 2rem 2rem 0;
+}
+
+article figure .buttons .code-button {
+  background-color: #aa86f1;
+  border-radius: 2rem 0 0 2rem;
 }
 
 article figcaption {
@@ -168,6 +172,14 @@ article figcaption p {
   line-height: 1.4;
   color: #8d8d8d;
   margin-bottom: 1rem;
+}
+
+article figcaption .link-source {
+  color: #8d8d8d;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .8rem;
+  text-decoration: none;
 }
 
 .techs {

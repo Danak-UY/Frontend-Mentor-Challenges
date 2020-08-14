@@ -1,4 +1,4 @@
-{{#with project}} {{evaluateLink folder projectLink}}
+{{#with project}} {{evaluateLink folder projectLink}} {{githubLink folder }}
 <figure>
   <a href="{{projectLink}}">
     <img src="{{folder}}design/desktop-preview.jpg" alt="Project Preview" />
@@ -15,8 +15,9 @@
     </div>
   </figcaption>
   <div class="buttons">
-    <a href="{{originalLink}}" target="_blank">Original</a>
-    <a href="{{projectLink}}" class="project-button">Project</a>
+    <a href="{{originalLink}}" target="_blank" class="code-button">Idea</a>
+    <a href="{{projectLink}}">Demo</a>
+    <a href="{{codeLink}}" class="project-button" target="_blank">Code</a>
   </div>
 </figure>
 {{/with}}

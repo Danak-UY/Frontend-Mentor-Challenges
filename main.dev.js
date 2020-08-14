@@ -6,6 +6,9 @@ var projectsDOM = document.querySelector("main");
 Handlebars.registerHelper("evaluateLink", function (folder, link, options) {
   if (!link) options.data.root.project["projectLink"] = folder;
 });
+Handlebars.registerHelper("githubLink", function (folder, options) {
+  options.data.root.project["codeLink"] = "https://github.com/Danak-UY/Frontend-Mentor-Challenges/tree/master/" + folder;
+});
 fetch(fileUrl).then(function (r) {
   return r.text();
 }).then(function (t) {

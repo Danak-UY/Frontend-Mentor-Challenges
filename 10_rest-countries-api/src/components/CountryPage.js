@@ -20,7 +20,7 @@ function CountryPage({ match, history }) {
   const [country, setCountry] = useState(DBcountry);
 
   useEffect(() => {
-    if (!country) {
+    if (!country || country.alpha3Code !== match.params.countryCode) {
       fetch("https://restcountries.eu/rest/v2/alpha/" + countryCode)
         .then((response) => {
           return response.json();

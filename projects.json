@@ -73,7 +73,7 @@ const projects = [
       "techs": ["html", "css", "react"]
     },
     {
-      "projectLink": "https://stupefied-pasteur-be942b.netlify.app/",
+      "projectLink": "https://nifty-yonath-b5ea44.netlify.app/",
       "folder": "./11_job-listing-with-filtering/",
       "title": "Job Listing with Filtering",
       "originalLink": "https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt",

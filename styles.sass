@@ -134,7 +134,6 @@ article
 
       a
         padding: 1rem
-        border-radius: 2rem
         text-transform: uppercase
         color: $white
         text-decoration: none
@@ -142,18 +141,21 @@ article
         text-align: center
         font-weight: 500
         font-family: $base-font-family
-        letter-spacing: 2px
-        border-radius: 2rem 0 0 2rem      
-        background-color: $soft-purple
+        letter-spacing: 2px     
+        background-color: $purple
         transition: .3s ease
         flex: 4
+        white-space: nowrap
 
         &:hover
           flex: 5
 
       .project-button
-        background-color: $purple
+        background-color: $soft-purple
         border-radius: 0 2rem 2rem 0
+      .code-button
+        background-color: $soft-purple
+        border-radius: 2rem 0 0 2rem
 
 
   figcaption
@@ -176,6 +178,13 @@ article
       line-height: 1.4
       color: $gray
       margin-bottom: 1rem
+
+    .link-source
+      color: $gray
+      text-transform: uppercase
+      font-weight: 600
+      font-size: .8rem
+      text-decoration: none
 
 .techs
   list-style: none

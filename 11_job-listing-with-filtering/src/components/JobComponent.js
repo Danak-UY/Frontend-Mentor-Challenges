@@ -12,7 +12,6 @@ const JobComponent = ({
   org,
   logo,
   type,
-  techs,
   role,
   level,
   languages,
