@@ -32,17 +32,22 @@ const JobComponent = ({
 
   return (
     <article
-      className={`flex flex-col lg:flex-row bg-white shadow-lg p-6 pt-12 lg:p-6 justify-between align-center rounded-lg transition-shadow duration-300 ease hover:shadow-xl 
-      ${days < 5 ? "border-l-4 border-primary" : ""}`}
+      className={`flex flex-col lg:flex-row bg-white shadow-lg p-6 pl-8 pt-12 lg:p-6 justify-between align-center rounded-lg transition-shadow duration-300 ease hover:shadow-xl relative 
+      ${featured ? "featured-border" : ""}`}
     >
       <div className="flex flex-col lg:flex-row items-start lg:items-center  pb-4 lg:p-0 relative">
         <div className="absolute w-16 lg:static lg:w-auto" style={LogoStyle}>
-          <img src={logo[0].url} alt={`${org} logo`} className="w-full" />
+          <img
+            loading="lazy"
+            src={logo[0].url}
+            alt={`${org} logo`}
+            className="w-full"
+          />
         </div>
         <div className="lg:ml-4">
           <div className="flex items-center mb-2">
             <h3 className="text-primary font-bold text-primary mr-2">{org}</h3>
-            {days < 3 && <Badge text="NEW!" color="bg-primary" />}
+            {days <= 5 && <Badge text="NEW!" color="bg-primary" />}
             {featured && (
               <Badge text="featured" color="bg-cyan-veryDarkGraysh" />
             )}

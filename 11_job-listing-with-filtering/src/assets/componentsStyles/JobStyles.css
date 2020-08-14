@@ -3,3 +3,14 @@ p span:not(:last-of-type)::after {
   padding: 0 0.75rem;
   transform: scale(1.2);
 }
+
+.featured-border::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  background-color: hsl(180, 29%, 50%);
+  border-radius: 0.5rem 0 0 0.5rem;
+}
