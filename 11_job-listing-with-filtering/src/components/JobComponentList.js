@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Airtable from "airtable";
 
+import Wrapper from "./Wrapper";
 import JobComponent from "./JobComponent";
 
 Airtable.configure({
@@ -36,13 +37,15 @@ const JobComponentList = () => {
   }, []);
 
   return (
-    <main className="p-8 max-w-screen-xl mx-auto grid sm:grid-cols-2 lg:grid-cols-1 gap-8 row-gap-16 lg:row-gap-10">
-      {jobsList.length === 0 ? (
-        <p>Loading</p>
-      ) : (
-        jobsList.map((job, index) => <JobComponent {...job} key={index} />)
-      )}
-    </main>
+    <Wrapper>
+      <main className="grid sm:grid-cols-2 lg:grid-cols-1 gap-8 row-gap-16 lg:row-gap-10">
+        {jobsList.length === 0 ? (
+          <p>Loading</p>
+        ) : (
+          jobsList.map((job, index) => <JobComponent {...job} key={index} />)
+        )}
+      </main>
+    </Wrapper>
   );
 };
 
