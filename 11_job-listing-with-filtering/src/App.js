@@ -14,6 +14,10 @@ let base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE);
 
 function App() {
   const dispatch = useDispatch();
+  const jobsList = useSelector((state) => {
+    if (state.filterTags.length === 0) return state.jobsList;
+    return state.jobsFilteredList;
+  });
   const filterTags = useSelector((state) => state.filterTags);
 
   useEffect(() => {
@@ -48,8 +52,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {filterTags.length !== 0 ? <FilterBar /> : <br />}
-      <JobComponentList />
+      {filterTags.length !== 0 && <FilterBar />}
+      <JobComponentList jobsList={jobsList} />
     </div>
   );
 }

@@ -6,8 +6,11 @@ import TagFilter from "./TagFilter";
 
 const FilterBar = () => {
   const dispatch = useDispatch();
-  const filterTags = useSelector((state) => {
-    return state.filterTags;
+  const filterTags = useSelector((state) => state.filterTags);
+
+  const jobsList = useSelector((state) => {
+    if (state.filterTags.length === 0) return state.jobsList;
+    return state.jobsFilteredList;
   });
   function clearFilter() {
     dispatch({
