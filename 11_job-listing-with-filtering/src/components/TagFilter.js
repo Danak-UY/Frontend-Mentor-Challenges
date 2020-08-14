@@ -19,7 +19,7 @@ const TagFilter = ({ text }) => {
         onClick={removeTag}
       >
         <img
-          src="https://image.flaticon.com/icons/svg/1828/1828774.svg"
+          src="./images/close-icon.svg"
           alt="Close icon"
           className="w-4 inline select-none pointer-events-none"
           style={ImageStyles}

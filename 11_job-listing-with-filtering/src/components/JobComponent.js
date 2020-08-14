@@ -13,8 +13,18 @@ const JobComponent = ({
   logo,
   type,
   techs,
+  role,
+  level,
+  languages,
+  tools,
 }) => {
   const [days] = useState(calculateDays(date));
+  const [jobTechs] = useState([
+    role,
+    level,
+    ...(languages || []),
+    ...(tools || []),
+  ]);
 
   function calculateDays(date) {
     const jobDate = new Date(date);
@@ -63,7 +73,8 @@ const JobComponent = ({
         </div>
       </div>
       <div className="flex items-center flex-wrap lg:border-none border-cyan-lightGraysh border-t-2 pt-3 lg:p-0">
-        {techs && techs.map((tech, index) => <Tag key={index} text={tech} />)}
+        {jobTechs &&
+          jobTechs.map((tech, index) => <Tag key={index} text={tech} />)}
       </div>
     </article>
   );

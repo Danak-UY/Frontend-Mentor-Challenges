@@ -11,6 +11,24 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function filterJobsByTags(list, tags) {
+  tags.forEach(function (tag) {
+    list = list.filter(function (job) {
+      var techs = [job.role, job.level].concat(_toConsumableArray(job.languages || []), _toConsumableArray(job.tools || []));
+      return techs.includes(tag);
+    });
+  });
+  return list;
+}
+
 function reducer(state, action) {
   switch (action.type) {
     case "SET_JOBS_LIST":
@@ -24,38 +42,39 @@ function reducer(state, action) {
     case "FILTER_BY_TAGS":
       {
         var tagSelected = action.payload;
-        var currentFilter = state.filterTags;
-        if (currentFilter.includes(action.payload)) return _objectSpread({}, state);
-        var jobsFilteredList = currentFilter.length === 0 ? state.jobsList : state.jobsFilteredList;
-        jobsFilteredList = jobsFilteredList.filter(function (job) {
-          return job.techs.includes(tagSelected);
-        });
-        currentFilter.push(tagSelected); // console.log(jobsFiltered);
-
+        var filterTags = state.filterTags;
+        if (filterTags.includes(tagSelected)) return _objectSpread({}, state);
+        filterTags.push(tagSelected);
+        var jobsFilteredList = filterJobsByTags(state.jobsList, filterTags);
         return _objectSpread({}, state, {
-          jobsFilteredList: jobsFilteredList,
-          filterTags: currentFilter
+          filterTags: filterTags,
+          jobsFilteredList: jobsFilteredList
         });
       }
 
     case "REMOVE_FILTER_TAG":
       {
         if (state.filterTags.length === 0) return _objectSpread({}, state);
-        var filterTags = state.filterTags.filter(function (tag) {
+
+        var _filterTags = state.filterTags.filter(function (tag) {
           return tag !== action.payload;
         });
+
+        var _jobsFilteredList = filterJobsByTags(state.jobsList, _filterTags);
+
         return _objectSpread({}, state, {
-          filterTags: filterTags
+          filterTags: _filterTags,
+          jobsFilteredList: _jobsFilteredList
         });
       }
 
     case "CLEAR_FILTER":
       {
-        var _filterTags = [];
-        var _jobsFilteredList = [];
+        var _filterTags2 = [];
+        var _jobsFilteredList2 = [];
         return _objectSpread({}, state, {
-          filterTags: _filterTags,
-          jobsFilteredList: _jobsFilteredList
+          filterTags: _filterTags2,
+          jobsFilteredList: _jobsFilteredList2
         });
       }
 
