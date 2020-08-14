@@ -45,10 +45,6 @@ function App() {
       );
   }, []);
 
-  useEffect(() => {
-    console.log("Filtro", filterTags);
-  }, [filterTags]);
-
   return (
     <div className="App">
       <Header />
