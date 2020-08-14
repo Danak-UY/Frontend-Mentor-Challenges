@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Airtable from "airtable";
 
 import Wrapper from "./Wrapper";
@@ -11,7 +12,10 @@ Airtable.configure({
 let base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE);
 
 const JobComponentList = () => {
-  const [jobsList, setJobsList] = useState([]);
+  const dispatch = useDispatch();
+  const jobsList = useSelector((state) => {
+    return state.jobsList;
+  });
 
   console.log(jobsList);
 
@@ -24,7 +28,11 @@ const JobComponentList = () => {
       })
       .eachPage(
         function page(records, fetchNextPage) {
-          setJobsList(records.map((record) => record.fields));
+          // setJobsList(records.map((record) => record.fields));
+          dispatch({
+            type: "SET_JOBS_LIST",
+            payload: records.map((record) => record.fields),
+          });
           // fetchNextPage();
         },
         function done(err) {

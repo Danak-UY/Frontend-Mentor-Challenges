@@ -1161,13 +1161,13 @@ video {
 
 .divide-white > :not(template) ~ :not(template) {
   --divide-opacity: 1;
-  border-color: rgb(255,255,255);
+  border-color: rgb(255, 255, 255);
   border-color: rgba(255, 255, 255, var(--divide-opacity));
 }
 
 .divide-black > :not(template) ~ :not(template) {
   --divide-opacity: 1;
-  border-color: rgb(0,0,0);
+  border-color: rgb(0, 0, 0);
   border-color: rgba(0, 0, 0, var(--divide-opacity));
 }
 
@@ -1287,13 +1287,13 @@ video {
 
 .bg-white {
   --bg-opacity: 1;
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
 .bg-black {
   --bg-opacity: 1;
-  background-color: rgb(0,0,0);
+  background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, var(--bg-opacity));
 }
 
@@ -1329,13 +1329,13 @@ video {
 
 .hover\:bg-white:hover {
   --bg-opacity: 1;
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
 .hover\:bg-black:hover {
   --bg-opacity: 1;
-  background-color: rgb(0,0,0);
+  background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, var(--bg-opacity));
 }
 
@@ -1371,13 +1371,13 @@ video {
 
 .focus\:bg-white:focus {
   --bg-opacity: 1;
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
 .focus\:bg-black:focus {
   --bg-opacity: 1;
-  background-color: rgb(0,0,0);
+  background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, var(--bg-opacity));
 }
 
@@ -1553,13 +1553,13 @@ video {
 
 .border-white {
   --border-opacity: 1;
-  border-color: rgb(255,255,255);
+  border-color: rgb(255, 255, 255);
   border-color: rgba(255, 255, 255, var(--border-opacity));
 }
 
 .border-black {
   --border-opacity: 1;
-  border-color: rgb(0,0,0);
+  border-color: rgb(0, 0, 0);
   border-color: rgba(0, 0, 0, var(--border-opacity));
 }
 
@@ -1595,13 +1595,13 @@ video {
 
 .hover\:border-white:hover {
   --border-opacity: 1;
-  border-color: rgb(255,255,255);
+  border-color: rgb(255, 255, 255);
   border-color: rgba(255, 255, 255, var(--border-opacity));
 }
 
 .hover\:border-black:hover {
   --border-opacity: 1;
-  border-color: rgb(0,0,0);
+  border-color: rgb(0, 0, 0);
   border-color: rgba(0, 0, 0, var(--border-opacity));
 }
 
@@ -1637,13 +1637,13 @@ video {
 
 .focus\:border-white:focus {
   --border-opacity: 1;
-  border-color: rgb(255,255,255);
+  border-color: rgb(255, 255, 255);
   border-color: rgba(255, 255, 255, var(--border-opacity));
 }
 
 .focus\:border-black:focus {
   --border-opacity: 1;
-  border-color: rgb(0,0,0);
+  border-color: rgb(0, 0, 0);
   border-color: rgba(0, 0, 0, var(--border-opacity));
 }
 
@@ -4779,13 +4779,13 @@ video {
 
 .placeholder-white::placeholder {
   --placeholder-opacity: 1;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   color: rgba(255, 255, 255, var(--placeholder-opacity));
 }
 
 .placeholder-black::placeholder {
   --placeholder-opacity: 1;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   color: rgba(0, 0, 0, var(--placeholder-opacity));
 }
 
@@ -4821,13 +4821,13 @@ video {
 
 .focus\:placeholder-white:focus::placeholder {
   --placeholder-opacity: 1;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   color: rgba(255, 255, 255, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-black:focus::placeholder {
   --placeholder-opacity: 1;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   color: rgba(0, 0, 0, var(--placeholder-opacity));
 }
 
@@ -5177,13 +5177,13 @@ video {
 
 .text-white {
   --text-opacity: 1;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
 .text-black {
   --text-opacity: 1;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   color: rgba(0, 0, 0, var(--text-opacity));
 }
 
@@ -5219,13 +5219,13 @@ video {
 
 .hover\:text-white:hover {
   --text-opacity: 1;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
 .hover\:text-black:hover {
   --text-opacity: 1;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   color: rgba(0, 0, 0, var(--text-opacity));
 }
 
@@ -5261,13 +5261,13 @@ video {
 
 .focus\:text-white:focus {
   --text-opacity: 1;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
 .focus\:text-black:focus {
   --text-opacity: 1;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   color: rgba(0, 0, 0, var(--text-opacity));
 }
 
@@ -8803,13 +8803,13 @@ video {
 
   .sm\:divide-white > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--divide-opacity));
   }
 
   .sm\:divide-black > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--divide-opacity));
   }
 
@@ -8929,13 +8929,13 @@ video {
 
   .sm\:bg-white {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .sm\:bg-black {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -8971,13 +8971,13 @@ video {
 
   .sm\:hover\:bg-white:hover {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .sm\:hover\:bg-black:hover {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -9013,13 +9013,13 @@ video {
 
   .sm\:focus\:bg-white:focus {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .sm\:focus\:bg-black:focus {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -9195,13 +9195,13 @@ video {
 
   .sm\:border-white {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .sm\:border-black {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -9237,13 +9237,13 @@ video {
 
   .sm\:hover\:border-white:hover {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .sm\:hover\:border-black:hover {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -9279,13 +9279,13 @@ video {
 
   .sm\:focus\:border-white:focus {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .sm\:focus\:border-black:focus {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -12421,13 +12421,13 @@ video {
 
   .sm\:placeholder-white::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-black::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--placeholder-opacity));
   }
 
@@ -12463,13 +12463,13 @@ video {
 
   .sm\:focus\:placeholder-white:focus::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-black:focus::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--placeholder-opacity));
   }
 
@@ -12819,13 +12819,13 @@ video {
 
   .sm\:text-white {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .sm\:text-black {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -12861,13 +12861,13 @@ video {
 
   .sm\:hover\:text-white:hover {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .sm\:hover\:text-black:hover {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -12903,13 +12903,13 @@ video {
 
   .sm\:focus\:text-white:focus {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .sm\:focus\:text-black:focus {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -16402,13 +16402,13 @@ video {
 
   .md\:divide-white > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--divide-opacity));
   }
 
   .md\:divide-black > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--divide-opacity));
   }
 
@@ -16528,13 +16528,13 @@ video {
 
   .md\:bg-white {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .md\:bg-black {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -16570,13 +16570,13 @@ video {
 
   .md\:hover\:bg-white:hover {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .md\:hover\:bg-black:hover {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -16612,13 +16612,13 @@ video {
 
   .md\:focus\:bg-white:focus {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .md\:focus\:bg-black:focus {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -16794,13 +16794,13 @@ video {
 
   .md\:border-white {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .md\:border-black {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -16836,13 +16836,13 @@ video {
 
   .md\:hover\:border-white:hover {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .md\:hover\:border-black:hover {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -16878,13 +16878,13 @@ video {
 
   .md\:focus\:border-white:focus {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .md\:focus\:border-black:focus {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -20020,13 +20020,13 @@ video {
 
   .md\:placeholder-white::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .md\:placeholder-black::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--placeholder-opacity));
   }
 
@@ -20062,13 +20062,13 @@ video {
 
   .md\:focus\:placeholder-white:focus::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-black:focus::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--placeholder-opacity));
   }
 
@@ -20418,13 +20418,13 @@ video {
 
   .md\:text-white {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .md\:text-black {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -20460,13 +20460,13 @@ video {
 
   .md\:hover\:text-white:hover {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .md\:hover\:text-black:hover {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -20502,13 +20502,13 @@ video {
 
   .md\:focus\:text-white:focus {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .md\:focus\:text-black:focus {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -24001,13 +24001,13 @@ video {
 
   .lg\:divide-white > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--divide-opacity));
   }
 
   .lg\:divide-black > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--divide-opacity));
   }
 
@@ -24127,13 +24127,13 @@ video {
 
   .lg\:bg-white {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .lg\:bg-black {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -24169,13 +24169,13 @@ video {
 
   .lg\:hover\:bg-white:hover {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .lg\:hover\:bg-black:hover {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -24211,13 +24211,13 @@ video {
 
   .lg\:focus\:bg-white:focus {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .lg\:focus\:bg-black:focus {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -24393,13 +24393,13 @@ video {
 
   .lg\:border-white {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .lg\:border-black {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -24435,13 +24435,13 @@ video {
 
   .lg\:hover\:border-white:hover {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .lg\:hover\:border-black:hover {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -24477,13 +24477,13 @@ video {
 
   .lg\:focus\:border-white:focus {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .lg\:focus\:border-black:focus {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -27619,13 +27619,13 @@ video {
 
   .lg\:placeholder-white::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-black::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--placeholder-opacity));
   }
 
@@ -27661,13 +27661,13 @@ video {
 
   .lg\:focus\:placeholder-white:focus::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-black:focus::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--placeholder-opacity));
   }
 
@@ -28017,13 +28017,13 @@ video {
 
   .lg\:text-white {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .lg\:text-black {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -28059,13 +28059,13 @@ video {
 
   .lg\:hover\:text-white:hover {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .lg\:hover\:text-black:hover {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -28101,13 +28101,13 @@ video {
 
   .lg\:focus\:text-white:focus {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .lg\:focus\:text-black:focus {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -31600,13 +31600,13 @@ video {
 
   .xl\:divide-white > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--divide-opacity));
   }
 
   .xl\:divide-black > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--divide-opacity));
   }
 
@@ -31726,13 +31726,13 @@ video {
 
   .xl\:bg-white {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .xl\:bg-black {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -31768,13 +31768,13 @@ video {
 
   .xl\:hover\:bg-white:hover {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .xl\:hover\:bg-black:hover {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -31810,13 +31810,13 @@ video {
 
   .xl\:focus\:bg-white:focus {
     --bg-opacity: 1;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, var(--bg-opacity));
   }
 
   .xl\:focus\:bg-black:focus {
     --bg-opacity: 1;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, var(--bg-opacity));
   }
 
@@ -31992,13 +31992,13 @@ video {
 
   .xl\:border-white {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .xl\:border-black {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -32034,13 +32034,13 @@ video {
 
   .xl\:hover\:border-white:hover {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .xl\:hover\:border-black:hover {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -32076,13 +32076,13 @@ video {
 
   .xl\:focus\:border-white:focus {
     --border-opacity: 1;
-    border-color: rgb(255,255,255);
+    border-color: rgb(255, 255, 255);
     border-color: rgba(255, 255, 255, var(--border-opacity));
   }
 
   .xl\:focus\:border-black:focus {
     --border-opacity: 1;
-    border-color: rgb(0,0,0);
+    border-color: rgb(0, 0, 0);
     border-color: rgba(0, 0, 0, var(--border-opacity));
   }
 
@@ -35218,13 +35218,13 @@ video {
 
   .xl\:placeholder-white::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-black::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--placeholder-opacity));
   }
 
@@ -35260,13 +35260,13 @@ video {
 
   .xl\:focus\:placeholder-white:focus::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-black:focus::placeholder {
     --placeholder-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--placeholder-opacity));
   }
 
@@ -35616,13 +35616,13 @@ video {
 
   .xl\:text-white {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .xl\:text-black {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -35658,13 +35658,13 @@ video {
 
   .xl\:hover\:text-white:hover {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .xl\:hover\:text-black:hover {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
@@ -35700,13 +35700,13 @@ video {
 
   .xl\:focus\:text-white:focus {
     --text-opacity: 1;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .xl\:focus\:text-black:focus {
     --text-opacity: 1;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, var(--text-opacity));
   }
 
