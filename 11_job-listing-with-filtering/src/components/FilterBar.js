@@ -31,6 +31,7 @@ const FilterBar = () => {
               key={index}
               timeout={500}
               classNames="fade"
+              key={index}
             >
               <TagFilter text={tag} key={index} />
             </CSSTransition>

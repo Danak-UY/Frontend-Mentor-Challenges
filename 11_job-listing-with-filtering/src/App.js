@@ -50,6 +50,16 @@ function App() {
       <Header />
       {filterTags.length !== 0 && <FilterBar />}
       <JobComponentList jobsList={jobsList} />
+      <p className="p-4 mb-4 text-center text-cyan-darkGraysh">
+        Want to populate the web?
+        <a
+          href="https://airtable.com/shrRRNlqGAqYuaAw4"
+          target="_blank"
+          className="text-primary no-underline hover:text-cyan-darkGraysh transition-color duration-200 ease ml-2"
+        >
+          Upload a fake job! 📮
+        </a>
+      </p>
     </div>
   );
 }

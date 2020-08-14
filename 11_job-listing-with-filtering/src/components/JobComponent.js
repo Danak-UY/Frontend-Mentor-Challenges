@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Badge from "./Badge";
 import Tag from "./Tag";
 
@@ -19,12 +19,16 @@ const JobComponent = ({
   tools,
 }) => {
   const [days] = useState(calculateDays(date));
-  const [jobTechs] = useState([
+  const [jobTechs, setJobTechs] = useState([
     role,
     level,
     ...(languages || []),
     ...(tools || []),
   ]);
+
+  useEffect(() => {
+    setJobTechs([role, level, ...(languages || []), ...(tools || [])]);
+  }, [job]);
 
   function calculateDays(date) {
     const jobDate = new Date(date);

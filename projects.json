@@ -72,4 +72,12 @@ const projects = [
       "description": "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
       "techs": ["html", "css", "react"]
     },
+    {
+      "projectLink": "https://stupefied-pasteur-be942b.netlify.app/",
+      "folder": "./11_job-listing-with-filtering/",
+      "title": "Job Listing with Filtering",
+      "originalLink": "https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt",
+      "description": "In this challenge, you'll be using JavaScript to filter out jobs based on the categories selected.",
+      "techs": ["html", "tailwind", "react"]
+    },
 ]

@@ -33,7 +33,6 @@ function reducer(state, action) {
   switch (action.type) {
     case "SET_JOBS_LIST":
       {
-        console.log(action.payload);
         return _objectSpread({}, state, {
           jobsList: action.payload
         });
