@@ -38,12 +38,23 @@ function reducer(state, action) {
         });
       }
 
+    case "REMOVE_FILTER_TAG":
+      {
+        if (state.filterTags.length === 0) return _objectSpread({}, state);
+        var filterTags = state.filterTags.filter(function (tag) {
+          return tag !== action.payload;
+        });
+        return _objectSpread({}, state, {
+          filterTags: filterTags
+        });
+      }
+
     case "CLEAR_FILTER":
       {
-        var filterTags = [];
+        var _filterTags = [];
         var _jobsFilteredList = [];
         return _objectSpread({}, state, {
-          filterTags: filterTags,
+          filterTags: _filterTags,
           jobsFilteredList: _jobsFilteredList
         });
       }

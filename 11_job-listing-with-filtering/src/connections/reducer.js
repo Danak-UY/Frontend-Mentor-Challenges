@@ -4,6 +4,7 @@ export default function reducer(state, action) {
       console.log(action.payload);
       return { ...state, jobsList: action.payload };
     }
+
     case "FILTER_BY_TAGS": {
       const tagSelected = action.payload;
       let currentFilter = state.filterTags;
@@ -24,6 +25,17 @@ export default function reducer(state, action) {
         filterTags: currentFilter,
       };
     }
+
+    case "REMOVE_FILTER_TAG": {
+      if (state.filterTags.length === 0) return { ...state };
+
+      const filterTags = state.filterTags.filter(
+        (tag) => tag !== action.payload
+      );
+
+      return { ...state, filterTags };
+    }
+
     case "CLEAR_FILTER": {
       const filterTags = [];
       const jobsFilteredList = [];
