@@ -8,12 +8,13 @@ import ToggleTheme from "./ToggleTheme";
 const HeaderStyled = styled.div`
   background-color: var(--cl-elements);
   box-shadow: 0px 4px 12px 0px hsla(200, 15%, 8%, 0.08);
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 0;
 
   .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
   }
 
   h1 {

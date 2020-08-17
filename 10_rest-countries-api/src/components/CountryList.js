@@ -17,6 +17,26 @@ const CountryListStyled = styled.div`
   }
 `;
 
+const ErrorMessage = styled.p`
+  padding: 0 2rem;
+  text-align: center;
+  color: var(--cl-input);
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+  margin: 2rem 0;
+
+  a {
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: var(--cl-text);
+      text-decoration: underline;
+    }
+  }
+`;
+
 function CountryList() {
   const dispatch = useDispatch();
   const filterByName = useSelector((state) => state.filterByName);
@@ -54,28 +74,27 @@ function CountryList() {
 
   return (
     <Wrapper>
+      {countryList.length === 0 && filterByName !== "" && (
+        <ErrorMessage>
+          No countries match the filters, let's{" "}
+          <a onClick={clearFilter}>clear the filter</a>
+        </ErrorMessage>
+      )}
       <CountryListStyled>
-        {countryList.length === 0 && filterByName !== "" ? (
-          <p>
-            No countries match the filters, let's{" "}
-            <a onClick={clearFilter}>clear the filter</a>
-          </p>
-        ) : (
-          countryList.map(
-            ({ flag, name, population, region, capital, alpha3Code }) => {
-              return (
-                <Country
-                  key={alpha3Code}
-                  flag={flag}
-                  name={name}
-                  population={population}
-                  region={region}
-                  capital={capital}
-                  alpha3Code={alpha3Code}
-                />
-              );
-            }
-          )
+        {countryList.map(
+          ({ flag, name, population, region, capital, alpha3Code }) => {
+            return (
+              <Country
+                key={alpha3Code}
+                flag={flag}
+                name={name}
+                population={population}
+                region={region}
+                capital={capital}
+                alpha3Code={alpha3Code}
+              />
+            );
+          }
         )}
       </CountryListStyled>
     </Wrapper>
