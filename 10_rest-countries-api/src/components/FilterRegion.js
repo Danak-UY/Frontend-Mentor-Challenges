@@ -28,7 +28,6 @@ const FilterRegionStyled = styled.div`
     border-radius: 0.5rem;
     background-color: var(--cl-elements);
     box-shadow: 0px 4px 12px 0px hsla(200, 15%, 8%, 0.08);
-    /* display: none; */
     padding: 0.5rem;
     text-align: left;
     position: absolute;
@@ -42,15 +41,29 @@ const FilterRegionStyled = styled.div`
     overflow: hidden;
   }
   .dropdown.open ul {
-    /* display: block; */
     opacity: 1;
     top: 100%;
     z-index: 99;
     height: 14.5rem;
   }
+  .dropdown.open ul.reset-filter {
+    height: 16.8rem;
+  }
+  .dropdown.open ul.reset-filter::before {
+    content: "";
+    background-color: var(--cl-background);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5rem;
+    transition: 0.3s ease;
+  }
   .dropdown ul li {
     margin: 0.25rem 0;
     padding: 0.5rem 1rem;
+    position: relative;
+    z-index: 5;
 
     &:hover {
       color: var(--cl-text);
@@ -91,12 +104,15 @@ function FilterRegion() {
       >
         Filter by Region {filterByRegion && `( ${filterByRegion} )`}
         <ion-icon name="chevron-down-outline"></ion-icon>
-        <ul>
+        <ul className={filterByRegion && "reset-filter"}>
           <li onClick={() => onRegionChange("Africa")}>Africa</li>
           <li onClick={() => onRegionChange("Americas")}>Americas</li>
           <li onClick={() => onRegionChange("Asia")}>Asia</li>
           <li onClick={() => onRegionChange("Europe")}>Europe</li>
           <li onClick={() => onRegionChange("Oceania")}>Oceania</li>
+          {filterByRegion && (
+            <li onClick={() => onRegionChange("")}>Reset filter</li>
+          )}
         </ul>
       </div>
       {/* <option value="Africa">Africa</option>
