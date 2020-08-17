@@ -7,30 +7,30 @@ const cardListData = [
   {
     username: "@Danak-UY",
     socialMedia: "facebook",
-    followersNumber: 1987,
-    followersTitle: "followers",
-    followersToday: 12,
+    followersNumber: 57,
+    followersTitle: "Followers",
+    followersToday: 13,
   },
   {
     username: "@Danak-UY",
     socialMedia: "twitter",
-    followersNumber: 1044,
-    followersTitle: "followers",
-    followersToday: 99,
+    followersNumber: 162,
+    followersTitle: "Followers",
+    followersToday: 12,
   },
   {
     username: "@Danak-UY",
     socialMedia: "instagram",
-    followersNumber: "11k",
-    followersTitle: "followers",
-    followersToday: 1099,
+    followersNumber: 160,
+    followersTitle: "Followers",
+    followersToday: 19,
   },
   {
     username: "@Danak-UY",
     socialMedia: "youtube",
-    followersNumber: 8239,
-    followersTitle: "subscribers",
-    followersToday: -144,
+    followersNumber: 78,
+    followersTitle: "Subscribers",
+    followersToday: -18,
   },
 ];
 
@@ -76,14 +76,8 @@ const item = {
   },
 };
 
-function TopCardsList({ followers, followersOverview }) {
-  const [followersArray, setFollowersArray] = useState([]);
-  const [followersOverviewArray, setFollowersOverviewArray] = useState([]);
-
-  useEffect(() => {
-    setFollowersOverviewArray(followersOverview);
-    console.log(followersOverviewArray);
-  }, [followersOverview]);
+function TopCardsList({ followers }) {
+  const [followersArray, setFollowersArray] = useState(cardListData);
 
   useEffect(() => {
     setFollowersArray(followers);
@@ -96,6 +90,7 @@ function TopCardsList({ followers, followersOverview }) {
           className="grid"
           initial="hidden"
           animate="visible"
+          exit="exit"
           variants={list}
         >
           {followersArray.map((socialMedia, index) => (

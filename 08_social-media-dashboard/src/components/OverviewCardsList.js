@@ -3,6 +3,23 @@ import { motion, useAnimation } from "framer-motion";
 import "./styles/overview-cards-list.css";
 import CardOverview from "./CardOverview";
 
+function loopCardOverviews(objectListCardOverview) {
+  let cardsOverview = [];
+  Object.keys(objectListCardOverview).forEach((socialMedia) =>
+    cardsOverview.push(
+      <CardOverview
+        socialMedia={socialMedia}
+        followersNumbersOverview={
+          objectListCardOverview[socialMedia][0].pagesViews
+        }
+        percentage="-8"
+        title="Pages Views"
+      />
+    )
+  );
+  return cardsOverview;
+}
+
 const cardSmallList = [
   {
     socialMedia: "facebook",
@@ -24,13 +41,13 @@ const cardSmallList = [
     info: [
       {
         title: "likes",
-        followersNumbersOverview: 5462,
-        percentage: 2257,
+        followersNumbersOverview: 62,
+        percentage: 7,
       },
       {
         title: "pages views",
-        followersNumbersOverview: "52k",
-        percentage: 1375,
+        followersNumbersOverview: 52,
+        percentage: -75,
       },
     ],
   },
@@ -44,8 +61,8 @@ const cardSmallList = [
       },
       {
         title: "pages views",
-        followersNumbersOverview: 507,
-        percentage: 553,
+        followersNumbersOverview: 57,
+        percentage: 53,
       },
     ],
   },
@@ -59,7 +76,7 @@ const cardSmallList = [
       },
       {
         title: "total views",
-        followersNumbersOverview: 1407,
+        followersNumbersOverview: 147,
         percentage: -12,
       },
     ],
@@ -97,7 +114,7 @@ const item = {
 const itemOpacity = {
   visible: {
     opacity: 1,
-    transition: { type: "tween", ease: "easeInOut" },
+    transition: { type: "tween", ease: "easeInOut", delay: 1 },
   },
   hidden: {
     opacity: 0,
@@ -107,18 +124,20 @@ const itemOpacity = {
 function OverviewCardsList({ followersOverview }) {
   const titleControls = useAnimation();
   const itemControls = useAnimation();
-  const [followersOverviewArray, setFollowersOverviewArray] = useState([]);
+  const [followersOverviewArray, setFollowersOverviewArray] = useState(
+    cardSmallList
+  );
 
-  useEffect(() => {
-    setFollowersOverviewArray(followersOverview);
-    console.log(followersOverviewArray);
-  }, [followersOverview]);
+  // useEffect(() => {
+  //   setFollowersOverviewArray(loopCardOverviews(followersOverview));
+  // }, [followersOverview]);
 
   const sequence = async () => {
     await titleControls.start("visible");
     return await itemControls.start("visible");
   };
   sequence();
+
   return (
     <section className="overview-cards">
       <div className="wrapper">
@@ -136,7 +155,7 @@ function OverviewCardsList({ followersOverview }) {
           animate={itemControls}
           variants={list}
         >
-          {cardSmallList.map((socialMedia, index) => (
+          {followersOverviewArray.map((socialMedia, index) => (
             <Fragment key={index}>
               {socialMedia.info.map((info, index) => (
                 <motion.div key={index} variants={item}>

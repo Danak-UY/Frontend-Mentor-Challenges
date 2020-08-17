@@ -13,7 +13,7 @@ function orderCardList(crudData) {
       socialMedia: card.fields.SocialMedia,
       followersNumber: card.fields.TotalFollowers,
       followersTitle: card.fields.Title,
-      followersToday: card.fields.TotalLikes,
+      followersToday: card.fields.Followers[card.fields.Followers.length - 1],
     };
     orderedData.push(socialFollowers);
   });
@@ -21,7 +21,7 @@ function orderCardList(crudData) {
 }
 
 function orderCardOverview(crudData) {
-  let orderedData = [];
+  let orderedData = {};
   crudData.forEach((card) => {
     let socialMedia = card.fields.SocialMedia[0];
     let socialOverview = {
@@ -29,13 +29,13 @@ function orderCardOverview(crudData) {
       likes: card.fields.Likes,
       pagesViews: card.fields.PageViews,
     };
+
     if (orderedData[socialMedia]) {
       orderedData[socialMedia].push(socialOverview);
     } else {
       orderedData[socialMedia] = [socialOverview];
     }
   });
-  console.log("Ordered Overview", orderedData);
   return orderedData;
 }
 
@@ -47,7 +47,7 @@ let base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE);
 
 function App() {
   const [cardList, setCardList] = useState([]);
-  const [cardOverview, setCardOverview] = useState([]);
+  const [cardOverview, setCardOverview] = useState({});
 
   useEffect(() => {
     base("Social Media")
@@ -78,7 +78,6 @@ function App() {
       .eachPage(
         function page(records) {
           setCardOverview(orderCardOverview(records));
-          console.log("App Card Overview", cardOverview);
         },
         function done(err) {
           if (err) {
@@ -92,11 +91,11 @@ function App() {
   return (
     <Fragment>
       <Header />
-      {cardList.length !== 0 && (
-        <TopCardsList followers={cardList} followersOverview={cardOverview} />
-      )}
+      {cardList.length !== 0 && <TopCardsList followers={cardList} />}
 
-      <OverviewCardsList followersOverview={cardOverview} />
+      {cardOverview.length !== 0 && cardList.length !== 0 && (
+        <OverviewCardsList followersOverview={cardOverview} />
+      )}
     </Fragment>
   );
 }
