@@ -5,6 +5,40 @@ import Header from "./components/Header";
 import TopCardsList from "./components/TopCardsList";
 import OverviewCardsList from "./components/OverviewCardsList";
 
+function orderCardList(crudData) {
+  let orderedData = [];
+  crudData.forEach((card) => {
+    let socialFollowers = {
+      username: card.fields.Username,
+      socialMedia: card.fields.SocialMedia,
+      followersNumber: card.fields.TotalFollowers,
+      followersTitle: card.fields.Title,
+      followersToday: card.fields.TotalLikes,
+    };
+    orderedData.push(socialFollowers);
+  });
+  return orderedData;
+}
+
+function orderCardOverview(crudData) {
+  let orderedData = [];
+  crudData.forEach((card) => {
+    let socialMedia = card.fields.SocialMedia[0];
+    let socialOverview = {
+      followers: card.fields.Followers,
+      likes: card.fields.Likes,
+      pagesViews: card.fields.PageViews,
+    };
+    if (orderedData[socialMedia]) {
+      orderedData[socialMedia].push(socialOverview);
+    } else {
+      orderedData[socialMedia] = [socialOverview];
+    }
+  });
+  console.log("Ordered Overview", orderedData);
+  return orderedData;
+}
+
 Airtable.configure({
   endpointUrl: "https://api.airtable.com",
   apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
@@ -12,17 +46,18 @@ Airtable.configure({
 let base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE);
 
 function App() {
-  const [cardList, setCardList] = useState({});
-  const [cardOverview, setCardOverview] = useState({});
-  console.log(cardList);
-  console.log(cardOverview);
+  const [cardList, setCardList] = useState([]);
+  const [cardOverview, setCardOverview] = useState([]);
 
   useEffect(() => {
     base("Social Media")
-      .select({})
+      .select({
+        view: "Grid view",
+        sort: [{ field: "Order", direction: "asc" }],
+      })
       .eachPage(
         function page(records) {
-          setCardList(records);
+          setCardList(orderCardList(records));
         },
         function done(err) {
           if (err) {
@@ -37,18 +72,13 @@ function App() {
     base("New Followers")
       .select({
         maxRecords: 8,
-        sort: [{ field: "Created Time", direction: "desc" }],
+        view: "Grid view",
+        sort: [{ field: "CreatedTime", direction: "desc" }],
       })
       .eachPage(
         function page(records) {
-          setCardOverview(records);
-          records.forEach((record) => {
-            console.log(
-              "Followers",
-              record.get("Social Media"),
-              record.get("Created Time")
-            );
-          });
+          setCardOverview(orderCardOverview(records));
+          console.log("App Card Overview", cardOverview);
         },
         function done(err) {
           if (err) {
@@ -62,7 +92,10 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <TopCardsList followers={cardList} followersOverview={cardOverview} />
+      {cardList.length !== 0 && (
+        <TopCardsList followers={cardList} followersOverview={cardOverview} />
+      )}
+
       <OverviewCardsList followersOverview={cardOverview} />
     </Fragment>
   );

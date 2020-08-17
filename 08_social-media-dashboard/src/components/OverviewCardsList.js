@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import "./styles/overview-cards-list.css";
 import CardOverview from "./CardOverview";
@@ -104,9 +104,15 @@ const itemOpacity = {
   },
 };
 
-function OverviewCardsList() {
+function OverviewCardsList({ followersOverview }) {
   const titleControls = useAnimation();
   const itemControls = useAnimation();
+  const [followersOverviewArray, setFollowersOverviewArray] = useState([]);
+
+  useEffect(() => {
+    setFollowersOverviewArray(followersOverview);
+    console.log(followersOverviewArray);
+  }, [followersOverview]);
 
   const sequence = async () => {
     await titleControls.start("visible");
