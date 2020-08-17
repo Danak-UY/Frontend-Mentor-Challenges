@@ -18,8 +18,8 @@ const CountryStyled = styled.div`
 
   .country-flag {
     overflow: hidden;
+    border-radius: 0.5rem 0.5rem 0 0;
     img {
-      border-radius: 0.5rem 0.5rem 0 0;
       width: 100%;
       height: 15rem;
       object-fit: cover;

@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
 import Wrapper from "./Wrapper";
 import Country from "./Country";
+import SkeletonCard from "./SkeletonCard";
 
 const CountryListStyled = styled.div`
   padding: 0 4rem;
@@ -32,7 +33,6 @@ const ErrorMessage = styled.p`
 
     &:hover {
       color: var(--cl-text);
-      text-decoration: underline;
     }
   }
 `;
@@ -41,6 +41,7 @@ function CountryList() {
   const dispatch = useDispatch();
   const filterByName = useSelector((state) => state.filterByName);
   const fullCountryList = useSelector((state) => state.countryList);
+  const [countriesLoading, setCountriesLoading] = useState(true);
 
   const countryList = useSelector((state) => {
     if (state.filterByRegion !== "" || state.filterByName !== "") {
@@ -59,6 +60,7 @@ function CountryList() {
           type: "SET_COUNTRY_LIST",
           payload: list,
         });
+        setCountriesLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -77,25 +79,28 @@ function CountryList() {
       {countryList.length === 0 && filterByName !== "" && (
         <ErrorMessage>
           No countries match the filters, let's{" "}
-          <a onClick={clearFilter}>clear the filter</a>
+          <a onClick={clearFilter}>start again</a>
         </ErrorMessage>
       )}
       <CountryListStyled>
-        {countryList.map(
-          ({ flag, name, population, region, capital, alpha3Code }) => {
-            return (
-              <Country
-                key={alpha3Code}
-                flag={flag}
-                name={name}
-                population={population}
-                region={region}
-                capital={capital}
-                alpha3Code={alpha3Code}
-              />
-            );
-          }
-        )}
+        {countriesLoading &&
+          [1, 2, 3, 4, 5, 6, 7, 8].map((item) => <SkeletonCard />)}
+        {!countriesLoading &&
+          countryList.map(
+            ({ flag, name, population, region, capital, alpha3Code }) => {
+              return (
+                <Country
+                  key={alpha3Code}
+                  flag={flag}
+                  name={name}
+                  population={population}
+                  region={region}
+                  capital={capital}
+                  alpha3Code={alpha3Code}
+                />
+              );
+            }
+          )}
       </CountryListStyled>
     </Wrapper>
   );

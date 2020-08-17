@@ -6,7 +6,7 @@ import Search from "./Search";
 import FilterRegion from "./FilterRegion";
 
 const ActionListStyled = styled.div`
-  padding: 2rem;
+  padding: 3rem 2rem;
   .grid {
     display: grid;
     grid-template-columns: 1fr;
