@@ -46,13 +46,10 @@ const SearchStyled = styled.div`
 `;
 
 function Search() {
-  const [inputValue, setInputValue] = useState(
-    useSelector((state) => state.filterByName)
-  );
+  const inputValue = useSelector((state) => state.filterByName);
   const dispatch = useDispatch();
 
   const filterByName = (ev) => {
-    setInputValue(ev.target.value);
     dispatch({
       type: "SET_COUNTRY_BY_NAME",
       payload: ev.target.value,
@@ -64,7 +61,6 @@ function Search() {
       type: "SET_COUNTRY_BY_NAME",
       payload: "",
     });
-    setInputValue("");
   };
 
   return (

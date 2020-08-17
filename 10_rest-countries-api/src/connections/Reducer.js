@@ -10,7 +10,14 @@ function filterByName(list, name) {
 export default function reducer(state, action) {
   switch (action.type) {
     case "SET_COUNTRY_LIST": {
-      return { ...state, countryList: action.payload };
+      let filterByRegion = "";
+      let filterByName = "";
+      return {
+        ...state,
+        countryList: action.payload,
+        filterByRegion,
+        filterByName,
+      };
     }
 
     case "SET_COUNTRY_BY_NAME": {

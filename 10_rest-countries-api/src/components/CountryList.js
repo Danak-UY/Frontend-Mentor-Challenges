@@ -19,6 +19,8 @@ const CountryListStyled = styled.div`
 
 function CountryList() {
   const dispatch = useDispatch();
+  const filterByName = useSelector((state) => state.filterByName);
+  const fullCountryList = useSelector((state) => state.countryList);
 
   const countryList = useSelector((state) => {
     if (state.filterByRegion !== "" || state.filterByName !== "") {
@@ -43,24 +45,37 @@ function CountryList() {
       });
   }, [dispatch]);
 
+  const clearFilter = () => {
+    dispatch({
+      type: "SET_COUNTRY_LIST",
+      payload: fullCountryList,
+    });
+  };
+
   return (
     <Wrapper>
-      {/* {countryList.length === 0 && countryList.length} */}
       <CountryListStyled>
-        {countryList.map(
-          ({ flag, name, population, region, capital, alpha3Code }) => {
-            return (
-              <Country
-                key={alpha3Code}
-                flag={flag}
-                name={name}
-                population={population}
-                region={region}
-                capital={capital}
-                alpha3Code={alpha3Code}
-              />
-            );
-          }
+        {countryList.length === 0 && filterByName !== "" ? (
+          <p>
+            No countries match the filters, let's{" "}
+            <a onClick={clearFilter}>clear the filter</a>
+          </p>
+        ) : (
+          countryList.map(
+            ({ flag, name, population, region, capital, alpha3Code }) => {
+              return (
+                <Country
+                  key={alpha3Code}
+                  flag={flag}
+                  name={name}
+                  population={population}
+                  region={region}
+                  capital={capital}
+                  alpha3Code={alpha3Code}
+                />
+              );
+            }
+          )
         )}
       </CountryListStyled>
     </Wrapper>

@@ -27,8 +27,12 @@ function reducer(state, action) {
   switch (action.type) {
     case "SET_COUNTRY_LIST":
       {
+        var _filterByRegion = "";
+        var _filterByName = "";
         return _objectSpread({}, state, {
-          countryList: action.payload
+          countryList: action.payload,
+          filterByRegion: _filterByRegion,
+          filterByName: _filterByName
         });
       }
 
