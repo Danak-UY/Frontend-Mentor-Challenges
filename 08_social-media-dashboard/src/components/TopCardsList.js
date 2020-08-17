@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./styles/top-cards-list.css";
 import CardSocial from "./CardSocial";
 
@@ -28,20 +29,55 @@ const cardListData = [
     username: "@Danak-UY",
     socialMedia: "youtube",
     followersNumber: 8239,
-    followersTitle: "followers",
+    followersTitle: "subscribers",
     followersToday: -144,
   },
 ];
+
+const list = {
+  visible: {
+    opacity: 1,
+    height: "auto",
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+      duration: 0.2,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    height: 0,
+  },
+};
+
+const item = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "tween", ease: "easeInOut" },
+  },
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+};
 
 function TopCardsList() {
   return (
     <section className="card-section">
       <div className="wrapper">
-        <div className="grid">
+        <motion.div
+          className="grid"
+          initial="hidden"
+          animate="visible"
+          variants={list}
+        >
           {cardListData.map((user, index) => (
-            <CardSocial key={index} {...user} />
+            <motion.div key={index} variants={item}>
+              <CardSocial key={index} {...user} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

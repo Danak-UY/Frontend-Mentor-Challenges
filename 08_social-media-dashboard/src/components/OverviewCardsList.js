@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { motion, useAnimation } from "framer-motion";
 import "./styles/overview-cards-list.css";
 import CardOverview from "./CardOverview";
 
@@ -65,24 +66,84 @@ const cardSmallList = [
   },
 ];
 
+const list = {
+  visible: {
+    opacity: 1,
+    height: "auto",
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+      duration: 0.1,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    height: 0,
+  },
+};
+
+const item = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "tween", ease: "easeInOut" },
+  },
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+};
+
+const itemOpacity = {
+  visible: {
+    opacity: 1,
+    transition: { type: "tween", ease: "easeInOut" },
+  },
+  hidden: {
+    opacity: 0,
+  },
+};
+
 function OverviewCardsList() {
+  const titleControls = useAnimation();
+  const itemControls = useAnimation();
+
+  const sequence = async () => {
+    await titleControls.start("visible");
+    return await itemControls.start("visible");
+  };
+  sequence();
   return (
     <section className="overview-cards">
       <div className="wrapper">
-        <h2 className="page-subtitle">Overview - Today</h2>
-        <div className="grid">
+        <motion.h2
+          className="page-subtitle"
+          initial="hidden"
+          animate={titleControls}
+          variants={itemOpacity}
+        >
+          Overview - Today
+        </motion.h2>
+        <motion.div
+          className="grid"
+          initial="hidden"
+          animate={itemControls}
+          variants={list}
+        >
           {cardSmallList.map((socialMedia, index) => (
             <Fragment key={index}>
               {socialMedia.info.map((info, index) => (
-                <CardOverview
-                  key={index}
-                  socialMedia={socialMedia.socialMedia}
-                  {...info}
-                />
+                <motion.div key={index} variants={item}>
+                  <CardOverview
+                    key={index}
+                    socialMedia={socialMedia.socialMedia}
+                    {...info}
+                  />
+                </motion.div>
               ))}
             </Fragment>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
