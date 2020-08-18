@@ -42,6 +42,7 @@ function CountryList() {
   const filterByName = useSelector((state) => state.filterByName);
   const fullCountryList = useSelector((state) => state.countryList);
   const [countriesLoading, setCountriesLoading] = useState(true);
+  const [countriesError, setCountriesError] = useState(false);
 
   const countryList = useSelector((state) => {
     if (state.filterByRegion !== "" || state.filterByName !== "") {
@@ -64,6 +65,8 @@ function CountryList() {
       })
       .catch((error) => {
         console.log(error);
+        setCountriesError(true);
+        setCountriesLoading(false);
       });
   }, [dispatch]);
 
@@ -76,6 +79,12 @@ function CountryList() {
 
   return (
     <Wrapper>
+      {countriesError && countryList.length === 0 && (
+        <ErrorMessage>
+          We're experiencing problems with the country list, please try again
+          later. Thanks!
+        </ErrorMessage>
+      )}
       {countryList.length === 0 && filterByName !== "" && (
         <ErrorMessage>
           No countries match the filters, let's{" "}
