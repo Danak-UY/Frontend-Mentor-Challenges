@@ -2,8 +2,6 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 
-import "./../assets/componentsStyles/FilterBar.css";
-
 import Wrapper from "./Wrapper";
 import TagFilter from "./TagFilter";
 

@@ -68,7 +68,7 @@ const JobComponent = ({
           <h2 className="font-bold text-cyan-veryDarkGraysh font-bold mb-2 text-lg cursor-pointer hover:text-primary transition-colors duration-300 ease">
             {job}
           </h2>
-          <p className="flex text-cyan-darkGraysh font-medium text-sm flex-wrap">
+          <p className="flex text-cyan-darkGraysh font-medium text-sm flex-wrap span-list">
             <span>{formatTime(days)} ago</span>
             <span>{type}</span>
             <span>{location}</span>

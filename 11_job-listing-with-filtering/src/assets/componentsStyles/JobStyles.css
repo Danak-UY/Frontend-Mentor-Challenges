@@ -1,4 +1,4 @@
-p span:not(:last-of-type)::after {
+p.span-list span:not(:last-of-type)::after {
   content: "•";
   padding: 0 0.75rem;
   transform: scale(1.2);

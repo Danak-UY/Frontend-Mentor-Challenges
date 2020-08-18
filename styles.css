@@ -135,7 +135,7 @@ article figure .buttons a {
 }
 
 article figure .buttons a:hover {
-  flex: 5;
+  flex: 6;
 }
 
 article figure .buttons .project-button {
