@@ -8,10 +8,12 @@
     "@testing-library/user-event": "^7.2.1",
     "airtable": "^0.9.0",
     "animejs": "^3.2.0",
+    "framer-motion": "^2.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
     "react-scripts": "3.4.3",
+    "react-skeleton-loading": "^1.0.0",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5"
   },

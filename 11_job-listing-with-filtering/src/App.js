@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Airtable from "airtable";
 
@@ -14,6 +14,7 @@ let base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE);
 
 function App() {
   const dispatch = useDispatch();
+  const [loadingJobs, setLoadingJobs] = useState(true);
   const jobsList = useSelector((state) => {
     if (state.filterTags.length === 0) return state.jobsList;
     return state.jobsFilteredList;
@@ -34,6 +35,7 @@ function App() {
             type: "SET_JOBS_LIST",
             payload: records.map((record) => record.fields),
           });
+          setLoadingJobs(false);
           // fetchNextPage();
         },
         function done(err) {
@@ -48,8 +50,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {filterTags.length !== 0 && <FilterBar />}
-      <JobComponentList jobsList={jobsList} />
+      <FilterBar />
+      <JobComponentList jobsList={jobsList} loading={loadingJobs} />
       <p className="p-4 mb-4 text-center text-cyan-darkGraysh">
         Want to populate the web?
         <a
