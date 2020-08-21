@@ -3,85 +3,34 @@ import { motion, useAnimation } from "framer-motion";
 import "./styles/overview-cards-list.css";
 import CardOverview from "./CardOverview";
 
-function loopCardOverviews(objectListCardOverview) {
+function loopCardOverviews(listSocialMedia, overviewSocialMedia) {
+  if (!listSocialMedia || !overviewSocialMedia) return [];
   let cardsOverview = [];
-  Object.keys(objectListCardOverview).forEach((socialMedia) =>
-    cardsOverview.push(
-      <CardOverview
-        socialMedia={socialMedia}
-        followersNumbersOverview={
-          objectListCardOverview[socialMedia][0].pagesViews
-        }
-        percentage="-8"
-        title="Pages Views"
-      />
-    )
-  );
+  listSocialMedia.forEach((socialMedia) => {
+    let mediaName = socialMedia.socialMedia;
+    let objectMedia = {
+      socialMedia: mediaName,
+      info: [],
+    };
+
+    let objectOverviewLikes = {
+      title: socialMedia.titleViews,
+      todayFollowers: overviewSocialMedia[mediaName][0].likes,
+      yesterdayFollowers: overviewSocialMedia[mediaName][1].likes,
+    };
+
+    let objectOverviewPages = {
+      title: socialMedia.titleLikes,
+      todayFollowers: overviewSocialMedia[mediaName][0].pagesViews,
+      yesterdayFollowers: overviewSocialMedia[mediaName][1].pagesViews,
+    };
+
+    objectMedia.info.push(objectOverviewPages);
+    objectMedia.info.push(objectOverviewLikes);
+    cardsOverview.push(objectMedia);
+  });
   return cardsOverview;
 }
-
-const cardSmallList = [
-  {
-    socialMedia: "facebook",
-    info: [
-      {
-        title: "pages views",
-        followersNumbersOverview: 87,
-        percentage: 3,
-      },
-      {
-        title: "likes",
-        followersNumbersOverview: 52,
-        percentage: 2,
-      },
-    ],
-  },
-  {
-    socialMedia: "instagram",
-    info: [
-      {
-        title: "likes",
-        followersNumbersOverview: 62,
-        percentage: 7,
-      },
-      {
-        title: "pages views",
-        followersNumbersOverview: 52,
-        percentage: -75,
-      },
-    ],
-  },
-  {
-    socialMedia: "twitter",
-    info: [
-      {
-        title: "retweets",
-        followersNumbersOverview: 117,
-        percentage: 303,
-      },
-      {
-        title: "pages views",
-        followersNumbersOverview: 57,
-        percentage: 53,
-      },
-    ],
-  },
-  {
-    socialMedia: "youtube",
-    info: [
-      {
-        title: "likes",
-        followersNumbersOverview: 107,
-        percentage: -19,
-      },
-      {
-        title: "total views",
-        followersNumbersOverview: 147,
-        percentage: -12,
-      },
-    ],
-  },
-];
 
 const list = {
   visible: {
@@ -121,16 +70,12 @@ const itemOpacity = {
   },
 };
 
-function OverviewCardsList({ followersOverview }) {
+function OverviewCardsList({ followersOverview, followers }) {
   const titleControls = useAnimation();
   const itemControls = useAnimation();
-  const [followersOverviewArray, setFollowersOverviewArray] = useState(
-    cardSmallList
+  const followersOverviewArray = useState(
+    loopCardOverviews(followers, followersOverview)
   );
-
-  // useEffect(() => {
-  //   setFollowersOverviewArray(loopCardOverviews(followersOverview));
-  // }, [followersOverview]);
 
   const sequence = async () => {
     await titleControls.start("visible");
@@ -155,19 +100,21 @@ function OverviewCardsList({ followersOverview }) {
           animate={itemControls}
           variants={list}
         >
-          {followersOverviewArray.map((socialMedia, index) => (
-            <Fragment key={index}>
-              {socialMedia.info.map((info, index) => (
-                <motion.div key={index} variants={item}>
-                  <CardOverview
-                    key={index}
-                    socialMedia={socialMedia.socialMedia}
-                    {...info}
-                  />
-                </motion.div>
-              ))}
-            </Fragment>
-          ))}
+          {followersOverviewArray.length !== 0 &&
+            followersOverviewArray[0].map((socialMediaInfo, index) => (
+              <Fragment key={index}>
+                {socialMediaInfo.info &&
+                  socialMediaInfo.info.map((info, index) => (
+                    <motion.div key={index} variants={item}>
+                      <CardOverview
+                        key={index}
+                        socialMedia={socialMediaInfo.socialMedia}
+                        {...info}
+                      />
+                    </motion.div>
+                  ))}
+              </Fragment>
+            ))}
         </motion.div>
       </div>
     </section>

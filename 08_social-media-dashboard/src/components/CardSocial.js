@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/card-social.css";
 import SocialMediaImage from "./SocialMediaImage";
+import numeral from "numeral";
 
 function CardSocial({
   username,
@@ -16,7 +17,9 @@ function CardSocial({
         {username}
       </p>
       <p className="card-followers">
-        <span className="card-followers-number">{followersNumber}</span>
+        <span className="card-followers-number">
+          {numeral(followersNumber).format("0a")}
+        </span>
         <span className="card-followers-title">{followersTitle}</span>
       </p>
       <p

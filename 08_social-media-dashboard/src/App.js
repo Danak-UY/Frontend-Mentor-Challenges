@@ -14,6 +14,8 @@ function orderCardList(crudData) {
       followersNumber: card.fields.TotalFollowers,
       followersTitle: card.fields.Title,
       followersToday: card.fields.Followers[card.fields.Followers.length - 1],
+      titleLikes: card.fields.TitleLikes,
+      titleViews: card.fields.TitleViews,
     };
     orderedData.push(socialFollowers);
   });
@@ -93,9 +95,13 @@ function App() {
       <Header />
       {cardList.length !== 0 && <TopCardsList followers={cardList} />}
 
-      {cardOverview.length !== 0 && cardList.length !== 0 && (
-        <OverviewCardsList followersOverview={cardOverview} />
-      )}
+      {Object.keys(cardOverview).length !== 0 &&
+        Object.keys(cardList).length !== 0 && (
+          <OverviewCardsList
+            followersOverview={cardOverview}
+            followers={cardList}
+          />
+        )}
     </Fragment>
   );
 }
