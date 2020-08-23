@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import "./styles/overview-cards-list.css";
 import CardOverview from "./CardOverview";

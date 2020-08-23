@@ -92,7 +92,7 @@ function App() {
 
   return (
     <Fragment>
-      <Header />
+      <Header followers={cardList} />
       {cardList.length !== 0 && <TopCardsList followers={cardList} />}
 
       {Object.keys(cardOverview).length !== 0 &&
