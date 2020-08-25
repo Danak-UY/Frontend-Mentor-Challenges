@@ -49,7 +49,7 @@ const projects = [
       "techs": ["html", "css", "js"]
     },
     {
-      "projectLink": "https://epic-johnson-c6a2b8.netlify.app/",
+      "projectLink": "https://dk-fmc-social-media-dashboard.netlify.app",
       "folder": "./08_Social-media-dashboard-with-theme-swithcher/",
       "title": "Social media dashboard with theme switcher",
       "originalLink": "https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H",
@@ -57,7 +57,7 @@ const projects = [
       "techs": ["html", "css", "react"]
     },
     {
-      "projectLink": "https://condescending-ptolemy-52c31e.netlify.app/",
+      "projectLink": "https://dk-fmc-rock-paper-scissors.netlify.app",
       "folder": "./09_rock-paper-scissors/",
       "title": "Rock, Paper, Scissors game",
       "originalLink": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
@@ -65,7 +65,7 @@ const projects = [
       "techs": ["html", "css", "react"]
     },
     {
-      "projectLink": "https://stupefied-pasteur-be942b.netlify.app/",
+      "projectLink": "https://dk-fmc-rest-countries-api.netlify.app",
       "folder": "./10_rest-countries-api/",
       "title": "REST Countries API",
       "originalLink": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
@@ -73,7 +73,7 @@ const projects = [
       "techs": ["html", "css", "react"]
     },
     {
-      "projectLink": "https://nifty-yonath-b5ea44.netlify.app/",
+      "projectLink": "https://dk-fmc-job-listing.netlify.app",
       "folder": "./11_job-listing-with-filtering/",
       "title": "Job Listing with Filtering",
       "originalLink": "https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt",
